@@ -14,24 +14,22 @@ public class Clue
    
    {
       
-      private String clueText;
+      private String clueText;   // text for the clue
       
-      private String answerA;
+      private String answerA;    // text for answer A
       
-      private String answerB;
+      private String answerB;    // text for answer B
       
-      private String answerX;
+      private String answerX;    // text for answer X
       
-      private String answerY;
+      private String answerY;    // text for answer Y
+            
+      private int pointValue; // point value for each clue
       
-      private String answerCorrect;
-      
-      private int pointValue;
-      
-      private String wolfKeyword;
+      private String wolfKeyword;   // the keyword used for the wolfram search
       
       
-      public Clue (String infoClue, String infoA, String infoB, String infoX, String infoY, String infoCorrect, int infoPoints, String infoKeyword)
+      public Clue (String infoClue, String infoA, String infoB, String infoX, String infoY, int infoPoints, String infoKeyword)
          
          {
             clueText = infoClue;
@@ -43,8 +41,6 @@ public class Clue
             answerX = infoX;
             
             answerY = infoY;
-            
-            answerCorrect = infoCorrect;
             
             pointValue = infoPoints;
             
@@ -89,14 +85,6 @@ public class Clue
          {
             
             return answerY;
-            
-         }
-         
-      public String getAnswerCorrect()
-         
-         {
-            
-            return answerCorrect;
             
          }
          
