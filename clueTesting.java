@@ -6,7 +6,7 @@ public class clueTesting
       
          {
          
-            Clue cluetest = new Clue("Yeet it works", "A", "B", "X", "Y", "CORRECT", 420, "WOFLRAM");
+            Clue cluetest = new Clue("Yeet it works", "A", "B", "X", "Y", 420, "WOLFRAM");
             
             System.out.println(cluetest.getClueText());
             
@@ -17,8 +17,6 @@ public class clueTesting
             System.out.println(cluetest.getAnswerX());
             
             System.out.println(cluetest.getAnswerY());
-            
-            System.out.println(cluetest.getAnswerCorrect());
             
             System.out.println(cluetest.getPointValue());
             
