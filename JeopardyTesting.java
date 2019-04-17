@@ -314,6 +314,11 @@ public class JeopardyTesting extends Application
                      
                      Scene clueScene = new Scene(clueSceneBorderPane, 1280, 720);
                      
+                  /////////   Daily Double Scene
+                  
+                  /////////   Final Jeopardy Scene
+                     
+                     
                      
             
             //Disregard what the buttons do below, it was for testing purposes.
