@@ -243,8 +243,12 @@ public class JeopardyTesting extends Application
                      /////////   Adding gameboard to gameboardBorderPane
                      
                         BorderPane gameboardBorderPane = new BorderPane();
+                        
+                        Button dailyDoubleTestButton = new Button("Daily Double Test");   // This button will eventually get deleted
                
                         gameboardBorderPane.setCenter(gameboard);
+                        
+                        gameboardBorderPane.setBottom(dailyDoubleTestButton); // This line of code will eventually get deleted
                
                //////////////////   End of adding Gameboard Buttons to the Gameboard Gridpane
                
@@ -314,7 +318,76 @@ public class JeopardyTesting extends Application
                      
                      Scene clueScene = new Scene(clueSceneBorderPane, 1280, 720);
                      
-                  /////////   Daily Double Scene
+                  /////////   Daily Double Scenes. ONE Daily Double in Regular Jeopardy, TWO Daily Doubles in Double Jeopardy.
+                  
+                     //////   Daily Double Scene 1
+                           
+                        Label dailyDoubleScene1Label = new Label("Daily \nDouble");
+                        
+                        Button dailyDoubleScene1Button = new Button ("Next");
+                        
+                        VBox dailyDoubleScene1VBox = new VBox(dailyDoubleScene1Label,dailyDoubleScene1Button);
+                        
+                        BorderPane dailyDoubleScene1BorderPane = new BorderPane();
+                        
+                        dailyDoubleScene1BorderPane.setCenter(dailyDoubleScene1VBox);
+                        
+                        Scene dailyDoubleScene1 = new Scene(dailyDoubleScene1BorderPane, 1280, 720);
+                        
+                     //////   Daily Double Scene 2
+                     
+                        Label dailyDoubleScene2Label = new Label("How much would you like to wager? \nAll wagers must be positive whole numbers \nequal to or less than your current total.");
+                        
+                        TextField dailyDoubleWagerField = new TextField("");
+                        
+                        Button dailyDoubleEnterButton = new Button("Enter");
+                        
+                        VBox dailyDoubleScene2VBox = new VBox(dailyDoubleScene2Label, dailyDoubleWagerField,dailyDoubleEnterButton); 
+                        
+                        BorderPane dailyDoubleScene2BorderPane = new BorderPane();
+                        
+                        dailyDoubleScene2BorderPane.setCenter(dailyDoubleScene2VBox);
+                        
+                        Scene dailyDoubleScene2 = new Scene(dailyDoubleScene2BorderPane, 1280, 720);
+                        
+                     //////   Daily Double Clue Scene
+                     
+                        Label clueTextDD = new Label("Put the text for the clue here.");
+                     
+                        Button answerADD = new Button("A: Answer A");
+                     
+                        Button answerBDD = new Button("B: Answer B");
+                     
+                        Button answerXDD = new Button("X: Answer X");
+                     
+                        Button answerYDD = new Button("Y: Answer Y");
+                     
+                        Button clueBackButtonDD = new Button("Back");
+                     
+                        GridPane clueGridPaneDD = new GridPane();
+                     
+                        clueGridPaneDD.add(answerADD, 0, 0);
+                     
+                        clueGridPaneDD.add(answerBDD, 1, 0);
+                     
+                        clueGridPaneDD.add(answerXDD, 0, 1);
+                     
+                        clueGridPaneDD.add(answerYDD, 1, 1);
+                     
+                        VBox clueSceneVBoxDD = new VBox(clueTextDD, clueGridPaneDD, clueBackButtonDD);
+                     
+                        BorderPane clueSceneBorderPaneDD = new BorderPane();
+                     
+                        clueSceneVBoxDD.setAlignment(Pos.CENTER);
+                     
+                        clueGridPaneDD.setAlignment(Pos.BOTTOM_CENTER);
+                     
+                        clueSceneBorderPaneDD.setLeft(clueBackButton);
+                     
+                        clueSceneBorderPaneDD.setCenter(clueSceneVBox);
+                     
+                        Scene dailyDoubleClueScene = new Scene(clueSceneBorderPaneDD, 1280, 720);
+      
                   
                   /////////   Final Jeopardy Scene
                      
@@ -343,7 +416,31 @@ public class JeopardyTesting extends Application
                      window.setScene(gameboardScene);
                   
                   });
+                  
+               dailyDoubleScene1Button.setOnAction( e ->  
+                  
+                  {
+                  
+                     window.setScene(dailyDoubleScene2);
+                  
+                  });
             
+               dailyDoubleEnterButton.setOnAction( e ->  
+                  
+                  {
+                  
+                     window.setScene(dailyDoubleClueScene);
+                  
+                  });
+                  
+               dailyDoubleTestButton.setOnAction( e -> //   This Button will eventually get deleted. 
+                  
+                  {
+                  
+                     window.setScene(dailyDoubleScene1);
+                  
+                  });
+               
                /////////   Category A Buttons
                
                categoryAInfo.setOnAction( e ->  //this button will go back and forth between the gameboardScene and the categoryInfomation scene
