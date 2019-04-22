@@ -382,9 +382,9 @@ public class JeopardyTesting extends Application
                      
                         clueGridPaneDD.setAlignment(Pos.BOTTOM_CENTER);
                      
-                        clueSceneBorderPaneDD.setLeft(clueBackButton);
+                        clueSceneBorderPaneDD.setLeft(clueBackButtonDD);
                      
-                        clueSceneBorderPaneDD.setCenter(clueSceneVBox);
+                        clueSceneBorderPaneDD.setCenter(clueSceneVBoxDD);
                      
                         Scene dailyDoubleClueScene = new Scene(clueSceneBorderPaneDD, 1280, 720);
       
@@ -410,6 +410,14 @@ public class JeopardyTesting extends Application
                   });
                   
                clueBackButton.setOnAction( e ->  
+                  
+                  {
+                  
+                     window.setScene(gameboardScene);
+                  
+                  });
+                  
+               clueBackButtonDD.setOnAction( e ->  
                   
                   {
                   
