@@ -1,3 +1,5 @@
+
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -42,7 +44,42 @@ public class JeopardyTesting extends Application
       
          {
       
+            ////////////////// Generating the positions for the Daily Doubles. 
+                           /// ValueA is for regular jeopardy, while ValueB and ValueC are for doubleJeopardy
             
+            Die dailyDoubleDie = new Die(29);
+                  
+            dailyDoubleDie.roll();
+                  
+            int dailyDoubleValueA = dailyDoubleDie.getValue();
+                  
+            dailyDoubleDie.roll();
+                  
+            int dailyDoubleValueB = dailyDoubleDie.getValue();
+                     
+            dailyDoubleDie.roll();
+                  
+            int dailyDoubleValueC = dailyDoubleDie.getValue();
+                  
+            while (dailyDoubleValueB == dailyDoubleValueC)
+                     
+               {
+                     
+                  dailyDoubleDie.roll();
+                     
+                  dailyDoubleValueC = dailyDoubleDie.getValue();
+                     
+               }
+               
+            int dailyDoubleCounter = 0;
+                  
+            System.out.println(dailyDoubleValueA);
+                  
+            System.out.println(dailyDoubleValueB);
+                  
+            System.out.println(dailyDoubleValueC);
+            
+            System.out.println("The daily double counter is currently at " + dailyDoubleCounter + ".");  
             
             ////////////////// Beginning of Gameboard Button Creation
             
