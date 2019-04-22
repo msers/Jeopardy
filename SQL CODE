@@ -1,0 +1,416 @@
+/**=======================================================TABLE DROPS=======================================================**/
+
+IF EXISTS (SELECT 1 FROM sysobjects
+WHERE id=object_id('') AND type='U')
+DROP TABLE CATEGORY
+GO
+
+IF EXISTS (SELECT 1 FROM sysobjects
+WHERE id=object_id('') AND type='U')
+DROP TABLE QUESTIONS
+GO
+
+/**=======================================================TABLE CREATES=======================================================**/
+
+
+CREATE TABLE QUESTIONS (
+QUESTION_ID					int				NOT NULL primary key, 
+QUESTION					varchar(255)		NOT NULL,
+CATEGORY_ID					int					NOT NULL,
+ANSWER_A					varchar(255)		NOT NULL,
+ANSWER_B					varchar(255)		NOT NULL,
+ANSWER_X					varchar(255)		NULL,
+ANSWER_Y					varchar(255)		NULL,
+ANSWER						varchar(2)			NULL,
+)
+go
+
+/**=======================================================TABLE CREATES=======================================================**/
+
+
+CREATE TABLE CATEGORY (
+CATEGORY_ID					int				NOT NULL primary key, 
+CATEGORY					varchar(50)			NOT NULL,
+CATEGORY_DESCRIPTION		varchar(255)		NOT NULL,
+)
+go
+
+/**=======================================================FOREIGN KEY ALTERS=======================================================**/
+
+
+ALTER TABLE QUESTIONS
+   ADD CONSTRAINT FK_QUESTIONS_REF_CATEGORY FOREIGN KEY  (CATEGORY_ID)
+       REFERENCES CATEGORY (CATEGORY_ID)
+
+/**=======================================================CATEGORY INSERT=======================================================**/
+
+
+
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+VALUES(1, 'HELLO WORLD', 'JAVA FACTS' )
+go
+
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+VALUES(2, 'THIS LAND IS YOUR LAND', 'U.S. LANDMARKS' )
+go
+
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+VALUES(3, 'CHIPS, DISCS, AND PERIPHERALS', 'COMPUTER HARDWARE ACRONYMS' )
+go
+
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+VALUES(4, 'GIANTS OF THEIR TIME', 'FAMOUS FIGURES' )
+go
+
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+VALUES(5, 'READY PLAYER ONE', 'VIDEO GAMES' )
+go
+
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+VALUES(6, 'SPITTING BARS', 'MUSIC' )
+go
+
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+VALUES(7, 'EXCELSIOR!', 'COMIC BOOKS' )
+go
+
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+VALUES(8, 'GOATS', 'RECORD BREAKING ATHLETES/TEAMS' )
+go
+
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+VALUES(9, 'THE BOYS CLUB', 'U.S. PRESIDENTS' )
+go
+
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+VALUES(10, 'EUREKA!', 'SCIENCE' )
+go
+
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+VALUES(11, 'VROOM VROOM', 'MOTOR VEHICLES' )
+go
+
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+VALUES(12, 'HIGHER LEARNING', 'UNIVERSITIES' )
+go
+
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+VALUES(13, 'DAILY DOUBLE', 'GAME OF THRONES DAILY DOUBLE' )
+go
+
+
+
+/**=======================================================QUESTIONS INSERT=======================================================**/
+
+
+
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(100, 'Named after the tree that stood outside its creator’s office, this was the original name for the Java Programming Language.
+', 1, 'PINE', 'BIRCH', 'OAK', 'MAPLE', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(101, 'This company, founded in February 1982 originally developed Java.
+', 1, 'SUN MICROSYSTEMS', 'ORACLE CORPORATION', 'SUNOPSIS', 'ROOTS', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(102, 'Occurring to Oracle, ATMs, PCs, Blu-Ray Players, and Servers help make up the _________ number of devices that run Java.
+', 1, '15,000,000', '150,000,000', '1,500,000,000', '15,000,000,000', 'Y')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(103, 'First released in on a device in 2008, this operating system is mostly written Java.
+', 1, 'SUN MICROSYSTEMS', 'ORACLE CORPORATION', 'SUNOPSIS', 'ROOTS', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(104, 'An Officer in the Order of Canada, this man founded Java.
+', 1, 'JAMES GOSLING', 'ANDY JASSY', 'RONALD WAYNE', 'PHIL SPENCER', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(105, 'Opened in 1937, the Golden Gate Bridge connects the city of San Francisco, CA to this county. 
+', 2, 'ALAMEDA COUNTY', 'NAPA COUNTY', 'MARIN COUNTY', 'SAN MATEO COUNTY', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(106, 'Once the world’s largest the Georgia aquarium is located in this city? 
+', 2, 'SAVANNAH', 'ATHENS', 'COLUMBUS', 'ATLANTA', 'Y')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(107, 'Given as a token of friendship between two nations, the Statue of Liberty was given to the United States from this nation.
+', 2, 'SPAIN', 'FRANCE', 'GERMANY', 'GREAT BRITIAN', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(108, 'Once called the Sears Tower, the Willis Tower is the tallest skyscraper in this midwest city. 
+', 2, 'INDIANAPOLIS, INDIANA', 'DERTROIT, MICHIGAN', 'CHICAGO, ILLINOIS', 'OMAHA, NEBRASKA', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(109, 'The first national monument, Devils Tower National Monument, can be found in this state. 
+', 2, 'COLORADO', 'CALIFORNIA', 'MONTANA', 'WYOMING', 'Y')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(110, 'USB' , 3, 'UNITED SERIAL BUS', 'UNIVERSAL STORAGE BUS', 'UNITED STORAGE BUS', 'UNIVERSAL SERIAL BUS', 'Y')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(111, 'RAM', 3, 'RANDOM ACCESS MEMORY', 'READABLE ACCESS MEMORY', 'RANDOM ACTION MATRIX', 'RANDOM ACTION MEMORY', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(112, 'HDD', 3, 'HARD DISK DRIVE', 'HARD DRIVE DISK', 'HIGH DEFINITION DISK', 'HIGH DEFINITION DRIVER', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(113, 'SSD', 3, 'SOLID-SILENT DRIVE', 'SILENT-STATE DRIVE', 'SOLID-STATE DRIVE', 'SERIAL-STATE DRIVE', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(114, 'GPU', 3, 'GRAPHICS PROCESSING UTILITY', 'GRAPHICS PROCESSING UNIT', 'GRAPHIC PROCEDURAL UNIT', 'GENERATING PROCESSING UTILITY', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(115, 'In the late 19th Century, this inventor perfected the design of the light bulb.
+', 4, 'THOMAS EDISON', 'ALBERT EINSTEIN', 'NIKOLA TESLA', 'CHARLES PROTEUS STEINMETZ', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(116, 'Five years after the first solo flight across the atlantic, this pilot became the second person to complete the same feat.
+', 4, 'CHARLES LINDBERGH', 'AMELIA EARHART', 'ARTHUR BROWN', 'JOHN ALCOCK', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(117, 'A fan of ancient indian poetry, this physicist quotes the Bhagavad Gita, stating “Now I am become Death, the destroyer of worlds.”
+', 4, 'J. ROBERT OPPENHEIMER', 'WERNER HEISENBERG', 'ALBERT EINSTEIN', 'RICHARD FEYNMAN', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(118, 'One of the co-founders of Microsoft, this man unfortunately lost his battle with cancer in 2018. 
+', 4, 'PAUL ALLEN', 'BILL GATES', 'STEVE WOZNIAK', 'TIM COOK', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(119, 'This scotsman is credited with creating the worlds first antibiotic. 
+', 4, 'ALEXANDER FLEMING', 'GEORGE BEADLE', 'ERWIN CHARGAFF', 'NORTON ZINDER', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(120, 'In the 2013 smash hit Grand Theft Auto V, players can travel and interact in a virtual parody of this US City.
+', 5, 'LOS ANGELES', 'LAS VEGAS', 'NEW YORK CITY', 'MIAMI', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(121, 'The names of the Ghosts from 1980’s Pac Man are Binky, Pinky, Inky, and _______. 
+', 5, 'RICKY', 'KYLE', 'CLYDE', 'WINKY', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(122, 'Since release, this MMORPG has made over $9,000,000,000 in revenue. 
+', 5, 'GRAND THEFT AUTO V', 'MINECRAFT', 'WORLD OF WARCRAFT', 'SIMS', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(123, 'Well before making video games and consoles, Nintendo first started producing _______ in 1889. 
+', 5, 'FOOD', 'PLAYING CARDS', 'DICE', 'CLOTHING', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(124, 'With over 150 Million consoles sold, this system is the best selling game console of all time.
+', 5, 'PLAYSTATION 2', 'XBOX 360', 'NITENDO WII', 'PLAYSTATION 4', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(125, 'This musician was awarded the very first gold record from the Recording Industry Association of America.
+', 6, 'NAT KING COLE', 'THE BEATLES', 'ELVIS PRESLEY', 'PERRY COMO', 'Y')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(126, 'This is the oldest surviving musical instrument.'
+, 6, 'DRUM', 'LYRE', 'FLUTE', 'TRUMPET', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(127, 'The world record for most words in a hit single is held by this musician.
+', 6, 'KANYE WEST', 'EMINEM', 'BUSTA RHYMES', '50 CENT', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(128, 'In 2016, they became the first musician to win the Nobel Prize in Literature "for having created new poetic expressions within the great American song tradition".
+', 6, 'ARETHA FRANKLIN', 'NEIL YOUNG', 'BOB DYLAN', 'CHUCK BERRY', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(129, 'This brass instrument, despite its appearance, is a member of the woodwind family.
+', 6, 'TROMBONE', 'TRUMPET', 'SAXOPHONE', 'FRENCH HORN', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(130, 'First appearing in 1936, this character is considered the first costumed superhero.
+', 7, 'SUPERMAN', 'ARROW', 'CRIMSON AVENGER', 'THE PHANTOM', 'Y')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(131, 'This actor was the first person to be hired to play a role in the Marvel Cinematic Universe.
+', 7, 'TERRENCE HOWARD', 'ROBERT DOWNEY JR.', 'GWYNETH PALTROW', 'JEFF BRIDGES', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(132, 'This building served as the original headquarters for the Fantastic Four.
+', 7, 'BAXTER BUILDING', 'TITANS TOWER', 'STARK TOWER', 'FOUR FREEDOMS PLAZA', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(133, 'This japanese comic series is known for having over 200 musical references spread across its 30 plus year print run.
+', 7, 'GOLGO 13', 'ONE PIECE', 'DRAGON BALL FRANCHISE', 'JOJOS BIZARRE ADVENTURE', 'Y')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(134, 'While well known today as a big green giant, the Incredible Hulk’ skin was originally printed this color.
+', 7, 'WHITE', 'GREY', 'PURPLE', 'RED', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(135, 'This pitcher holds the record for the most complete games in an MLB career.
+', 8, 'ROY HALLADAY', 'NOLAN RYAN', 'CY YOUNG', 'DON SUTTON', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(136, 'This player was the only player in NBA history to be named Most Valuable Player, Coach of the Year, and Executive of the Year.
+', 8, 'PHIL JACKSON', 'MAGIC JOHNSON', 'MICHAEL JORDAN', 'LARRY BIRD', 'Y')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(137, 'This american olympian is the most decorated olympic athlete of all time.
+', 8, 'CARL LEWIS', 'MARY LOU RETTON', 'MICHAEL PHELPS', 'PAAVO NURMI', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(138, 'During the 1992 Olympic Games, the US Basketball “Dream Team” played against this country in the gold medal match, winning 117-85. 
+', 8, 'BRAZIL', 'CROATIA', 'PUERTO RICO', 'GERMANY', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(139, 'This MLB player holds the record for most Grand Slams in one inning.
+', 8, 'BARRY BONDS', 'FERNANDO TATIS', 'MARK MCGWIRE', 'BABE RUTH', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(140, 'While they all share a spot on Mt. Rushmore, this US President does not appear on paper currency.
+', 9, 'THEODORE ROOSEVELT', 'ABRAHAM LINCOLN', 'GEORGE WASHINGTON', 'THOMAS JEFFERSON', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(141, 'Walt Whitmans poem "Oh Captain, My Captain" was written about this President. 
+', 9, 'ABRAHAM LINCOLN', 'ULYSSES S. GRANT', 'GEORGE WASHINGTON', 'JOHN ADAMS', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(142, 'This U.S. President won a Pulitzer Prize for his book Profiles in Courage.
+', 9, 'BILL CLINTON', 'RICHARD NIXON', 'JOHN F. KENNEDY', 'LYNDON B. JOHNSON', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(143, 'Among the 44 men who have been president, only this one had a Phd.
+', 9, 'ZACHARY TAYLOR', 'GEORGE H. W. BUSH', 'RONALD REAGAN', 'WOODROW WILSON', 'Y')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(144, 'This President was the first to be born a US Citizen. 
+', 9, 'JOHN QUINCY ADAMS', 'MARTIN VAN BUREN', 'WILLIAM HENRY HARRISON', 'WOODROW WILSON', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(145, 'In 1911 this person became the only Nobel Laureate to win the award in two different sciences.
+', 10, 'FREDERICK SANGER', 'LINUS PAULING', 'MARIE CURIE', 'JOHN BARDEEN', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(146, 'The fifth planet from the Sun, _______ has the most moons in its orbit with 79.
+', 10, 'JUPITER', 'SATURN', 'URANUS', 'MARS', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(147, 'Born at the San Francisco Zoo, this gorilla gained international attention after being taught sign language.
+', 10, 'CHLOE', 'KOKO', 'CARLY', 'KATIE', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(148, 'Appearing on earth over 400 Million years ago, this group of animal are older than trees. 
+', 10, 'ALLIGATORS', 'LICE', 'SHARKS', 'COCKROACHES', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(149, 'Devil’s Tower in Black Hills, Wyoming and obsidian are both made of of this type of rock.
+', 10, 'SEDIMENTARY', 'IGNEOUS', 'METAMORPHIC', 'PHYLLITE', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(150, 'First introduced in 1953, this vehicle earned the title “America’s Sports Car.”
+', 11, 'CHALLENGER', 'CORVETTE', 'CAMARO', 'CHARGER', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(151, 'Made in Detroit, Michigan, this vehicle was the first mass produced automobile in America.
+', 11, 'MODEL T', 'MODEL A', 'PACKARD', 'BENZ PATENT-MOTORWAGEN', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(152, 'Formed in 1982 and disbanded in 1999, this street racing club was known for their secrecy and their commitment to safety.
+', 11, 'BAYSHORE CLUB', 'WANGAN CLUB', 'MIDNIGHT CLUB', 'INITIAL D', 'X')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(153, 'This was the first commercially available hybrid gasoline-electric car in the United States.
+', 11, 'FORD ESCAPE HYBRID', 'TESLA MODEL 3', 'TOYOTA PRIUS', 'HONDA INSIGHT', 'Y')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(154, 'Selling more than one million units in 1965, this char set a record that still stands today.
+', 11, 'BUICK WILDCAT', 'PONTIAC GTO', 'FORD THUNDERBIRD', 'CHEVROLET IMPALA', 'Y')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(155, 'This institution is the second-oldest college in the United States.
+', 12, 'WAHINGTON AND LEE UNIVERSITY', 'BROWN UNIVERSITY', 'COLLEGE OF WILLIAM AND MARY', 'UNIVERSITY OF VIRGINIA', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(156, 'Established in 1636, this institution has had more US Presidents graduate from it than any other school.
+', 12, 'YALE UNIVERSITY', 'HARVARD UNIVERSITY', 'GEORGETOWN UNIVERSITY', 'STANFORD UNIVERSITY', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(157, 'This country is the number one country of origin for foreign students in the US.
+', 12, 'INDIA', 'CHINA', 'SOUTH KOREA', 'VIETNAM', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(158, 'Located in Blue Bell, Pennsylvania, Montgomery County Community College had its original location was located in this Philadelphia suburb.
+', 12, 'PLYMOUTH MEETING', 'MONTGOMERYVILLE', 'CONSHOHOCKEN', 'KING OF PRUSSIA', 'C')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(159, 'With 11 championships, this school’s basketball team has won the NCAA Division I Men’s Basketball Tournament more than any other team. 
+', 12, 'UCLA', 'DUKE UNIVERSITY', 'VILLANOVA', 'UNC', 'A')
+go
+
+
+/**=======================================================DAILY DOUBLE INSERT=======================================================**/
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(160, '"Family, Duty, Honor"', 13, 'HOUSE TULLY', 'HOUSE KARSTARK', 'HOUSE BARATHEON', 'HOUSE BOLTON', 'A')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(161, '"Hear Me Roar!"', 13, 'HOUSE TARGARYEN', 'HOUSE LANNISTER', 'HOUSE UMBER', 'HOUSE ROYCE', 'B')
+go
+
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+VALUES(162, '"Unbowed, Unbent, Unbroken"', 13, 'HOUSE HORNWOOD', 'HOUSE GREYJOY', 'HOUSE CLEGANE', 'HOUSE MARTELL', 'D')
+go
