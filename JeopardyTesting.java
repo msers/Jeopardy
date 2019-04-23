@@ -477,8 +477,8 @@ public class JeopardyTesting extends Application
                
                /////////   Category A Buttons
                
-               categoryAInfo.setOnAction( e ->  //this button will go back and forth between the gameboardScene and the categoryInfomation scene
-                  
+               categoryAInfo.setOnAction( e ->  
+                                 
                   {
                      
                      categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryAInfo.");
@@ -498,11 +498,27 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryA100.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                        
+                      categoryA100.setDisable(true);
                      
-                     categoryA100.setDisable(true);
-                     
-                     categoryA100.setText("        ");
+                      categoryA100.setText("        ");
                   
                   });
                   
@@ -516,7 +532,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryA200.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryA200.setDisable(true);
                      
@@ -534,7 +566,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryA300.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryA300.setDisable(true);
                      
@@ -552,7 +600,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryA400.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryA400.setDisable(true);
                      
@@ -570,7 +634,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryA500.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryA500.setDisable(true);
                      
@@ -601,11 +681,27 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryB100.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                        
+                      categoryB100.setDisable(true);
                      
-                     categoryB100.setDisable(true);
-                     
-                     categoryB100.setText("        ");
+                      categoryB100.setText("        ");
                   
                   });
                   
@@ -619,7 +715,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryB200.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryB200.setDisable(true);
                      
@@ -637,7 +749,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryB300.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryB300.setDisable(true);
                      
@@ -655,7 +783,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryB400.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryB400.setDisable(true);
                      
@@ -673,7 +817,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryB500.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryB500.setDisable(true);
                      
@@ -705,11 +865,27 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryC100.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                        
+                      categoryC100.setDisable(true);
                      
-                     categoryC100.setDisable(true);
-                     
-                     categoryC100.setText("        ");
+                      categoryC100.setText("        ");
                   
                   });
                   
@@ -723,7 +899,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryC200.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryC200.setDisable(true);
                      
@@ -741,7 +933,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryC300.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryC300.setDisable(true);
                      
@@ -759,7 +967,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryC400.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryC400.setDisable(true);
                      
@@ -777,7 +1001,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryC500.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryC500.setDisable(true);
                      
@@ -809,11 +1049,27 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryD100.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                        
+                      categoryD100.setDisable(true);
                      
-                     categoryD100.setDisable(true);
-                     
-                     categoryD100.setText("        ");
+                      categoryD100.setText("        ");
                   
                   });
                   
@@ -827,7 +1083,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryD200.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryD200.setDisable(true);
                      
@@ -845,7 +1117,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryD300.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryD300.setDisable(true);
                      
@@ -863,7 +1151,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryD400.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryD400.setDisable(true);
                      
@@ -881,7 +1185,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryD500.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryD500.setDisable(true);
                      
@@ -913,11 +1233,27 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryE100.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                        
+                      categoryE100.setDisable(true);
                      
-                     categoryE100.setDisable(true);
-                     
-                     categoryE100.setText("        ");
+                      categoryE100.setText("        ");
                   
                   });
                   
@@ -931,7 +1267,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryE200.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryE200.setDisable(true);
                      
@@ -949,7 +1301,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryE300.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryE300.setDisable(true);
                      
@@ -967,7 +1335,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryE400.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryE400.setDisable(true);
                      
@@ -985,7 +1369,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryE500.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryE500.setDisable(true);
                      
@@ -1017,11 +1417,27 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryF100.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                        
+                      categoryF100.setDisable(true);
                      
-                     categoryF100.setDisable(true);
-                     
-                     categoryF100.setText("        ");
+                      categoryF100.setText("        ");
                   
                   });
                   
@@ -1035,7 +1451,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryF200.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryF200.setDisable(true);
                      
@@ -1053,8 +1485,24 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryF300.");
                      
-                     window.setScene(clueScene);
-                                          
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                     
                      categoryF300.setDisable(true);
                      
                      categoryF300.setText("        ");
@@ -1071,7 +1519,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryF400.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryF400.setDisable(true);
                      
@@ -1089,7 +1553,23 @@ public class JeopardyTesting extends Application
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryF500.");
                      
-                     window.setScene(clueScene);
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
                      
                      categoryF500.setDisable(true);
                      
