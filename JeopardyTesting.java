@@ -47,39 +47,28 @@ public class JeopardyTesting extends Application
             ////////////////// Generating the positions for the Daily Doubles. 
                            /// ValueA is for regular jeopardy, while ValueB and ValueC are for doubleJeopardy
             
-            Die dailyDoubleDie = new Die(29);
-                  
-            dailyDoubleDie.roll();
-                  
-            int dailyDoubleValueA = dailyDoubleDie.getValue();
-                  
-            dailyDoubleDie.roll();
-                  
-            int dailyDoubleValueB = dailyDoubleDie.getValue();
-                     
-            dailyDoubleDie.roll();
-                  
-            int dailyDoubleValueC = dailyDoubleDie.getValue();
-                  
-            while (dailyDoubleValueB == dailyDoubleValueC)
-                     
-               {
-                     
-                  dailyDoubleDie.roll();
-                     
-                  dailyDoubleValueC = dailyDoubleDie.getValue();
-                     
-               }
-               
-            int dailyDoubleCounter = 0;
-                  
-            System.out.println(dailyDoubleValueA);
-                  
-            System.out.println(dailyDoubleValueB);
-                  
-            System.out.println(dailyDoubleValueC);
+            DailyDouble dailyDouble = new DailyDouble(); //sets up the daily double.
             
-            System.out.println("The daily double counter is currently at " + dailyDoubleCounter + ".");  
+            dailyDouble.setValueA(0);
+            
+            dailyDouble.setValueB(0);
+            
+            dailyDouble.setValueC(0);
+            
+            while (dailyDouble.getValueB() == dailyDouble.getValueC())
+               
+               {
+               
+                  dailyDouble.setValueC(0);
+               
+               }
+            
+            System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+            
+            System.out.println("The daily double will trigger on question " + dailyDouble.getValueA() + "."); 
+            
+            System.out.println("The two double jeopardy daily doubles will trigger on questions " + dailyDouble.getValueB() + " and " + dailyDouble.getValueC());
+             
             
             ////////////////// Beginning of Gameboard Button Creation
             
@@ -503,7 +492,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryA100.");
                      
@@ -519,7 +510,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryA200.");
                      
@@ -535,7 +528,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryA300.");
                      
@@ -551,7 +546,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryA400.");
                      
@@ -567,7 +564,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryA500.");
                      
@@ -596,7 +595,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryB100.");
                      
@@ -612,7 +613,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryB200.");
                      
@@ -628,7 +631,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryB300.");
                      
@@ -644,7 +649,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryB400.");
                      
@@ -660,7 +667,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryB500.");
                      
@@ -690,7 +699,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryC100.");
                      
@@ -706,7 +717,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryC200.");
                      
@@ -722,7 +735,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryC300.");
                      
@@ -738,7 +753,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryC400.");
                      
@@ -754,7 +771,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryC500.");
                      
@@ -784,7 +803,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryD100.");
                      
@@ -800,7 +821,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryD200.");
                      
@@ -816,7 +839,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryD300.");
                      
@@ -832,7 +857,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryD400.");
                      
@@ -848,7 +875,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryD500.");
                      
@@ -878,7 +907,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryE100.");
                      
@@ -894,7 +925,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryE200.");
                      
@@ -910,7 +943,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryE300.");
                      
@@ -926,7 +961,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryE400.");
                      
@@ -942,7 +979,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryE500.");
                      
@@ -972,7 +1011,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryF100.");
                      
@@ -988,7 +1029,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryF200.");
                      
@@ -1004,7 +1047,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryF300.");
                      
@@ -1020,7 +1065,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryF400.");
                      
@@ -1036,7 +1083,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     System.out.println("Yeet");
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
                      
                      clueText.setText("Put the text for the clue here.\nYou got here from categoryF500.");
                      
