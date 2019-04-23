@@ -1,6 +1,4 @@
 /*
-
-
    Authors: @Patrick_Hennessey, @Gregory_Ortlip, @Mike_Sers
    
    Project: Jeopardy CIS111B Final Project
@@ -26,15 +24,34 @@ public class DailyDouble
       
          {
          
-         int valueA = dailyDoubleValueA;
-         
-         int valueB = dailyDoubleValueB;
-         
-         int valueC = dailyDoubleValueC;
+
          
          }
       
-      public void setValueA()
+      public void setValueA(int valueA)
+      
+         {
+         
+            Die die = new Die(25);
+         
+            die.roll();
+            
+            valueA = die.getValue();
+            
+            dailyDoubleValueA = valueA + 4;
+         
+         }
+        
+         
+      public int getValueA() 
+                
+         {
+         
+            return dailyDoubleValueA;   
+         
+         }
+         
+      public void setValueB(int valueB)
       
          {
          
@@ -42,19 +59,71 @@ public class DailyDouble
          
             die.roll();
             
-            valueA = die.getValue();
+            valueB = die.getValue();
+            
+            dailyDoubleValueB = valueB + 30;
          
          }
-      
-      public int getValueA()
+        
+         
+      public int getValueB()  
          
          {
          
-            
-            
-            return valueA;
+            return dailyDoubleValueB;   
          
-         } 
+         }
+         
+      public void setValueC(int valueC)
+      
+         {
+         
+            Die die = new Die(29);
+         
+            die.roll();
+            
+            valueC = die.getValue();
+            
+            dailyDoubleValueC = valueC + 30;
+         
+         }
+        
+         
+      public int getValueC()  
+         
+         {
+         
+            return dailyDoubleValueC;   
+         
+         }
+         
+         
+      public void plusCounter()
+      
+         {
+         
+            dailyDoubleCounter++;
+         
+         }
+         
+      public int getCounter()
+         
+         {
+         
+            return dailyDoubleCounter;
+         
+         }
+         
+      public void resetCounter()
+         
+         {
+         
+            dailyDoubleCounter = 0;
+         
+         }
+
+      
+       
 
          
    }
