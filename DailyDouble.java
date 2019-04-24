@@ -18,10 +18,12 @@ public class DailyDouble
       
       private int dailyDoubleValueC;
       
-      int dailyDoubleCounter;
+      private int dailyDoubleCounter;
       
-      int gamePhase;
-
+      private int dailyDoubleWager;
+      
+      private int gamePhase;
+      
       public DailyDouble()
       
          {
@@ -124,6 +126,34 @@ public class DailyDouble
          
          }
 
+      public void addDigit (int digitToAdd)
+         
+         {
+         
+            int addingDigit = digitToAdd;
+            
+            dailyDoubleWager = dailyDoubleWager * 10;
+            
+            dailyDoubleWager = dailyDoubleWager + addingDigit;
+         
+         }
+         
+      public void resetWager()
+         
+         {
+         
+            dailyDoubleWager = 0;
+         
+         }
+         
+      public int getWager()
+         
+         {
+         
+            return dailyDoubleWager;
+         
+         }
+      
       public void plusGamePhase()
       
          {
