@@ -19,6 +19,8 @@ public class DailyDouble
       private int dailyDoubleValueC;
       
       int dailyDoubleCounter;
+      
+      int gamePhase;
 
       public DailyDouble()
       
@@ -119,6 +121,22 @@ public class DailyDouble
          {
          
             dailyDoubleCounter = 0;
+         
+         }
+
+      public void plusGamePhase()
+      
+         {
+         
+            gamePhase++;
+         
+         }
+         
+      public int getGamePhase()
+         
+         {
+         
+            return gamePhase;
          
          }
 
