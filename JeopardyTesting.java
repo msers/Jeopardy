@@ -415,12 +415,74 @@ public class JeopardyTesting extends Application
                         Scene dailyDoubleClueScene = new Scene(clueSceneBorderPaneDD, 1280, 720);
       
                   
-                  /////////   Final Jeopardy Scene
+                  /////////   Final Jeopardy Scenes
+                     
+                     //////   FJ Scene 1
+                           
+                        Label finalJeopardyScene1Label = new Label("Final \nJeopardy");
+                        
+                        Button finalJeopardyScene1Button = new Button ("Next");
+                        
+                        VBox finalJeopardyScene1VBox = new VBox(finalJeopardyScene1Label, finalJeopardyScene1Button);
+                        
+                        BorderPane finalJeopardyScene1BorderPane = new BorderPane();
+                        
+                        finalJeopardyScene1BorderPane.setCenter(finalJeopardyScene1VBox);
+                        
+                        Scene finalJeopardyScene1 = new Scene(finalJeopardyScene1BorderPane, 1280, 720);
+                        
+                     //////   FJ Scene 2 (Player 1 Wager)
+                     
+                        Label finalJeopardyScene2Label = new Label("Player 1, how much would you like to wager? \nAll wagers must be positive whole numbers \nequal to or less than your current total.");
+                        
+                        TextField finalJeopardyScene2WagerField = new TextField("");
+                        
+                        Button finalJeopardyScene2EnterButton = new Button("Enter");
+                        
+                        VBox finalJeopardyScene2VBox = new VBox(finalJeopardyScene2Label, finalJeopardyScene2WagerField,finalJeopardyScene2EnterButton); 
+                        
+                        BorderPane finalJeopardyScene2BorderPane = new BorderPane();
+                        
+                        finalJeopardyScene2BorderPane.setCenter(finalJeopardyScene2VBox);
+                        
+                        Scene finalJeopardyScene2 = new Scene(finalJeopardyScene2BorderPane, 1280, 720);
+                        
+                     //////   FJ Scene 3 (Player 2 Wager)
+                     
+                        Label finalJeopardyScene3Label = new Label("Player 2, how much would you like to wager? \nAll wagers must be positive whole numbers \nequal to or less than your current total.");
+                        
+                        TextField finalJeopardyScene3WagerField = new TextField("");
+                        
+                        Button finalJeopardyScene3EnterButton = new Button("Enter");
+                        
+                        VBox finalJeopardyScene3VBox = new VBox(finalJeopardyScene3Label, finalJeopardyScene3WagerField,finalJeopardyScene3EnterButton); 
+                        
+                        BorderPane finalJeopardyScene3BorderPane = new BorderPane();
+                        
+                        finalJeopardyScene3BorderPane.setCenter(finalJeopardyScene3VBox);
+                        
+                        Scene finalJeopardyScene3 = new Scene(finalJeopardyScene3BorderPane, 1280, 720);
+                        
+                     //////   FJ Scene 4 (Player 3 Wager)
+                     
+                        Label finalJeopardyScene4Label = new Label("Player 3, how much would you like to wager? \nAll wagers must be positive whole numbers \nequal to or less than your current total.");
+                        
+                        TextField finalJeopardyScene4WagerField = new TextField("");
+                        
+                        Button finalJeopardyScene4EnterButton = new Button("Enter");
+                        
+                        VBox finalJeopardyScene4VBox = new VBox(finalJeopardyScene4Label, finalJeopardyScene4WagerField,finalJeopardyScene4EnterButton); 
+                        
+                        BorderPane finalJeopardyScene4BorderPane = new BorderPane();
+                        
+                        finalJeopardyScene4BorderPane.setCenter(finalJeopardyScene4VBox);
+                        
+                        Scene finalJeopardyScene4 = new Scene(finalJeopardyScene4BorderPane, 1280, 720);
                      
                      
                      
             
-            //Disregard what the buttons do below, it was for testing purposes.
+           
             
             
             ///////////////// Start of Button Programming.  
@@ -570,7 +632,7 @@ public class JeopardyTesting extends Application
                                  
                                     // future final jeopardy code goes here. Right now it will exit the program.
                                     
-                                    System.exit(0);
+                                    window.setScene(finalJeopardyScene1);
                                  
                                  }
                           
@@ -592,14 +654,141 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     if (dailyDouble.getCounter() == 30)
+                      if (dailyDouble.getCounter() == 30 || dailyDouble.getCounter() == 60)
                         
-                        {
+                        {       
                         
-                           System.out.println("Yeet");
                         
-                        }
-                        
+                           dailyDouble.plusGamePhase();  // increases the value for the gamePhase, which is used to track which part of the game we are in.
+                                                         // gamePhase zero is regular jeopardy, gamePhase one is double jeopardy, gamePhase two is final jeopardy
+                           
+                              if (dailyDouble.getGamePhase() == 1)
+                                 
+                                 {
+                           
+                                    ///   Resets the Gameboard and prepares it for Double Jeopardy. 
+                                    
+                                    // Category A
+                                    
+                                       categoryA100.setDisable(false);
+                                       categoryA100.setText(" 200 ");
+                                       
+                                       categoryA200.setDisable(false);
+                                       categoryA200.setText(" 400 ");
+                                       
+                                       categoryA300.setDisable(false);
+                                       categoryA300.setText(" 600 ");
+                                       
+                                       categoryA400.setDisable(false);
+                                       categoryA400.setText(" 800 ");
+                                       
+                                       categoryA500.setDisable(false);
+                                       categoryA500.setText(" 1000 ");
+                                    
+                                    
+                                    // Category B
+                                    
+                                       categoryB100.setDisable(false);
+                                       categoryB100.setText(" 200 ");
+                                       
+                                       categoryB200.setDisable(false);
+                                       categoryB200.setText(" 400 ");
+                                       
+                                       categoryB300.setDisable(false);
+                                       categoryB300.setText(" 600 ");
+                                       
+                                       categoryB400.setDisable(false);
+                                       categoryB400.setText(" 800 ");
+                                       
+                                       categoryB500.setDisable(false);
+                                       categoryB500.setText(" 1000 ");
+                                    
+                                    
+                                    // Category C
+                                    
+                                       categoryC100.setDisable(false);
+                                       categoryC100.setText(" 200 ");
+                                    
+                                       categoryC200.setDisable(false);
+                                       categoryC200.setText(" 400 ");
+                                       
+                                       categoryC300.setDisable(false);
+                                       categoryC300.setText(" 600 ");
+                                       
+                                       categoryC400.setDisable(false);
+                                       categoryC400.setText(" 800 ");
+                                    
+                                       categoryC500.setDisable(false);
+                                       categoryC500.setText(" 1000 ");
+                                       
+                                       
+                                    // Category D
+                                    
+                                       categoryD100.setDisable(false);
+                                       categoryD100.setText(" 200 ");
+                                    
+                                       categoryD200.setDisable(false);
+                                       categoryD200.setText(" 400 ");
+                                       
+                                       categoryD300.setDisable(false);
+                                       categoryD300.setText(" 600 ");
+                                       
+                                       categoryD400.setDisable(false);
+                                       categoryD400.setText(" 800 ");
+                                    
+                                       categoryD500.setDisable(false);
+                                       categoryD500.setText(" 1000 ");
+                                       
+                                       
+                                    // Category E
+                                    
+                                       categoryE100.setDisable(false);
+                                       categoryE100.setText(" 200 ");
+                                    
+                                       categoryE200.setDisable(false);
+                                       categoryE200.setText(" 400 ");
+                                       
+                                       categoryE300.setDisable(false);
+                                       categoryE300.setText(" 600 ");
+                                       
+                                       categoryE400.setDisable(false);
+                                       categoryE400.setText(" 800 ");
+                                    
+                                       categoryE500.setDisable(false);
+                                       categoryE500.setText(" 1000 ");
+                                       
+                                    
+                                    // Category F
+                                       
+                                       categoryF100.setDisable(false);
+                                       categoryF100.setText(" 200 ");
+                                    
+                                       categoryF200.setDisable(false);
+                                       categoryF200.setText(" 400 ");
+                                       
+                                       categoryF300.setDisable(false);
+                                       categoryF300.setText(" 600 ");
+                                       
+                                       categoryF400.setDisable(false);
+                                       categoryF400.setText(" 800 ");
+                                    
+                                       categoryF500.setDisable(false);
+                                       categoryF500.setText(" 1000 ");
+                                       
+                                       window.setScene(gameboardScene);
+                                       
+                                 }
+                                 
+                              else if (dailyDouble.getGamePhase() == 2)
+                                 
+                                 {
+                                 
+                                    // future final jeopardy code goes here. Right now it will exit the program.
+                                    
+                                    System.exit(0);
+                                 
+                                 }
+                           }
                      else
                         
                         {
