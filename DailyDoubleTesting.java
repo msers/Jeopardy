@@ -44,9 +44,17 @@ public class DailyDoubleTesting extends Application
       
          {
          
+               DailyDouble dailyDouble = new DailyDouble(); //sets up the daily double.
+            
+               dailyDouble.setValueA(0);
+            
+               dailyDouble.setValueB(0);
+            
+               dailyDouble.setValueC(0);
+               
                Label dailyDoubleScene2Label = new Label("How much would you like to wager? \nAll wagers must be positive whole numbers \nequal to or less than your current total.");
                
-               Label dailyDoubleWagerLabel = new Label("This is the Daily Double Wager Label. This will change when running properly.");
+               Label dailyDoubleWagerLabel = new Label("Wager: 0");
                
                Button dailyDoubleWager1 = new Button ("   1   ");
                
@@ -111,6 +119,288 @@ public class DailyDoubleTesting extends Application
                window.setTitle("Jeopardy!");
                      
                window.show();
+               
+               // Buttons
+               
+               dailyDoubleWager1.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getWager() == 0)
+                        
+                        {
+                        
+                           dailyDouble.addDigit(1);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                           dailyDouble.addDigit(1);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                  
+                  });
+                  
+                  
+               dailyDoubleWager2.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getWager() == 0)
+                        
+                        {
+                        
+                           dailyDouble.addDigit(2);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                           dailyDouble.addDigit(2);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                  
+                  });
+                  
+                  
+               dailyDoubleWager3.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getWager() == 0)
+                        
+                        {
+                        
+                           dailyDouble.addDigit(3);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                           dailyDouble.addDigit(3);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                  
+                  });
+                  
+                  
+               dailyDoubleWager4.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getWager() == 0)
+                        
+                        {
+                        
+                           dailyDouble.addDigit(4);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                           dailyDouble.addDigit(4);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                  
+                  });
+                  
+                  
+               dailyDoubleWager5.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getWager() == 0)
+                        
+                        {
+                        
+                           dailyDouble.addDigit(5);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                           dailyDouble.addDigit(5);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                  
+                  });
+                  
+                  
+               dailyDoubleWager6.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getWager() == 0)
+                        
+                        {
+                        
+                           dailyDouble.addDigit(6);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                           dailyDouble.addDigit(6);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                  
+                  });
+                  
+                  
+               dailyDoubleWager7.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getWager() == 0)
+                        
+                        {
+                        
+                           dailyDouble.addDigit(7);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                           dailyDouble.addDigit(7);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                  
+                  });
+                  
+                  
+               dailyDoubleWager8.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getWager() == 0)
+                        
+                        {
+                        
+                           dailyDouble.addDigit(8);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                           dailyDouble.addDigit(1);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                  
+                  });
+                  
+                  
+               dailyDoubleWager9.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getWager() == 0)
+                        
+                        {
+                        
+                           dailyDouble.addDigit(9);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                           dailyDouble.addDigit(9);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                  
+                  });
+                  
+                  
+               dailyDoubleWager0.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getWager() == 0)
+                        
+                        {
+                        
+                           dailyDouble.addDigit(0);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                           dailyDouble.addDigit(0);
+                           
+                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+                        
+                        }
+                  
+                  });
+                  
+               dailyDoubleWagerClearButton.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.resetWager();  
+                     
+                     dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString()); 
+                  
+                  });
+                  
          
          }
          
