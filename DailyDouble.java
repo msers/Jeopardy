@@ -135,6 +135,14 @@ public class DailyDouble
             dailyDoubleWager = dailyDoubleWager * 10;
             
             dailyDoubleWager = dailyDoubleWager + addingDigit;
+            
+            if (dailyDoubleWager >=25002)
+               
+               {
+               
+                  dailyDoubleWager = 25001;
+               
+               }
          
          }
          
@@ -152,6 +160,15 @@ public class DailyDouble
          
             return dailyDoubleWager;
          
+         }
+         
+      public String getWagerString()
+         
+         {
+         
+            String dailyDoubleWagerString = ("" + dailyDoubleWager);
+            
+            return dailyDoubleWagerString;         
          }
       
       public void plusGamePhase()
