@@ -401,6 +401,16 @@ public class DailyDoubleTesting extends Application
                   
                   });
                   
+               dailyDoubleWagerEnterButton.setOnAction( e ->  
+                  
+                  {
+                  
+                     //window.setScene(dailyDoubleClueScene); 
+                     
+                     System.exit(0);
+                  
+                  });
+                  
          
          }
          
