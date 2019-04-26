@@ -20,9 +20,7 @@ public class JdbcSQLServerConnection {
         try {
  
             String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=Jeopardy;integratedSecurity=true;";
-            String user = "sa";
-            String pass = "secret";
-            conn = DriverManager.getConnection(dbURL, user, pass);
+            conn = DriverManager.getConnection(dbURL);
             if (conn != null) {
                 DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
                 System.out.println("Driver name: " + dm.getDriverName());
