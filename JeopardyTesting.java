@@ -745,6 +745,14 @@ public class JeopardyTesting extends Application
                   
                   });
                   
+               finalJeopardyWagerEnterButton.setOnAction ( e ->
+                  
+                  {
+                  
+                  
+                  
+                  }
+                  
                finalJeopardyWager1.setOnAction( e ->  
                   
                   {
@@ -779,31 +787,7 @@ public class JeopardyTesting extends Application
                            
                         }
                      
-                     /*
-                     
-                     if (finalJeopardy.getWager() == 0)
-                        
-                        {
-                        
-                           finalJeopardy.addDigit(1);
-                           
-                           finalJeopardyWagerLabel.setText("Wager: " + finalJeopardy.getWagerString());
-                        
-                        }
-                        
-                     else
-                        
-                        {
-                        
-                           finalJeopardy.addDigit(1);
-                           
-                           finalJeopardyWagerLabel.setText("Wager: " + finalJeopardy.getWagerString());
-                        
-                        }
-                        
-                     */
-                  
-                  });
+                    });
                   
                   
                
