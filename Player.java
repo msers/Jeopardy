@@ -54,11 +54,11 @@ public class Player
             
             finalJeopardyWager = finalJeopardyWager + addingDigit;
             
-            if (finalJeopardyWager >=25002)
+            if (finalJeopardyWager >=60015)  //The highest ever successful final jeopardy bet was $60,013. So, since nothing higher than this has happened, we set the max to be 60014, as we don't think our players will get to that point.
                
                {
                
-                  finalJeopardyWager = 25001;
+                  finalJeopardyWager = 60014;
                
                }
          
