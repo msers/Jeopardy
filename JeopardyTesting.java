@@ -284,11 +284,17 @@ public class JeopardyTesting extends Application
                      
                         BorderPane gameboardBorderPane = new BorderPane();
                         
+                     ///   Testing Buttons. This will get commented out on the final version. These where used to directly access the daily double and final jeopardy scenes.
+                        
                         Button dailyDoubleTestButton = new Button("Daily Double Test");   // This button will eventually get deleted
+                        
+                        Button finalJeopardyTestButton = new Button("Final Jeopardy Test");
+                        
+                        HBox testingHBox = new HBox(10, dailyDoubleTestButton, finalJeopardyTestButton);
                
                         gameboardBorderPane.setCenter(gameboard);
                         
-                        gameboardBorderPane.setBottom(dailyDoubleTestButton); // This line of code will eventually get deleted
+                        gameboardBorderPane.setBottom(testingHBox); // This line of code will eventually get deleted
                
                //////////////////   End of adding Gameboard Buttons to the Gameboard Gridpane
                
@@ -440,7 +446,6 @@ public class JeopardyTesting extends Application
                         
                         Scene dailyDoubleScene2 = new Scene(dailyDoubleScene2BorderPane, 1280, 720);
                         
-                        //window.setScene(dailyDoubleScene2);
                         
                      //////   Daily Double Clue Scene
                      
@@ -499,9 +504,9 @@ public class JeopardyTesting extends Application
                         
                      //////   FJ Scene 2 
                      
-                        Label finalJeopardyScene2Label = new Label("How much would you like to wager? \nAll wagers must be positive whole numbers \nequal to or less than your current total.");
+                        Label finalJeopardyScene2Label = new Label("How much would you like to wager? \nThe minimum wager is 5. \nThe max is equal to either your point total or 60,014, whichever one is lower.");
                
-                        Label finalJeopardyWagerLabel = new Label("Wager: 0");
+                        Label finalJeopardyWagerLabel = new Label("Player 1 Wager: 0");
                         
                         Button finalJeopardyWager1 = new Button ("   1   ");
                         
@@ -560,6 +565,54 @@ public class JeopardyTesting extends Application
                         finalJeopardyScene2BorderPane.setCenter(finalJeopardyScene2VBox);
                         
                         Scene finalJeopardyScene2 = new Scene(finalJeopardyScene2BorderPane, 1280, 720);
+                        
+                  // FJ Category Scene
+                                                
+                        Label finalJeopardyCategorySceneLabel = new Label("Final Jeopardy Category: \n“Noble Words of Westeros” \nGame of Thrones \nNoble House Mottos");
+                        
+                        Button finalJeopardyCategorySceneButton = new Button ("Next");
+                        
+                        VBox finalJeopardyCategorySceneVBox = new VBox(finalJeopardyCategorySceneLabel,finalJeopardyCategorySceneButton);
+                        
+                        BorderPane finalJeopardyCategorySceneBorderPane = new BorderPane();
+                        
+                        finalJeopardyCategorySceneBorderPane.setCenter(finalJeopardyCategorySceneVBox);
+                        
+                        Scene finalJeopardyCategoryScene = new Scene(finalJeopardyCategorySceneBorderPane, 1280, 720);
+                        
+                  // FJ Clue Scene
+                  
+                        Label clueTextFJ = new Label("Put the text for FJ here.");
+                     
+                        Button answerAFJ = new Button("A: Answer A");
+                     
+                        Button answerBFJ = new Button("B: Answer B");
+                     
+                        Button answerXFJ = new Button("X: Answer X");
+                     
+                        Button answerYFJ = new Button("Y: Answer Y");
+                     
+                        GridPane clueGridPaneFJ = new GridPane();
+                     
+                        clueGridPaneFJ.add(answerAFJ, 0, 0);
+                     
+                        clueGridPaneFJ.add(answerBFJ, 1, 0);
+                     
+                        clueGridPaneFJ.add(answerXFJ, 0, 1);
+                     
+                        clueGridPaneFJ.add(answerYFJ, 1, 1);
+                     
+                        VBox clueSceneVBoxFJ = new VBox(clueTextFJ, clueGridPaneFJ);
+                     
+                        BorderPane clueSceneBorderPaneFJ = new BorderPane();
+                     
+                        clueSceneVBoxFJ.setAlignment(Pos.CENTER);
+                     
+                        clueGridPaneFJ.setAlignment(Pos.BOTTOM_CENTER);
+                     
+                        clueSceneBorderPaneFJ.setCenter(clueSceneVBoxFJ);
+                     
+                        Scene finalJeopardyClueScene = new Scene(clueSceneBorderPaneFJ, 1280, 720);
                      
                      
                      
@@ -735,6 +788,18 @@ public class JeopardyTesting extends Application
                
                // Final Jeopardy Buttons
                
+               finalJeopardyTestButton.setOnAction ( e ->
+                  
+                  {
+                  
+                     dailyDouble.plusGamePhase();
+                     
+                     dailyDouble.plusGamePhase();
+                     
+                     window.setScene(finalJeopardyScene1);
+                  
+                  });
+               
                finalJeopardyScene1Button.setOnAction ( e ->
                   
                   {
@@ -745,13 +810,85 @@ public class JeopardyTesting extends Application
                   
                   });
                   
+               finalJeopardyCategorySceneButton.setOnAction ( e ->
+                  
+                  {
+                  
+                     window.setScene(finalJeopardyClueScene);
+                  
+                  });
+                  
+               // Final Jeopardy Wager Scene Buttons
+               
                finalJeopardyWagerEnterButton.setOnAction ( e ->
                   
                   {
                   
+                     dailyDouble.plusGamePhase();
+                     
+                     if (dailyDouble.getGamePhase() == 3)
+                     
+                        {
+                        
+                           finalJeopardyWagerLabel.setText("Player 2 Wager: 0");   
+                        
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 4)
+                     
+                        {
+                        
+                           finalJeopardyWagerLabel.setText("Player 3 Wager: 0");   
+                        
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 5)
+                     
+                        {
+                           
+                           window.setScene(finalJeopardyCategoryScene);   
+                        
+                        }
+                  
+                  });
                   
                   
-                  }
+               finalJeopardyWagerClearButton.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getGamePhase() == 2)
+                        
+                        {
+                           
+                           player1.resetWager();
+                           
+                           finalJeopardyWagerLabel.setText("Player 1 Wager: 0");
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 3)
+                        
+                        {
+                           
+                           player2.resetWager();
+                           
+                           finalJeopardyWagerLabel.setText("Player 2 Wager: 0");
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 4)
+                        
+                        {
+                           
+                           player3.resetWager();
+                           
+                           finalJeopardyWagerLabel.setText("Player 3 Wager: 0");
+                           
+                        }
+                     
+                    });
+                    
                   
                finalJeopardyWager1.setOnAction( e ->  
                   
@@ -763,7 +900,7 @@ public class JeopardyTesting extends Application
                            
                            player1.addDigit(1);
                            
-                           finalJeopardyWagerLabel.setText("Wager: " + player1.getWagerString());
+                           finalJeopardyWagerLabel.setText("Player 1 Wager: " + player1.getWagerString());
                            
                         }
                         
@@ -773,7 +910,7 @@ public class JeopardyTesting extends Application
                            
                            player2.addDigit(1);
                            
-                           finalJeopardyWagerLabel.setText("Wager: " + player2.getWagerString());
+                           finalJeopardyWagerLabel.setText("Player 2 Wager: " + player2.getWagerString());
                            
                         }
                         
@@ -783,7 +920,340 @@ public class JeopardyTesting extends Application
                            
                            player3.addDigit(1);
                            
-                           finalJeopardyWagerLabel.setText("Wager: " + player3.getWagerString());
+                           finalJeopardyWagerLabel.setText("Player 3 Wager: " + player3.getWagerString());
+                           
+                        }
+                     
+                    });
+                    
+                    
+               finalJeopardyWager2.setOnAction( e ->  
+               
+                  {
+                  
+                     if (dailyDouble.getGamePhase() == 2)
+                        
+                        {
+                           
+                           player1.addDigit(2);
+                           
+                           finalJeopardyWagerLabel.setText("Player 1 Wager: " + player1.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 3)
+                        
+                        {
+                           
+                           player2.addDigit(2);
+                           
+                           finalJeopardyWagerLabel.setText("Player 2 Wager: " + player2.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 4)
+                        
+                        {
+                           
+                           player3.addDigit(2);
+                           
+                           finalJeopardyWagerLabel.setText("Player 3 Wager: " + player3.getWagerString());
+                           
+                        }
+                     
+                    });
+                
+                    
+               finalJeopardyWager3.setOnAction( e ->  
+               
+                  {
+                  
+                     if (dailyDouble.getGamePhase() == 2)
+                        
+                        {
+                           
+                           player1.addDigit(3);
+                           
+                           finalJeopardyWagerLabel.setText("Player 1 Wager: " + player1.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 3)
+                        
+                        {
+                           
+                           player2.addDigit(3);
+                           
+                           finalJeopardyWagerLabel.setText("Player 2 Wager: " + player2.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 4)
+                        
+                        {
+                           
+                           player3.addDigit(3);
+                           
+                           finalJeopardyWagerLabel.setText("Player 3 Wager: " + player3.getWagerString());
+                           
+                        }
+                     
+                    });
+                    
+                    
+               finalJeopardyWager4.setOnAction( e ->  
+               
+                  {
+                  
+                     if (dailyDouble.getGamePhase() == 2)
+                        
+                        {
+                           
+                           player1.addDigit(4);
+                           
+                           finalJeopardyWagerLabel.setText("Player 1 Wager: " + player1.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 3)
+                        
+                        {
+                           
+                           player2.addDigit(4);
+                           
+                           finalJeopardyWagerLabel.setText("Player 2 Wager: " + player2.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 4)
+                        
+                        {
+                           
+                           player3.addDigit(4);
+                           
+                           finalJeopardyWagerLabel.setText("Player 3 Wager: " + player3.getWagerString());
+                           
+                        }
+                     
+                    });
+                    
+                    
+               finalJeopardyWager5.setOnAction( e ->  
+               
+                  {
+                  
+                     if (dailyDouble.getGamePhase() == 2)
+                        
+                        {
+                           
+                           player1.addDigit(5);
+                           
+                           finalJeopardyWagerLabel.setText("Player 1 Wager: " + player1.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 3)
+                        
+                        {
+                           
+                           player2.addDigit(5);
+                           
+                           finalJeopardyWagerLabel.setText("Player 2 Wager: " + player2.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 4)
+                        
+                        {
+                           
+                           player3.addDigit(5);
+                           
+                           finalJeopardyWagerLabel.setText("Player 3 Wager: " + player3.getWagerString());
+                           
+                        }
+                     
+                    });
+                    
+                    
+               finalJeopardyWager6.setOnAction( e ->  
+               
+                  {
+                  
+                     if (dailyDouble.getGamePhase() == 2)
+                        
+                        {
+                           
+                           player1.addDigit(6);
+                           
+                           finalJeopardyWagerLabel.setText("Player 1 Wager: " + player1.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 3)
+                        
+                        {
+                           
+                           player2.addDigit(6);
+                           
+                           finalJeopardyWagerLabel.setText("Player 2 Wager: " + player2.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 4)
+                        
+                        {
+                           
+                           player3.addDigit(6);
+                           
+                           finalJeopardyWagerLabel.setText("Player 3 Wager: " + player3.getWagerString());
+                           
+                        }
+                     
+                    });
+                    
+                    
+               finalJeopardyWager7.setOnAction( e ->  
+               
+                  {
+                  
+                     if (dailyDouble.getGamePhase() == 2)
+                        
+                        {
+                           
+                           player1.addDigit(7);
+                           
+                           finalJeopardyWagerLabel.setText("Player 1 Wager: " + player1.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 3)
+                        
+                        {
+                           
+                           player2.addDigit(7);
+                           
+                           finalJeopardyWagerLabel.setText("Player 2 Wager: " + player2.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 4)
+                        
+                        {
+                           
+                           player3.addDigit(7);
+                           
+                           finalJeopardyWagerLabel.setText("Player 3 Wager: " + player3.getWagerString());
+                           
+                        }
+                     
+                    });
+                    
+                    
+               finalJeopardyWager8.setOnAction( e ->  
+               
+                  {
+                  
+                     if (dailyDouble.getGamePhase() == 2)
+                        
+                        {
+                           
+                           player1.addDigit(8);
+                           
+                           finalJeopardyWagerLabel.setText("Player 1 Wager: " + player1.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 3)
+                        
+                        {
+                           
+                           player2.addDigit(8);
+                           
+                           finalJeopardyWagerLabel.setText("Player 2 Wager: " + player2.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 4)
+                        
+                        {
+                           
+                           player3.addDigit(8);
+                           
+                           finalJeopardyWagerLabel.setText("Player 3 Wager: " + player3.getWagerString());
+                           
+                        }
+                     
+                    });
+                    
+                    
+               finalJeopardyWager9.setOnAction( e ->  
+               
+                  {
+                  
+                     if (dailyDouble.getGamePhase() == 2)
+                        
+                        {
+                           
+                           player1.addDigit(9);
+                           
+                           finalJeopardyWagerLabel.setText("Player 1 Wager: " + player1.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 3)
+                        
+                        {
+                           
+                           player2.addDigit(9);
+                           
+                           finalJeopardyWagerLabel.setText("Player 2 Wager: " + player2.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 4)
+                        
+                        {
+                           
+                           player3.addDigit(9);
+                           
+                           finalJeopardyWagerLabel.setText("Player 3 Wager: " + player3.getWagerString());
+                           
+                        }
+                     
+                    });
+                    
+                    
+               finalJeopardyWager0.setOnAction( e ->  
+               
+                  {
+                  
+                     if (dailyDouble.getGamePhase() == 2)
+                        
+                        {
+                           
+                           player1.addDigit(0);
+                           
+                           finalJeopardyWagerLabel.setText("Player 1 Wager: " + player1.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 3)
+                        
+                        {
+                           
+                           player2.addDigit(0);
+                           
+                           finalJeopardyWagerLabel.setText("Player 2 Wager: " + player2.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 4)
+                        
+                        {
+                           
+                           player3.addDigit(0);
+                           
+                           finalJeopardyWagerLabel.setText("Player 3 Wager: " + player3.getWagerString());
                            
                         }
                      
@@ -961,25 +1431,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     if (dailyDouble.getWager() == 0)
-                        
-                        {
-                        
-                           dailyDouble.addDigit(1);
+                     dailyDouble.addDigit(1);
                            
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
-                        
-                     else
-                        
-                        {
-                        
-                           dailyDouble.addDigit(1);
-                           
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
+                     dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
                   
                   });
                   
@@ -988,25 +1442,10 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     if (dailyDouble.getWager() == 0)
-                        
-                        {
-                        
-                           dailyDouble.addDigit(2);
+                     dailyDouble.addDigit(2);
                            
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
-                        
-                     else
-                        
-                        {
-                        
-                           dailyDouble.addDigit(2);
-                           
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
+                     dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+
                   
                   });
                   
@@ -1015,25 +1454,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     if (dailyDouble.getWager() == 0)
-                        
-                        {
-                        
-                           dailyDouble.addDigit(3);
+                     dailyDouble.addDigit(3);
                            
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
-                        
-                     else
-                        
-                        {
-                        
-                           dailyDouble.addDigit(3);
-                           
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
+                     dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
                   
                   });
                   
@@ -1042,25 +1465,10 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     if (dailyDouble.getWager() == 0)
-                        
-                        {
-                        
-                           dailyDouble.addDigit(4);
+                     dailyDouble.addDigit(4);
                            
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
-                        
-                     else
-                        
-                        {
-                        
-                           dailyDouble.addDigit(4);
-                           
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
+                     dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
+
                   
                   });
                   
@@ -1069,25 +1477,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     if (dailyDouble.getWager() == 0)
-                        
-                        {
-                        
-                           dailyDouble.addDigit(5);
+                     dailyDouble.addDigit(5);
                            
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
-                        
-                     else
-                        
-                        {
-                        
-                           dailyDouble.addDigit(5);
-                           
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
+                     dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());   
                   
                   });
                   
@@ -1096,25 +1488,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     if (dailyDouble.getWager() == 0)
-                        
-                        {
-                        
-                           dailyDouble.addDigit(6);
+                     dailyDouble.addDigit(6);
                            
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
-                        
-                     else
-                        
-                        {
-                        
-                           dailyDouble.addDigit(6);
-                           
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
+                     dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
                   
                   });
                   
@@ -1123,25 +1499,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     if (dailyDouble.getWager() == 0)
-                        
-                        {
-                        
-                           dailyDouble.addDigit(7);
+                     dailyDouble.addDigit(7);
                            
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
-                        
-                     else
-                        
-                        {
-                        
-                           dailyDouble.addDigit(7);
-                           
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
+                     dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
                   
                   });
                   
@@ -1150,25 +1510,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     if (dailyDouble.getWager() == 0)
-                        
-                        {
-                        
-                           dailyDouble.addDigit(8);
+                     dailyDouble.addDigit(8);
                            
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
-                        
-                     else
-                        
-                        {
-                        
-                           dailyDouble.addDigit(8);
-                           
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
+                     dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
                   
                   });
                   
@@ -1177,25 +1521,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     if (dailyDouble.getWager() == 0)
-                        
-                        {
-                        
-                           dailyDouble.addDigit(9);
+                     dailyDouble.addDigit(9);
                            
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
-                        
-                     else
-                        
-                        {
-                        
-                           dailyDouble.addDigit(9);
-                           
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
+                     dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
                   
                   });
                   
@@ -1204,25 +1532,9 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     if (dailyDouble.getWager() == 0)
-                        
-                        {
-                        
-                           dailyDouble.addDigit(0);
+                     dailyDouble.addDigit(0);
                            
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
-                        
-                     else
-                        
-                        {
-                        
-                           dailyDouble.addDigit(0);
-                           
-                           dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
-                        
-                        }
+                     dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
                   
                   });
                   
