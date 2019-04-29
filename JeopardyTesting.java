@@ -1,5 +1,3 @@
-
-
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -44,18 +42,29 @@ public class JeopardyTesting extends Application
       
          {
       
-            ////////////////// Generating the positions for the Daily Doubles. 
-                           /// ValueA is for regular jeopardy, while ValueB and ValueC are for doubleJeopardy
+            ////////////////// Setting Up player objects. 
             
-            DailyDouble dailyDouble = new DailyDouble(); //sets up the daily double.
+            Player player1 = new Player();
             
-            dailyDouble.setValueA(0);
+            Player player2 = new Player();
+            
+            Player player3 = new Player();
+                           
+            
+            
+            ////////////////// Setting Up DailyDouble. 
+                           
+            
+            DailyDouble dailyDouble = new DailyDouble(); //    The DailyDouble class is used for several features inside of Jeopardy. 
+                                                         //    It handles the randomization of the daily double positions in both regular and double jeopardy along with the wager each player makes. It also helps us keep track of what phase of the game we are currently in.
+            
+            dailyDouble.setValueA(0);  /// ValueA is the daily double question for regular jeopardy, while ValueB and ValueC are for double jeopardy
             
             dailyDouble.setValueB(0);
             
             dailyDouble.setValueC(0);
             
-            while (dailyDouble.getValueB() == dailyDouble.getValueC())
+            while (dailyDouble.getValueB() == dailyDouble.getValueC())  // simple while loop that prevents both daily doubles in double jeopardy from being the same position.
                
                {
                
@@ -63,14 +72,19 @@ public class JeopardyTesting extends Application
                
                }
             
-            System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+            System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");  // Console outputs used in testing. These let us know that the counter we use to trigger the daily double is working.
             
-            System.out.println("The daily double will trigger on question " + dailyDouble.getValueA() + "."); 
+            System.out.println("The daily double will trigger on question " + dailyDouble.getValueA() + "."); //  This tells us the daily double position in regular jeopardy.
             
-            System.out.println("The two double jeopardy daily doubles will trigger on questions " + dailyDouble.getValueB() + " and " + dailyDouble.getValueC());
-             
+            System.out.println("The two double jeopardy daily doubles will trigger on questions " + dailyDouble.getValueB() + " and " + dailyDouble.getValueC()); // Same as above, however with the two different daily doubles in double jeopardy.
+            
+            
             
             ////////////////// Beginning of Gameboard Button Creation
+            
+               // Jeopardy has six different categories on the gameboard at all times, so we have them sorted by Category A-F. We created each group of buttons for each category seperately from the other categories in order. 
+               
+               // The spacing with any of the numberical buttons is there for appearences sake during development. *******TWEAK THIS LINE BEFORE SUBMISSION******* The CSS stylesheet changes the look of the buttons so this becomes unnessessary.
             
                // Category A
             
@@ -362,6 +376,8 @@ public class JeopardyTesting extends Application
                         
                      //////   Daily Double Scene 2
                      
+                        ///   This scene is used for the player to enter their wager during the daily double. As of 4/26/2019, the highest daily double wager was $25,000 which was set on April 9th, 2018. Because of this, we maxed out the bet at $25,001.
+                     
                         Label dailyDoubleScene2Label = new Label("How much would you like to wager? \nAll wagers must be positive whole numbers \nequal to or less than your current total.");
                
                         Label dailyDoubleWagerLabel = new Label("Wager: 0");
@@ -481,53 +497,69 @@ public class JeopardyTesting extends Application
                         
                         Scene finalJeopardyScene1 = new Scene(finalJeopardyScene1BorderPane, 1280, 720);
                         
-                     //////   FJ Scene 2 (Player 1 Wager)
+                     //////   FJ Scene 2 
                      
-                        Label finalJeopardyScene2Label = new Label("Player 1, how much would you like to wager? \nAll wagers must be positive whole numbers \nequal to or less than your current total.");
+                        Label finalJeopardyScene2Label = new Label("How much would you like to wager? \nAll wagers must be positive whole numbers \nequal to or less than your current total.");
+               
+                        Label finalJeopardyWagerLabel = new Label("Wager: 0");
                         
-                        TextField finalJeopardyScene2WagerField = new TextField("");
+                        Button finalJeopardyWager1 = new Button ("   1   ");
                         
-                        Button finalJeopardyScene2EnterButton = new Button("Enter");
+                        Button finalJeopardyWager2 = new Button ("   2   ");
                         
-                        VBox finalJeopardyScene2VBox = new VBox(finalJeopardyScene2Label, finalJeopardyScene2WagerField,finalJeopardyScene2EnterButton); 
+                        Button finalJeopardyWager3 = new Button ("   3   ");
+                        
+                        Button finalJeopardyWager4 = new Button ("   4   ");
+                        
+                        Button finalJeopardyWager5 = new Button ("   5   ");
+                        
+                        Button finalJeopardyWager6 = new Button ("   6   ");
+                        
+                        Button finalJeopardyWager7 = new Button ("   7   ");
+                        
+                        Button finalJeopardyWager8 = new Button ("   8   ");
+                        
+                        Button finalJeopardyWager9 = new Button ("   9   ");
+                        
+                        Button finalJeopardyWager0 = new Button ("   0   ");
+                        
+                        Button finalJeopardyWagerEnterButton = new Button("Enter");
+                        
+                        Button finalJeopardyWagerClearButton = new Button("Clear");
+                        
+                        GridPane finalJeopardyWagerGridPane = new GridPane();
+                        
+                        finalJeopardyWagerGridPane.add(finalJeopardyWager1, 0, 0);
+                        
+                        finalJeopardyWagerGridPane.add(finalJeopardyWager2, 1, 0);
+                        
+                        finalJeopardyWagerGridPane.add(finalJeopardyWager3, 2, 0);
+                        
+                        finalJeopardyWagerGridPane.add(finalJeopardyWager4, 0, 1);
+                        
+                        finalJeopardyWagerGridPane.add(finalJeopardyWager5, 1, 1);
+                        
+                        finalJeopardyWagerGridPane.add(finalJeopardyWager6, 2, 1);
+                        
+                        finalJeopardyWagerGridPane.add(finalJeopardyWager7, 0, 2);
+                        
+                        finalJeopardyWagerGridPane.add(finalJeopardyWager8, 1, 2);
+                        
+                        finalJeopardyWagerGridPane.add(finalJeopardyWager9, 2, 2);
+                        
+                        finalJeopardyWagerGridPane.add(finalJeopardyWagerClearButton, 0, 3);
+                        
+                        finalJeopardyWagerGridPane.add(finalJeopardyWager0, 1, 3);
+                        
+                        finalJeopardyWagerGridPane.add(finalJeopardyWagerEnterButton, 2, 3); 
+                        
+                        VBox finalJeopardyScene2VBox = new VBox(finalJeopardyScene2Label, finalJeopardyWagerLabel, finalJeopardyWagerGridPane); 
                         
                         BorderPane finalJeopardyScene2BorderPane = new BorderPane();
                         
                         finalJeopardyScene2BorderPane.setCenter(finalJeopardyScene2VBox);
                         
                         Scene finalJeopardyScene2 = new Scene(finalJeopardyScene2BorderPane, 1280, 720);
-                        
-                     //////   FJ Scene 3 (Player 2 Wager)
-                     
-                        Label finalJeopardyScene3Label = new Label("Player 2, how much would you like to wager? \nAll wagers must be positive whole numbers \nequal to or less than your current total.");
-                        
-                        TextField finalJeopardyScene3WagerField = new TextField("");
-                        
-                        Button finalJeopardyScene3EnterButton = new Button("Enter");
-                        
-                        VBox finalJeopardyScene3VBox = new VBox(finalJeopardyScene3Label, finalJeopardyScene3WagerField,finalJeopardyScene3EnterButton); 
-                        
-                        BorderPane finalJeopardyScene3BorderPane = new BorderPane();
-                        
-                        finalJeopardyScene3BorderPane.setCenter(finalJeopardyScene3VBox);
-                        
-                        Scene finalJeopardyScene3 = new Scene(finalJeopardyScene3BorderPane, 1280, 720);
-                        
-                     //////   FJ Scene 4 (Player 3 Wager)
-                     
-                        Label finalJeopardyScene4Label = new Label("Player 3, how much would you like to wager? \nAll wagers must be positive whole numbers \nequal to or less than your current total.");
-                        
-                        TextField finalJeopardyScene4WagerField = new TextField("");
-                        
-                        Button finalJeopardyScene4EnterButton = new Button("Enter");
-                        
-                        VBox finalJeopardyScene4VBox = new VBox(finalJeopardyScene4Label, finalJeopardyScene4WagerField,finalJeopardyScene4EnterButton); 
-                        
-                        BorderPane finalJeopardyScene4BorderPane = new BorderPane();
-                        
-                        finalJeopardyScene4BorderPane.setCenter(finalJeopardyScene4VBox);
-                        
-                        Scene finalJeopardyScene4 = new Scene(finalJeopardyScene4BorderPane, 1280, 720);
                      
                      
                      
@@ -680,7 +712,7 @@ public class JeopardyTesting extends Application
                                  
                                  {
                                  
-                                    // future final jeopardy code goes here. Right now it will exit the program.
+                                    // future final jeopardy code goes here.
                                     
                                     window.setScene(finalJeopardyScene1);
                                  
@@ -700,6 +732,83 @@ public class JeopardyTesting extends Application
                   
                   });
                   
+               
+               // Final Jeopardy Buttons
+               
+               finalJeopardyScene1Button.setOnAction ( e ->
+                  
+                  {
+                  
+                     dailyDouble.resetWager();
+                     
+                     window.setScene(finalJeopardyScene2);
+                  
+                  });
+                  
+               finalJeopardyWager1.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getGamePhase() == 2)
+                        
+                        {
+                           
+                           player1.addDigit(1);
+                           
+                           finalJeopardyWagerLabel.setText("Wager: " + player1.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 3)
+                        
+                        {
+                           
+                           player2.addDigit(1);
+                           
+                           finalJeopardyWagerLabel.setText("Wager: " + player2.getWagerString());
+                           
+                        }
+                        
+                     if (dailyDouble.getGamePhase() == 4)
+                        
+                        {
+                           
+                           player3.addDigit(1);
+                           
+                           finalJeopardyWagerLabel.setText("Wager: " + player3.getWagerString());
+                           
+                        }
+                     
+                     /*
+                     
+                     if (finalJeopardy.getWager() == 0)
+                        
+                        {
+                        
+                           finalJeopardy.addDigit(1);
+                           
+                           finalJeopardyWagerLabel.setText("Wager: " + finalJeopardy.getWagerString());
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                           finalJeopardy.addDigit(1);
+                           
+                           finalJeopardyWagerLabel.setText("Wager: " + finalJeopardy.getWagerString());
+                        
+                        }
+                        
+                     */
+                  
+                  });
+                  
+                  
+               
+               
+               
                // Daily Double Buttons
                
                clueBackButtonDD.setOnAction( e ->  
@@ -835,9 +944,7 @@ public class JeopardyTesting extends Application
                                  
                                  {
                                  
-                                    // future final jeopardy code goes here. Right now it will exit the program.
-                                    
-                                    System.exit(0);
+                                    window.setScene(finalJeopardyScene1);
                                  
                                  }
                            }
@@ -1073,7 +1180,7 @@ public class JeopardyTesting extends Application
                         
                         {
                         
-                           dailyDouble.addDigit(1);
+                           dailyDouble.addDigit(8);
                            
                            dailyDoubleWagerLabel.setText("Wager: " + dailyDouble.getWagerString());
                         
