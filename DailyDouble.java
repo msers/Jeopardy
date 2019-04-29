@@ -136,7 +136,7 @@ public class DailyDouble
             
             dailyDoubleWager = dailyDoubleWager + addingDigit;
             
-            if (dailyDoubleWager >=25002)
+            if (dailyDoubleWager >=25002) //The highest ever successful daily double bet was $25,000. So, since nothing higher than this has happened, we set the max to be 25001, as we don't think our players will get to that point.
                
                {
                
