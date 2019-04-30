@@ -1,0 +1,74 @@
+.button   
+   
+   {
+    
+      
+      -fx-text-alignment: center;
+      
+      -fx-text-fill: gold;
+      
+      -fx-font-size: 14pt;
+      
+      -fx-font-family: sans-serif;
+      
+      -fx-focus-color: black; 
+      
+      -fx-borderstyle: solid;
+      
+      -fx-border-width: 3px;
+      
+      -fx-border-color: #000000;
+      
+      -fx-font-weight: bold; 
+      
+      -fx-min-height: 75px;
+      
+      -fx-pref-height: 75px;
+      
+      -fx-pref-width: 150px;
+      
+     -fx-background-color: blue;
+      
+     -fx-borderstyle: solid;
+      
+     -fx-border-width: 2px;
+      
+     -fx-border-color: #000000; 
+   
+   }
+   
+.label 
+   
+   {
+   
+      -fx-text-alignment: center;
+      
+      -fx-font-style: italic;
+      
+      -fx-text-fill: white;
+      
+      -fx-font-size: 120pt;
+      
+      -fx-font-weight: bold;
+      
+      -fx-font-family: sans-serif;
+      
+      -fx-background-color : blue;
+      
+      
+   
+   }
+   
+.root //this handles the BorderPane
+   
+   {
+   
+      -fx-background-color : blue;
+      
+      -fx-borderstyle: solid;
+      
+      -fx-border-width: 5px;
+      
+      -fix-border-color: black;
+   
+   }
