@@ -5,6 +5,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.*;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
@@ -88,93 +90,93 @@ public class JeopardyTesting extends Application
             
                // Category A
             
-                  Button categoryAInfo = new Button("aInfo"); 
+                  Button categoryAInfo = new Button("Category\n A".toUpperCase()); 
                   
-                  Button categoryA100 = new Button(" 100 ");
+                  Button categoryA100 = new Button("100");
                   
-                  Button categoryA200 = new Button(" 200 ");
+                  Button categoryA200 = new Button("200");
                   
-                  Button categoryA300 = new Button(" 300 ");
+                  Button categoryA300 = new Button("300");
                   
-                  Button categoryA400 = new Button(" 400 ");
+                  Button categoryA400 = new Button("400");
                   
-                  Button categoryA500 = new Button(" 500 ");
+                  Button categoryA500 = new Button("500");
                   
                
                // Category B
                
-                  Button categoryBInfo = new Button("bInfo"); 
+                  Button categoryBInfo = new Button("Category\n B".toUpperCase()); 
                   
-                  Button categoryB100 = new Button(" 100 ");
+                  Button categoryB100 = new Button("100");
                   
-                  Button categoryB200 = new Button(" 200 ");
+                  Button categoryB200 = new Button("200");
                   
-                  Button categoryB300 = new Button(" 300 ");
+                  Button categoryB300 = new Button("300");
                   
-                  Button categoryB400 = new Button(" 400 ");
+                  Button categoryB400 = new Button("400");
                   
-                  Button categoryB500 = new Button(" 500 ");
+                  Button categoryB500 = new Button("500");
                
                            
                
                // Category C
                
-                  Button categoryCInfo = new Button("cInfo"); 
+                  Button categoryCInfo = new Button("Category\n C".toUpperCase()); 
                   
-                  Button categoryC100 = new Button(" 100 ");
+                  Button categoryC100 = new Button("100");
                   
-                  Button categoryC200 = new Button(" 200 ");
+                  Button categoryC200 = new Button("200");
                   
-                  Button categoryC300 = new Button(" 300 ");
+                  Button categoryC300 = new Button("300");
                   
-                  Button categoryC400 = new Button(" 400 ");
+                  Button categoryC400 = new Button("400");
                   
-                  Button categoryC500 = new Button(" 500 ");
+                  Button categoryC500 = new Button("500");
                
                            
                // Category D
                
-                  Button categoryDInfo = new Button("dInfo"); 
+                  Button categoryDInfo = new Button("Category\n D".toUpperCase()); 
                   
-                  Button categoryD100 = new Button(" 100 ");
+                  Button categoryD100 = new Button("100");
                   
-                  Button categoryD200 = new Button(" 200 ");
+                  Button categoryD200 = new Button("200");
                   
-                  Button categoryD300 = new Button(" 300 ");
+                  Button categoryD300 = new Button("300");
                   
-                  Button categoryD400 = new Button(" 400 ");
+                  Button categoryD400 = new Button("400");
                   
-                  Button categoryD500 = new Button(" 500 ");
+                  Button categoryD500 = new Button("500");
                
                           
                // Category E 
                
-                  Button categoryEInfo = new Button("eInfo"); 
+                  Button categoryEInfo = new Button("Category\n E".toUpperCase()); 
                   
-                  Button categoryE100 = new Button(" 100 ");
+                  Button categoryE100 = new Button("100");
                   
-                  Button categoryE200 = new Button(" 200 ");
+                  Button categoryE200 = new Button("200");
                   
-                  Button categoryE300 = new Button(" 300 ");
+                  Button categoryE300 = new Button("300");
                   
-                  Button categoryE400 = new Button(" 400 ");
+                  Button categoryE400 = new Button("400");
                   
-                  Button categoryE500 = new Button(" 500 ");
+                  Button categoryE500 = new Button("500");
                   
                            
                // Category F
                
-                  Button categoryFInfo = new Button("fInfo"); 
+                  Button categoryFInfo = new Button("Category\n F".toUpperCase()); 
                   
-                  Button categoryF100 = new Button(" 100 ");
+                  Button categoryF100 = new Button("100");
                   
-                  Button categoryF200 = new Button(" 200 ");
+                  Button categoryF200 = new Button("200");
                   
-                  Button categoryF300 = new Button(" 300 ");
+                  Button categoryF300 = new Button("300");
                   
-                  Button categoryF400 = new Button(" 400 ");
+                  Button categoryF400 = new Button("400");
                   
-                  Button categoryF500 = new Button(" 500 ");
+                  Button categoryF500 = new Button("500");
             
             
             ////////////////// End of Gameboard Button Creation
@@ -188,11 +190,11 @@ public class JeopardyTesting extends Application
                
                gameboard.setAlignment(Pos.CENTER);
                
-               gameboard.setHgap(15);
+               gameboard.setHgap(5);
                
-               gameboard.setVgap(10);
+               gameboard.setVgap(5);
                
-               gameboard.setPadding(new Insets(10));
+               //gameboard.setPadding(new Insets(10));
                
                   //////////////////   Start of adding Gameboard Buttons to the Gameboard Gridpane
                   
@@ -292,19 +294,38 @@ public class JeopardyTesting extends Application
                         
                         HBox testingHBox = new HBox(10, dailyDoubleTestButton, finalJeopardyTestButton);
                
-                        gameboardBorderPane.setCenter(gameboard);
+                        //gameboardBorderPane.setCenter(gameboard);
                         
                         gameboardBorderPane.setBottom(testingHBox); // This line of code will eventually get deleted
                
                //////////////////   End of adding Gameboard Buttons to the Gameboard Gridpane
                
-               /////////
-               
+               /////////   Scoreboard creation
+                  
+                  Label player1ScoreLabel = new Label("Player 1:\n" + player1.getScore());
+                  
+                  Label player2ScoreLabel = new Label("Player 2:\n" + player2.getScore());
+                  
+                  Label player3ScoreLabel = new Label("Player 3:\n" + player3.getScore());
+                  
+                  HBox scoreboard = new HBox (325, player1ScoreLabel, player2ScoreLabel, player3ScoreLabel);
+                  
+                  VBox gameboardVBox = new VBox(50, gameboard, scoreboard);
+                  
+                  gameboardVBox.setAlignment(Pos.CENTER);
+                  
+                  scoreboard.setAlignment(Pos.CENTER);
+                  
+                  gameboardBorderPane.setCenter(gameboardVBox);
+                  
+                  
                //////////////////   Start of Scene Creation
                   
                   /////////   Main Gameboard Scene
-            
-                     Scene gameboardScene = new Scene(gameboardBorderPane, 1280, 720);  // scene for the gameboard
+                  
+                     Scene gameboardScene = new Scene(gameboardBorderPane, 1280, 720, Color.BLUE);  // scene for the gameboard
+                     
+                     gameboardScene.getStylesheets().add("gameboard.css"); 
                      
                      window.setScene(gameboardScene);
                      
@@ -322,21 +343,23 @@ public class JeopardyTesting extends Application
             
                      categoryInfoBorderPane.setCenter(categoryText);
                      
-                     categoryInfoBorderPane.setLeft(categoryBack);
+                     categoryInfoBorderPane.setBottom(categoryBack);
                                  
                      Scene categoryInfoScene = new Scene(categoryInfoBorderPane, 1280, 720);
+                     
+                     categoryInfoScene.getStylesheets().add("gameboard.css");
                   
                   /////////   Clue Scene
                   
-                     Label clueText = new Label("Put the text for the clue here.");
+                     Label clueText = new Label("Put the text for the clue here.".toUpperCase());
                      
-                     Button answerA = new Button("A: Answer A");
+                     Button answerA = new Button("A: Answer A".toUpperCase());
                      
-                     Button answerB = new Button("B: Answer B");
+                     Button answerB = new Button("B: Answer B".toUpperCase());
                      
-                     Button answerX = new Button("X: Answer X");
+                     Button answerX = new Button("X: Answer X".toUpperCase());
                      
-                     Button answerY = new Button("Y: Answer Y");
+                     Button answerY = new Button("Y: Answer Y".toUpperCase());
                      
                      Button clueBackButton = new Button("Back");
                      
@@ -350,35 +373,45 @@ public class JeopardyTesting extends Application
                      
                      clueGridPane.add(answerY, 1, 1);
                      
+                     clueGridPane.setHgap(5);
+                     
+                     clueGridPane.setVgap(5);
+                     
                      VBox clueSceneVBox = new VBox(clueText, clueGridPane, clueBackButton);
                      
                      BorderPane clueSceneBorderPane = new BorderPane();
                      
-                     clueSceneVBox.setAlignment(Pos.CENTER);
-                     
                      clueGridPane.setAlignment(Pos.BOTTOM_CENTER);
                      
-                     clueSceneBorderPane.setLeft(clueBackButton);
+                     clueSceneVBox.setAlignment(Pos.CENTER);
+                     
+                     clueSceneBorderPane.setBottom(clueBackButton);
                      
                      clueSceneBorderPane.setCenter(clueSceneVBox);
                      
                      Scene clueScene = new Scene(clueSceneBorderPane, 1280, 720);
                      
+                     clueScene.getStylesheets().add("Clue.css");
+                     
                   /////////   Daily Double Scenes. ONE Daily Double in Regular Jeopardy, TWO Daily Doubles in Double Jeopardy.
                   
                      //////   Daily Double Scene 1
                            
-                        Label dailyDoubleScene1Label = new Label("Daily \nDouble");
+                        Label dailyDoubleScene1Label = new Label("DAILY \nDOUBLE");
                         
                         Button dailyDoubleScene1Button = new Button ("Next");
                         
                         VBox dailyDoubleScene1VBox = new VBox(dailyDoubleScene1Label,dailyDoubleScene1Button);
+                        
+                        dailyDoubleScene1VBox.setAlignment(Pos.CENTER);
                         
                         BorderPane dailyDoubleScene1BorderPane = new BorderPane();
                         
                         dailyDoubleScene1BorderPane.setCenter(dailyDoubleScene1VBox);
                         
                         Scene dailyDoubleScene1 = new Scene(dailyDoubleScene1BorderPane, 1280, 720);
+                        
+                        dailyDoubleScene1.getStylesheets().add("DDFJSplash.css");
                         
                      //////   Daily Double Scene 2
                      
@@ -388,31 +421,37 @@ public class JeopardyTesting extends Application
                
                         Label dailyDoubleWagerLabel = new Label("Wager: 0");
                         
-                        Button dailyDoubleWager1 = new Button ("   1   ");
+                        Button dailyDoubleWager1 = new Button ("1");
                         
-                        Button dailyDoubleWager2 = new Button ("   2   ");
+                        Button dailyDoubleWager2 = new Button ("2");
                         
-                        Button dailyDoubleWager3 = new Button ("   3   ");
+                        Button dailyDoubleWager3 = new Button ("3");
                         
-                        Button dailyDoubleWager4 = new Button ("   4   ");
+                        Button dailyDoubleWager4 = new Button ("4");
                         
-                        Button dailyDoubleWager5 = new Button ("   5   ");
+                        Button dailyDoubleWager5 = new Button ("5");
                         
-                        Button dailyDoubleWager6 = new Button ("   6   ");
+                        Button dailyDoubleWager6 = new Button ("6");
                         
-                        Button dailyDoubleWager7 = new Button ("   7   ");
+                        Button dailyDoubleWager7 = new Button ("7");
                         
-                        Button dailyDoubleWager8 = new Button ("   8   ");
+                        Button dailyDoubleWager8 = new Button ("8");
                         
-                        Button dailyDoubleWager9 = new Button ("   9   ");
+                        Button dailyDoubleWager9 = new Button ("9");
                         
-                        Button dailyDoubleWager0 = new Button ("   0   ");
+                        Button dailyDoubleWager0 = new Button ("0");
                         
                         Button dailyDoubleWagerEnterButton = new Button("Enter");
                         
                         Button dailyDoubleWagerClearButton = new Button("Clear");
                         
                         GridPane dailyDoubleWagerGridPane = new GridPane();
+                        
+                        dailyDoubleWagerGridPane.setHgap(5);
+                        
+                        dailyDoubleWagerGridPane.setVgap(5);
+                        
+                        dailyDoubleWagerGridPane.setAlignment(Pos.CENTER);
                         
                         dailyDoubleWagerGridPane.add(dailyDoubleWager1, 0, 0);
                         
@@ -440,28 +479,34 @@ public class JeopardyTesting extends Application
                         
                         VBox dailyDoubleScene2VBox = new VBox(dailyDoubleScene2Label, dailyDoubleWagerLabel, dailyDoubleWagerGridPane); 
                         
+                        dailyDoubleScene2VBox.setAlignment(Pos.CENTER);
+                        
                         BorderPane dailyDoubleScene2BorderPane = new BorderPane();
                         
                         dailyDoubleScene2BorderPane.setCenter(dailyDoubleScene2VBox);
                         
                         Scene dailyDoubleScene2 = new Scene(dailyDoubleScene2BorderPane, 1280, 720);
                         
+                        dailyDoubleScene2.getStylesheets().add("gameboard.css");
+                        
                         
                      //////   Daily Double Clue Scene
                      
-                        Label clueTextDD = new Label("Put the text for the clue here.");
+                        Label clueTextDD = new Label("Put the text for the clue here.".toUpperCase());
                      
-                        Button answerADD = new Button("A: Answer A");
+                        Button answerADD = new Button("A: Answer A".toUpperCase());
                      
-                        Button answerBDD = new Button("B: Answer B");
+                        Button answerBDD = new Button("B: Answer B".toUpperCase());
                      
-                        Button answerXDD = new Button("X: Answer X");
+                        Button answerXDD = new Button("X: Answer X".toUpperCase());
                      
-                        Button answerYDD = new Button("Y: Answer Y");
+                        Button answerYDD = new Button("Y: Answer Y".toUpperCase());
                      
                         Button clueBackButtonDD = new Button("Back");
                      
                         GridPane clueGridPaneDD = new GridPane();
+                        
+                        clueGridPaneDD.setAlignment(Pos.CENTER);
                      
                         clueGridPaneDD.add(answerADD, 0, 0);
                      
@@ -470,31 +515,38 @@ public class JeopardyTesting extends Application
                         clueGridPaneDD.add(answerXDD, 0, 1);
                      
                         clueGridPaneDD.add(answerYDD, 1, 1);
+                        
+                        clueGridPaneDD.setHgap(5);
+                        
+                        clueGridPaneDD.setVgap(5);
                      
-                        VBox clueSceneVBoxDD = new VBox(clueTextDD, clueGridPaneDD, clueBackButtonDD);
+                        VBox clueSceneVBoxDD = new VBox(clueTextDD, clueGridPaneDD);
                      
                         BorderPane clueSceneBorderPaneDD = new BorderPane();
                      
                         clueSceneVBoxDD.setAlignment(Pos.CENTER);
                      
-                        clueGridPaneDD.setAlignment(Pos.BOTTOM_CENTER);
+                        clueGridPaneDD.setAlignment(Pos.CENTER);
                      
-                        clueSceneBorderPaneDD.setLeft(clueBackButtonDD);
+                        clueSceneBorderPaneDD.setBottom(clueBackButtonDD);
                      
                         clueSceneBorderPaneDD.setCenter(clueSceneVBoxDD);
                      
                         Scene dailyDoubleClueScene = new Scene(clueSceneBorderPaneDD, 1280, 720);
-      
+                        
+                        dailyDoubleClueScene.getStylesheets().add("Clue.css");
                   
                   /////////   Final Jeopardy Scenes
                      
                      //////   FJ Scene 1
                            
-                        Label finalJeopardyScene1Label = new Label("Final \nJeopardy");
+                        Label finalJeopardyScene1Label = new Label("Final \nJeopardy".toUpperCase());
                         
                         Button finalJeopardyScene1Button = new Button ("Next");
                         
                         VBox finalJeopardyScene1VBox = new VBox(finalJeopardyScene1Label, finalJeopardyScene1Button);
+                        
+                        finalJeopardyScene1VBox.setAlignment(Pos.CENTER);
                         
                         BorderPane finalJeopardyScene1BorderPane = new BorderPane();
                         
@@ -502,37 +554,45 @@ public class JeopardyTesting extends Application
                         
                         Scene finalJeopardyScene1 = new Scene(finalJeopardyScene1BorderPane, 1280, 720);
                         
+                        finalJeopardyScene1.getStylesheets().add("DDFJSplash.css");
+                        
                      //////   FJ Scene 2 
                      
                         Label finalJeopardyScene2Label = new Label("How much would you like to wager? \nThe minimum wager is 5. \nThe max is equal to either your point total or 60,014, whichever one is lower.");
                
                         Label finalJeopardyWagerLabel = new Label("Player 1 Wager: 0");
                         
-                        Button finalJeopardyWager1 = new Button ("   1   ");
+                        Button finalJeopardyWager1 = new Button ("1");
                         
-                        Button finalJeopardyWager2 = new Button ("   2   ");
+                        Button finalJeopardyWager2 = new Button ("2");
                         
-                        Button finalJeopardyWager3 = new Button ("   3   ");
+                        Button finalJeopardyWager3 = new Button ("3");
                         
-                        Button finalJeopardyWager4 = new Button ("   4   ");
+                        Button finalJeopardyWager4 = new Button ("4");
                         
-                        Button finalJeopardyWager5 = new Button ("   5   ");
+                        Button finalJeopardyWager5 = new Button ("5");
                         
-                        Button finalJeopardyWager6 = new Button ("   6   ");
+                        Button finalJeopardyWager6 = new Button ("6");
                         
-                        Button finalJeopardyWager7 = new Button ("   7   ");
+                        Button finalJeopardyWager7 = new Button ("7");
                         
-                        Button finalJeopardyWager8 = new Button ("   8   ");
+                        Button finalJeopardyWager8 = new Button ("8");
                         
-                        Button finalJeopardyWager9 = new Button ("   9   ");
+                        Button finalJeopardyWager9 = new Button ("9");
                         
-                        Button finalJeopardyWager0 = new Button ("   0   ");
+                        Button finalJeopardyWager0 = new Button ("0");
                         
                         Button finalJeopardyWagerEnterButton = new Button("Enter");
                         
                         Button finalJeopardyWagerClearButton = new Button("Clear");
                         
                         GridPane finalJeopardyWagerGridPane = new GridPane();
+                        
+                        finalJeopardyWagerGridPane.setHgap(5);
+                        
+                        finalJeopardyWagerGridPane.setVgap(5);
+                        
+                        finalJeopardyWagerGridPane.setAlignment(Pos.CENTER);
                         
                         finalJeopardyWagerGridPane.add(finalJeopardyWager1, 0, 0);
                         
@@ -558,7 +618,9 @@ public class JeopardyTesting extends Application
                         
                         finalJeopardyWagerGridPane.add(finalJeopardyWagerEnterButton, 2, 3); 
                         
-                        VBox finalJeopardyScene2VBox = new VBox(finalJeopardyScene2Label, finalJeopardyWagerLabel, finalJeopardyWagerGridPane); 
+                        VBox finalJeopardyScene2VBox = new VBox(finalJeopardyScene2Label, finalJeopardyWagerLabel, finalJeopardyWagerGridPane);
+                        
+                        finalJeopardyScene2VBox.setAlignment(Pos.CENTER); 
                         
                         BorderPane finalJeopardyScene2BorderPane = new BorderPane();
                         
@@ -566,13 +628,17 @@ public class JeopardyTesting extends Application
                         
                         Scene finalJeopardyScene2 = new Scene(finalJeopardyScene2BorderPane, 1280, 720);
                         
+                        finalJeopardyScene2.getStylesheets().add("gameboard.css");
+                        
                   // FJ Category Scene
                                                 
-                        Label finalJeopardyCategorySceneLabel = new Label("Final Jeopardy Category: \n“Noble Words of Westeros” \nGame of Thrones \nNoble House Mottos");
+                        Label finalJeopardyCategorySceneLabel = new Label("Final Jeopardy Category: \n“Noble Words of Westeros” \nGame of Thrones \nNoble House Mottos".toUpperCase());
                         
                         Button finalJeopardyCategorySceneButton = new Button ("Next");
                         
                         VBox finalJeopardyCategorySceneVBox = new VBox(finalJeopardyCategorySceneLabel,finalJeopardyCategorySceneButton);
+                        
+                        finalJeopardyCategorySceneVBox.setAlignment(Pos.CENTER);
                         
                         BorderPane finalJeopardyCategorySceneBorderPane = new BorderPane();
                         
@@ -580,19 +646,27 @@ public class JeopardyTesting extends Application
                         
                         Scene finalJeopardyCategoryScene = new Scene(finalJeopardyCategorySceneBorderPane, 1280, 720);
                         
+                        finalJeopardyCategoryScene.getStylesheets().add("FJCatScene.css");
+                        
                   // FJ Clue Scene
                   
-                        Label clueTextFJ = new Label("Put the text for FJ here.");
+                        Label clueTextFJ = new Label("Put the text for FJ here.".toUpperCase());
                      
-                        Button answerAFJ = new Button("A: Answer A");
+                        Button answerAFJ = new Button("A: Answer A".toUpperCase());
                      
-                        Button answerBFJ = new Button("B: Answer B");
+                        Button answerBFJ = new Button("B: Answer B".toUpperCase());
                      
-                        Button answerXFJ = new Button("X: Answer X");
+                        Button answerXFJ = new Button("X: Answer X".toUpperCase());
                      
-                        Button answerYFJ = new Button("Y: Answer Y");
+                        Button answerYFJ = new Button("Y: Answer Y".toUpperCase());
                      
                         GridPane clueGridPaneFJ = new GridPane();
+                        
+                        clueGridPaneFJ.setHgap(5);
+                        
+                        clueGridPaneFJ.setVgap(5);
+                        
+                        clueGridPaneFJ.setAlignment(Pos.CENTER);
                      
                         clueGridPaneFJ.add(answerAFJ, 0, 0);
                      
@@ -608,16 +682,13 @@ public class JeopardyTesting extends Application
                      
                         clueSceneVBoxFJ.setAlignment(Pos.CENTER);
                      
-                        clueGridPaneFJ.setAlignment(Pos.BOTTOM_CENTER);
+                        clueGridPaneFJ.setAlignment(Pos.CENTER);
                      
                         clueSceneBorderPaneFJ.setCenter(clueSceneVBoxFJ);
                      
                         Scene finalJeopardyClueScene = new Scene(clueSceneBorderPaneFJ, 1280, 720);
-                     
-                     
-                     
-            
-           
+                        
+                        finalJeopardyClueScene.getStylesheets().add("Clue.css");
             
             
             ///////////////// Start of Button Programming.  
@@ -653,109 +724,109 @@ public class JeopardyTesting extends Application
                                     // Category A
                                     
                                        categoryA100.setDisable(false);
-                                       categoryA100.setText(" 200 ");
+                                       categoryA100.setText("200");
                                        
                                        categoryA200.setDisable(false);
-                                       categoryA200.setText(" 400 ");
+                                       categoryA200.setText("400");
                                        
                                        categoryA300.setDisable(false);
-                                       categoryA300.setText(" 600 ");
+                                       categoryA300.setText("600");
                                        
                                        categoryA400.setDisable(false);
-                                       categoryA400.setText(" 800 ");
+                                       categoryA400.setText("800");
                                        
                                        categoryA500.setDisable(false);
-                                       categoryA500.setText(" 1000 ");
+                                       categoryA500.setText("1000");
                                     
                                     
                                     // Category B
                                     
                                        categoryB100.setDisable(false);
-                                       categoryB100.setText(" 200 ");
+                                       categoryB100.setText("200");
                                        
                                        categoryB200.setDisable(false);
-                                       categoryB200.setText(" 400 ");
+                                       categoryB200.setText("400");
                                        
                                        categoryB300.setDisable(false);
-                                       categoryB300.setText(" 600 ");
+                                       categoryB300.setText("600");
                                        
                                        categoryB400.setDisable(false);
-                                       categoryB400.setText(" 800 ");
+                                       categoryB400.setText("800");
                                        
                                        categoryB500.setDisable(false);
-                                       categoryB500.setText(" 1000 ");
+                                       categoryB500.setText("1000");
                                     
                                     
                                     // Category C
                                     
                                        categoryC100.setDisable(false);
-                                       categoryC100.setText(" 200 ");
+                                       categoryC100.setText("200");
                                     
                                        categoryC200.setDisable(false);
-                                       categoryC200.setText(" 400 ");
+                                       categoryC200.setText("400");
                                        
                                        categoryC300.setDisable(false);
-                                       categoryC300.setText(" 600 ");
+                                       categoryC300.setText("600");
                                        
                                        categoryC400.setDisable(false);
-                                       categoryC400.setText(" 800 ");
+                                       categoryC400.setText("800");
                                     
                                        categoryC500.setDisable(false);
-                                       categoryC500.setText(" 1000 ");
+                                       categoryC500.setText("1000");
                                        
                                        
                                     // Category D
                                     
                                        categoryD100.setDisable(false);
-                                       categoryD100.setText(" 200 ");
+                                       categoryD100.setText("200");
                                     
                                        categoryD200.setDisable(false);
-                                       categoryD200.setText(" 400 ");
+                                       categoryD200.setText("400");
                                        
                                        categoryD300.setDisable(false);
-                                       categoryD300.setText(" 600 ");
+                                       categoryD300.setText("600");
                                        
                                        categoryD400.setDisable(false);
-                                       categoryD400.setText(" 800 ");
+                                       categoryD400.setText("800");
                                     
                                        categoryD500.setDisable(false);
-                                       categoryD500.setText(" 1000 ");
+                                       categoryD500.setText("1000");
                                        
                                        
                                     // Category E
                                     
                                        categoryE100.setDisable(false);
-                                       categoryE100.setText(" 200 ");
+                                       categoryE100.setText("200");
                                     
                                        categoryE200.setDisable(false);
-                                       categoryE200.setText(" 400 ");
+                                       categoryE200.setText("400");
                                        
                                        categoryE300.setDisable(false);
-                                       categoryE300.setText(" 600 ");
+                                       categoryE300.setText("600");
                                        
                                        categoryE400.setDisable(false);
-                                       categoryE400.setText(" 800 ");
+                                       categoryE400.setText("800");
                                     
                                        categoryE500.setDisable(false);
-                                       categoryE500.setText(" 1000 ");
+                                       categoryE500.setText("1000");
                                        
                                     
                                     // Category F
                                        
                                        categoryF100.setDisable(false);
-                                       categoryF100.setText(" 200 ");
+                                       categoryF100.setText("200");
                                     
                                        categoryF200.setDisable(false);
-                                       categoryF200.setText(" 400 ");
+                                       categoryF200.setText("400");
                                        
                                        categoryF300.setDisable(false);
-                                       categoryF300.setText(" 600 ");
+                                       categoryF300.setText("600");
                                        
                                        categoryF400.setDisable(false);
-                                       categoryF400.setText(" 800 ");
+                                       categoryF400.setText("800");
                                     
                                        categoryF500.setDisable(false);
-                                       categoryF500.setText(" 1000 ");
+                                       categoryF500.setText("1000");
                                        
                                        window.setScene(gameboardScene);
                                        
@@ -1286,109 +1357,109 @@ public class JeopardyTesting extends Application
                                     // Category A
                                     
                                        categoryA100.setDisable(false);
-                                       categoryA100.setText(" 200 ");
+                                       categoryA100.setText("200");
                                        
                                        categoryA200.setDisable(false);
-                                       categoryA200.setText(" 400 ");
+                                       categoryA200.setText("400");
                                        
                                        categoryA300.setDisable(false);
-                                       categoryA300.setText(" 600 ");
+                                       categoryA300.setText("600");
                                        
                                        categoryA400.setDisable(false);
-                                       categoryA400.setText(" 800 ");
+                                       categoryA400.setText("800");
                                        
                                        categoryA500.setDisable(false);
-                                       categoryA500.setText(" 1000 ");
+                                       categoryA500.setText("1000");
                                     
                                     
                                     // Category B
                                     
                                        categoryB100.setDisable(false);
-                                       categoryB100.setText(" 200 ");
+                                       categoryB100.setText("200");
                                        
                                        categoryB200.setDisable(false);
-                                       categoryB200.setText(" 400 ");
+                                       categoryB200.setText("400");
                                        
                                        categoryB300.setDisable(false);
-                                       categoryB300.setText(" 600 ");
+                                       categoryB300.setText("600");
                                        
                                        categoryB400.setDisable(false);
-                                       categoryB400.setText(" 800 ");
+                                       categoryB400.setText("800");
                                        
                                        categoryB500.setDisable(false);
-                                       categoryB500.setText(" 1000 ");
+                                       categoryB500.setText("1000");
                                     
                                     
                                     // Category C
                                     
                                        categoryC100.setDisable(false);
-                                       categoryC100.setText(" 200 ");
+                                       categoryC100.setText("200");
                                     
                                        categoryC200.setDisable(false);
-                                       categoryC200.setText(" 400 ");
+                                       categoryC200.setText("400");
                                        
                                        categoryC300.setDisable(false);
-                                       categoryC300.setText(" 600 ");
+                                       categoryC300.setText("600");
                                        
                                        categoryC400.setDisable(false);
-                                       categoryC400.setText(" 800 ");
+                                       categoryC400.setText("800");
                                     
                                        categoryC500.setDisable(false);
-                                       categoryC500.setText(" 1000 ");
+                                       categoryC500.setText("1000");
                                        
                                        
                                     // Category D
                                     
                                        categoryD100.setDisable(false);
-                                       categoryD100.setText(" 200 ");
+                                       categoryD100.setText("200");
                                     
                                        categoryD200.setDisable(false);
-                                       categoryD200.setText(" 400 ");
+                                       categoryD200.setText("400");
                                        
                                        categoryD300.setDisable(false);
-                                       categoryD300.setText(" 600 ");
+                                       categoryD300.setText("600");
                                        
                                        categoryD400.setDisable(false);
-                                       categoryD400.setText(" 800 ");
+                                       categoryD400.setText("800");
                                     
                                        categoryD500.setDisable(false);
-                                       categoryD500.setText(" 1000 ");
+                                       categoryD500.setText("1000");
                                        
                                        
                                     // Category E
                                     
                                        categoryE100.setDisable(false);
-                                       categoryE100.setText(" 200 ");
+                                       categoryE100.setText("200");
                                     
                                        categoryE200.setDisable(false);
-                                       categoryE200.setText(" 400 ");
+                                       categoryE200.setText("400");
                                        
                                        categoryE300.setDisable(false);
-                                       categoryE300.setText(" 600 ");
+                                       categoryE300.setText("600");
                                        
                                        categoryE400.setDisable(false);
-                                       categoryE400.setText(" 800 ");
+                                       categoryE400.setText("800");
                                     
                                        categoryE500.setDisable(false);
-                                       categoryE500.setText(" 1000 ");
+                                       categoryE500.setText("1000");
                                        
                                     
                                     // Category F
                                        
                                        categoryF100.setDisable(false);
-                                       categoryF100.setText(" 200 ");
+                                       categoryF100.setText("200");
                                     
                                        categoryF200.setDisable(false);
-                                       categoryF200.setText(" 400 ");
+                                       categoryF200.setText("400");
                                        
                                        categoryF300.setDisable(false);
-                                       categoryF300.setText(" 600 ");
+                                       categoryF300.setText("600");
                                        
                                        categoryF400.setDisable(false);
-                                       categoryF400.setText(" 800 ");
+                                       categoryF400.setText("800");
                                     
                                        categoryF500.setDisable(false);
-                                       categoryF500.setText(" 1000 ");
+                                       categoryF500.setText("1000");
                                        
                                        window.setScene(gameboardScene);
                                        
@@ -1572,7 +1643,7 @@ public class JeopardyTesting extends Application
                                  
                   {
                      
-                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryAInfo.");
+                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryAInfo.".toUpperCase());
                      
                      
                      window.setScene(categoryInfoScene);
@@ -1585,9 +1656,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".");
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA100.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA100.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -1619,9 +1690,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA200.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA200.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -1653,9 +1724,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA300.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA300.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -1687,9 +1758,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA400.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA400.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -1721,9 +1792,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA500.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA500.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -1756,7 +1827,7 @@ public class JeopardyTesting extends Application
                   
                   {
                      
-                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryBInfo.");;
+                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryBInfo.".toUpperCase());;
                      
                      window.setScene(categoryInfoScene);
                   
@@ -1768,9 +1839,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB100.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB100.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -1802,9 +1873,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB200.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB200.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -1836,9 +1907,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB300.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB300.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -1870,9 +1941,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB400.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB400.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -1904,9 +1975,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB500.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB500.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -1939,7 +2010,7 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryCInfo.");
+                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryCInfo.".toUpperCase());
                      
                      
                      window.setScene(categoryInfoScene);
@@ -1952,9 +2023,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC100.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC100.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -1986,9 +2057,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC200.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC200.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2020,9 +2091,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC300.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC300.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2054,9 +2125,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC400.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC400.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2088,9 +2159,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC500.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC500.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2123,7 +2194,7 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryDInfo.");
+                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryDInfo.".toUpperCase());
                      
                      
                      window.setScene(categoryInfoScene);
@@ -2136,9 +2207,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD100.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD100.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2170,9 +2241,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD200.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD200.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2204,9 +2275,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD300.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD300.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2238,9 +2309,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD400.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD400.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2272,9 +2343,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD500.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD500.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2307,7 +2378,7 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryEInfo.");
+                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryEInfo.".toUpperCase());
                      
                      
                      window.setScene(categoryInfoScene);
@@ -2320,9 +2391,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE100.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE100.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2354,9 +2425,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE200.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE200.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2388,9 +2459,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE300.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE300.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2422,9 +2493,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE400.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE400.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2456,9 +2527,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE500.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE500.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2491,7 +2562,7 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryFInfo.");
+                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryFInfo.".toUpperCase());
                      
                      
                      window.setScene(categoryInfoScene);
@@ -2504,9 +2575,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF100.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF100.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2538,9 +2609,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF200.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF200.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2572,9 +2643,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF300.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF300.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2606,9 +2677,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF400.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF400.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2640,9 +2711,9 @@ public class JeopardyTesting extends Application
                   
                      dailyDouble.plusCounter();
                      
-                     System.out.println("The daily double counter is currently at " + dailyDouble.getCounter() + ".");
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF500.");
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF500.".toUpperCase());
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2674,5 +2745,5 @@ public class JeopardyTesting extends Application
          }
          
      
-          
+         
    }
