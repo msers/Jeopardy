@@ -26,6 +26,8 @@ public class DailyDouble
       
       private int gamePhase;
       
+      private int turnTracker;
+      
       public DailyDouble()
       
          {
@@ -202,6 +204,42 @@ public class DailyDouble
          {
          
             return gamePhase;
+         
+         }
+         
+      public void setTurn (int turnTrackerInt)
+      
+         {
+            
+            turnTracker = turnTrackerInt;
+         
+         }
+         
+      public void changeTurn()
+         
+         {
+         
+            turnTracker++;
+            
+            //0=player1
+            //1=player2
+            //2=player3
+            
+            if (turnTracker == 3)
+               
+               {
+               
+                  turnTracker = 0;
+               
+               }
+         
+         }
+            
+      public int getTurn()
+         
+         {
+         
+            return turnTracker;
          
          }
 
