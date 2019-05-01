@@ -55,8 +55,7 @@ public class JeopardyTesting extends Application
             
             
             ////////////////// Setting Up DailyDouble. 
-                           
-            
+                                       
             DailyDouble dailyDouble = new DailyDouble(); //    The DailyDouble class is used for several features inside of Jeopardy. 
                                                          //    It handles the randomization of the daily double positions in both regular and double jeopardy along with the wager each player makes. It also helps us keep track of what phase of the game we are currently in.
             
@@ -323,7 +322,7 @@ public class JeopardyTesting extends Application
                   
                   /////////   Main Gameboard Scene
                   
-                     Scene gameboardScene = new Scene(gameboardBorderPane, 1280, 720, Color.BLUE);  // scene for the gameboard
+                     Scene gameboardScene = new Scene(gameboardBorderPane, 1920, 980, Color.BLUE);  // scene for the gameboard
                      
                      gameboardScene.getStylesheets().add("gameboard.css"); 
                      
@@ -345,7 +344,7 @@ public class JeopardyTesting extends Application
                      
                      categoryInfoBorderPane.setBottom(categoryBack);
                                  
-                     Scene categoryInfoScene = new Scene(categoryInfoBorderPane, 1280, 720);
+                     Scene categoryInfoScene = new Scene(categoryInfoBorderPane, 1920, 980);
                      
                      categoryInfoScene.getStylesheets().add("gameboard.css");
                   
@@ -389,7 +388,7 @@ public class JeopardyTesting extends Application
                      
                      clueSceneBorderPane.setCenter(clueSceneVBox);
                      
-                     Scene clueScene = new Scene(clueSceneBorderPane, 1280, 720);
+                     Scene clueScene = new Scene(clueSceneBorderPane, 1920, 980);
                      
                      clueScene.getStylesheets().add("Clue.css");
                      
@@ -409,7 +408,7 @@ public class JeopardyTesting extends Application
                         
                         dailyDoubleScene1BorderPane.setCenter(dailyDoubleScene1VBox);
                         
-                        Scene dailyDoubleScene1 = new Scene(dailyDoubleScene1BorderPane, 1280, 720);
+                        Scene dailyDoubleScene1 = new Scene(dailyDoubleScene1BorderPane, 1920, 980);
                         
                         dailyDoubleScene1.getStylesheets().add("DDFJSplash.css");
                         
@@ -485,7 +484,7 @@ public class JeopardyTesting extends Application
                         
                         dailyDoubleScene2BorderPane.setCenter(dailyDoubleScene2VBox);
                         
-                        Scene dailyDoubleScene2 = new Scene(dailyDoubleScene2BorderPane, 1280, 720);
+                        Scene dailyDoubleScene2 = new Scene(dailyDoubleScene2BorderPane, 1920, 980);
                         
                         dailyDoubleScene2.getStylesheets().add("gameboard.css");
                         
@@ -532,7 +531,7 @@ public class JeopardyTesting extends Application
                      
                         clueSceneBorderPaneDD.setCenter(clueSceneVBoxDD);
                      
-                        Scene dailyDoubleClueScene = new Scene(clueSceneBorderPaneDD, 1280, 720);
+                        Scene dailyDoubleClueScene = new Scene(clueSceneBorderPaneDD, 1920, 980);
                         
                         dailyDoubleClueScene.getStylesheets().add("Clue.css");
                   
@@ -552,7 +551,7 @@ public class JeopardyTesting extends Application
                         
                         finalJeopardyScene1BorderPane.setCenter(finalJeopardyScene1VBox);
                         
-                        Scene finalJeopardyScene1 = new Scene(finalJeopardyScene1BorderPane, 1280, 720);
+                        Scene finalJeopardyScene1 = new Scene(finalJeopardyScene1BorderPane, 1920, 980);
                         
                         finalJeopardyScene1.getStylesheets().add("DDFJSplash.css");
                         
@@ -626,7 +625,7 @@ public class JeopardyTesting extends Application
                         
                         finalJeopardyScene2BorderPane.setCenter(finalJeopardyScene2VBox);
                         
-                        Scene finalJeopardyScene2 = new Scene(finalJeopardyScene2BorderPane, 1280, 720);
+                        Scene finalJeopardyScene2 = new Scene(finalJeopardyScene2BorderPane, 1920, 980);
                         
                         finalJeopardyScene2.getStylesheets().add("gameboard.css");
                         
@@ -644,7 +643,7 @@ public class JeopardyTesting extends Application
                         
                         finalJeopardyCategorySceneBorderPane.setCenter(finalJeopardyCategorySceneVBox);
                         
-                        Scene finalJeopardyCategoryScene = new Scene(finalJeopardyCategorySceneBorderPane, 1280, 720);
+                        Scene finalJeopardyCategoryScene = new Scene(finalJeopardyCategorySceneBorderPane, 1920, 980);
                         
                         finalJeopardyCategoryScene.getStylesheets().add("FJCatScene.css");
                         
@@ -686,7 +685,7 @@ public class JeopardyTesting extends Application
                      
                         clueSceneBorderPaneFJ.setCenter(clueSceneVBoxFJ);
                      
-                        Scene finalJeopardyClueScene = new Scene(clueSceneBorderPaneFJ, 1280, 720);
+                        Scene finalJeopardyClueScene = new Scene(clueSceneBorderPaneFJ, 1920, 980);
                         
                         finalJeopardyClueScene.getStylesheets().add("Clue.css");
             
@@ -1642,10 +1641,18 @@ public class JeopardyTesting extends Application
                categoryAInfo.setOnAction( e ->  
                                  
                   {
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                        
+                        categoryText.setText("HELLO WORLD: \nJava Facts.".toUpperCase());
+                     }
                      
-                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryAInfo.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
                      
+                        categoryText.setText("Giants of Our Time \nFamous Figures.".toUpperCase());
                      
+                     }
                      window.setScene(categoryInfoScene);
                   
                   });
@@ -1658,14 +1665,39 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".");
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA100.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
                      
+                     clueText.setText("Named after the tree that stood \noutside its creator’s office, this was the original \nname for the Java Programming Language.".toUpperCase());
+                     answerA.setText("A:Pine");
+                     answerB.setText("B:Birch");
+                     answerX.setText("X:Oak");
+                     answerY.setText("Y:Maple");
+                     dailyDouble.setAnswerInt(2);
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                     clueText.setText("In the late 19th Century, this inventor perfected the design of the light bulb.  ".toUpperCase());
+                     answerA.setText("A:Thomas Edison");
+                     answerB.setText("B:Albert Einstein");
+                     answerX.setText("X:Nikola Tesla");
+                     answerY.setText("Y:Charles Proteus Steinmetz");
+                     dailyDouble.setAnswerInt(0);
+                     
+                     }
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            
+
                            window.setScene(dailyDoubleScene1);
                         
                         }
@@ -1691,15 +1723,35 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA200.".toUpperCase());
-                     
+                    if(dailyDouble.getGamePhase() == 0)
+                    {
+                     clueText.setText("This company, founded in \nFebruary 1982 originally developed Java.".toUpperCase());
+                     answerA.setText("A:Sun Microsystems");
+                     answerB.setText("B:Oracle Corporation");
+                     answerX.setText("X:Sunopsis");
+                     answerY.setText("Y:Roots & Ladders LLC");
+                     dailyDouble.setAnswerInt(0);
+                    }
+                    
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("Five years after the first solo flight across the atlantic,\n this pilot became the second person to complete the same feat.".toUpperCase());
+                     answerA.setText("A:Charles Lindbergh");
+                     answerB.setText("B:Amelia Earhart");
+                     answerX.setText("X:Arthur Brown");
+                     answerY.setText("Y:John Alcock");
+                     dailyDouble.setAnswerInt(1);
+                    }
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
-                           
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
+                          
                            window.setScene(dailyDoubleScene1);
                         
                         }
@@ -1725,14 +1777,35 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA300.".toUpperCase());
-                     
+                    if(dailyDouble.getGamePhase() == 0)
+                    { 
+                     clueText.setText("Occurring to Oracle, ATMs, PCs,\nBlu-Ray Players, and Servers help make \nup the _________ number of devices that run Java.".toUpperCase());
+                     answerA.setText("A:15,000,000");
+                     answerB.setText("B:150,000,000");
+                     answerX.setText("X:1,500,000,000");
+                     answerY.setText("Y:15,000,000,000");
+                     dailyDouble.setAnswerInt(3);
+                    }
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("A fan of ancient indian poetry,\nthis physicist quotes the Bhagavad Gita, stating \n“Now I am become Death, the destroyer of worlds.”".toUpperCase());
+                     answerA.setText("A:J. Robert Oppenheimer");
+                     answerB.setText("B:Werner Heisenberg");
+                     answerX.setText("X:Albert Einstein");
+                     answerY.setText("Y:Richard Feynman");
+                     dailyDouble.setAnswerInt(0);
+                    }
+                    
+                    
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -1759,14 +1832,34 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA400.".toUpperCase());
-                     
+                    if(dailyDouble.getGamePhase() == 0)
+                    {
+                     clueText.setText("First released in on a device in 2008,\n this operating system is mostly written Java..".toUpperCase());
+                     answerA.setText("A:Android");
+                     answerB.setText("B:iOS");
+                     answerX.setText("X:FireOS");
+                     answerY.setText("Y:Linux");
+                     dailyDouble.setAnswerInt(0);
+                    }
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("One of the co-founders of Microsoft, \nthis man unfortunately lost his battle with cancer in 2018.  ".toUpperCase());
+                     answerA.setText("A:Paul Allen");
+                     answerB.setText("B:Bill Gates");
+                     answerX.setText("X:Steve Wozniak");
+                     answerY.setText("Y:Tim Cook");
+                     dailyDouble.setAnswerInt(0);
+                    }
+                    
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -1793,15 +1886,33 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryA500.".toUpperCase());
-                     
+                    if(dailyDouble.getGamePhase() == 0)
+                    {
+                     clueText.setText("An Officer in the Order of Canada,\nthis man founded Java.".toUpperCase());
+                     answerA.setText("A:James Gosling");
+                     answerB.setText("B:Andy Jassy");
+                     answerX.setText("X:Ronald Wyane");
+                     answerY.setText("Y:Phil Spencer");
+                     dailyDouble.setAnswerInt(0);
+                    }
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("This scotsman is credited with \ncreating the world's first antibiotic.  ".toUpperCase());
+                     answerA.setText("A:Alexander Fleming");
+                     answerB.setText("B:George Beadle");
+                     answerX.setText("X:Erwin Chargaff");
+                     answerY.setText("Y:Norton Zinder");
+                     dailyDouble.setAnswerInt(0);
+                    }
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
-                           
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            window.setScene(dailyDoubleScene1);
                         
                         }
@@ -1826,8 +1937,15 @@ public class JeopardyTesting extends Application
                categoryBInfo.setOnAction( e ->  //this button will go back and forth between the gameboardScene and the categoryInfomation scene
                   
                   {
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                        categoryText.setText("This Land is Your Land: \nU.S. Landmarks.".toUpperCase());;
+                     }
                      
-                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryBInfo.".toUpperCase());;
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                        categoryText.setText("Ready Player One: \nVideo Games.".toUpperCase());;
+                     }
                      
                      window.setScene(categoryInfoScene);
                   
@@ -1840,15 +1958,35 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB100.".toUpperCase());
-                     
+                    if(dailyDouble.getGamePhase() == 0)
+                    {
+                     clueText.setText("Opened in 1937, the Golden Gate Bridge\nconnects the city of San Francisco, CA to this county.".toUpperCase());
+                     answerA.setText("A:Alameda County");
+                     answerB.setText("B:Napa County");
+                     answerX.setText("X:Marin County");
+                     answerY.setText("Y:San Mateo County");
+                     dailyDouble.setAnswerInt(2);
+                    }
+                    
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("In the 2013 smash hit Grand Theft Auto V,\n players can travel and interact in a virtual parody of this US City.".toUpperCase());
+                     answerA.setText("A:Los Angeles");
+                     answerB.setText("B:Las Vegas");
+                     answerX.setText("X:New York City");
+                     answerY.setText("Y:Miami");
+                     dailyDouble.setAnswerInt(0);
+                    }
+                    
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
-                           
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            window.setScene(dailyDoubleScene1);
                         
                         }
@@ -1874,14 +2012,35 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB200.".toUpperCase());
-                     
+                    if(dailyDouble.getGamePhase() == 0)
+                    {
+                     clueText.setText("Once the world’s largest/n the Georgia aquarium is located in this city?".toUpperCase());
+                     answerA.setText("A:Savannah");
+                     answerB.setText("B:Athens");
+                     answerX.setText("X:Columbus");
+                     answerY.setText("Y:Atlanta");
+                     dailyDouble.setAnswerInt(3);
+                    }
+                    
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("The names of the Ghosts from 1980’s Pac Man\n are Binky, Pinky, Inky, and _______. ".toUpperCase());
+                     answerA.setText("A:Ricky");
+                     answerB.setText("B:Kyle");
+                     answerX.setText("X:Clyde");
+                     answerY.setText("Y:Winky");
+                     dailyDouble.setAnswerInt(2);
+                    }
+                    
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -1908,14 +2067,34 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB300.".toUpperCase());
-                     
+                    if(dailyDouble.getGamePhase() == 0)
+                    {
+                     clueText.setText("Given as a token of friendship between two nations,\nthe Statue of Liberty was given\nto the United States from this nation. ".toUpperCase());
+                     answerA.setText("A:Spain");
+                     answerB.setText("B:France");
+                     answerX.setText("X:Germany");
+                     answerY.setText("Y:Great Britain");
+                     dailyDouble.setAnswerInt(1);
+                    }
+                    
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("Since release, this MMORPG has made over $9,000,000,000 in revenue. ".toUpperCase());
+                     answerA.setText("A:Grand Theft Auto V");
+                     answerB.setText("B:Minecraft");
+                     answerX.setText("X:World of Warcraft");
+                     answerY.setText("Y:Sims");
+                     dailyDouble.setAnswerInt(2);
+                    }
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -1942,15 +2121,35 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB400.".toUpperCase());
-                     
+                    if(dailyDouble.getGamePhase() == 0)
+                    {
+                     clueText.setText("Once called the Sears Tower,\nthe Willis Tower is the tallest \nskyscraper in this midwest city.".toUpperCase());
+                     answerA.setText("A:Indianapolis, Indiana");
+                     answerB.setText("B:Detroit, Michigan");
+                     answerX.setText("X:Chicago, Illinois");
+                     answerY.setText("Y:Omaha, Nebraska");
+                     dailyDouble.setAnswerInt(2);
+                    }
+                    
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("Well before making video games and consoles,\n Nintendo first started producing _______ in 1889.".toUpperCase());
+                     answerA.setText("A:Food");
+                     answerB.setText("B:Playing Cards");
+                     answerX.setText("X:Dice");
+                     answerY.setText("Y:Clothing");
+                     dailyDouble.setAnswerInt(1);
+                    }
+                    
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
-                           
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            window.setScene(dailyDoubleScene1);
                         
                         }
@@ -1976,15 +2175,34 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryB500.".toUpperCase());
-                     
+                    if(dailyDouble.getGamePhase() == 0)
+                    {
+                     clueText.setText("The first national monument,\nDevils Tower National Monument,\ncan be found in this state.".toUpperCase());
+                     answerA.setText("A:Colorado");
+                     answerB.setText("B:California");
+                     answerX.setText("X:Montana");
+                     answerY.setText("Y:Wyoming");
+                     dailyDouble.setAnswerInt(0);
+                    }
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("With over 150 Million consoles sold, \nthis system is the best selling game console of all time. ".toUpperCase());
+                     answerA.setText("A:Playstation 2");
+                     answerB.setText("B:Xbox 360");
+                     answerX.setText("X:Nitendo Wii");
+                     answerY.setText("Y:Playstation 4");
+                     dailyDouble.setAnswerInt(0);
+                    }
+                    
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
-                           
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            window.setScene(dailyDoubleScene1);
                         
                         }
@@ -2009,9 +2227,15 @@ public class JeopardyTesting extends Application
                categoryCInfo.setOnAction( e ->  //this button will go back and forth between the gameboardScene and the categoryInfomation scene
                   
                   {
-                  
-                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryCInfo.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                        categoryText.setText("Chips, Discs, and Peripherals: \nComputer Hardware Acronyms".toUpperCase());
+                     }
                      
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                        categoryText.setText("The Boys Club: \nU.S. Presidents".toUpperCase());
+                     }
                      
                      window.setScene(categoryInfoScene);
                   
@@ -2024,14 +2248,35 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC100.".toUpperCase());
-                     
+                    if(dailyDouble.getGamePhase() == 0)
+                    {
+                     clueText.setText("USB".toUpperCase());
+                     answerA.setText("A:United Serial Bus");
+                     answerB.setText("B:Universal Storage Bus");
+                     answerX.setText("X:United Storage Bus");
+                     answerY.setText("Y:Universal Serial Bus");
+                     dailyDouble.setAnswerInt(3);
+                    }
+                    
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("While they all share a spot on Mt. Rushmore,\n this US President does not appear on paper currency.".toUpperCase());
+                     answerA.setText("A:Theodore Roosevelt");
+                     answerB.setText("B:Abraham Lincoln");
+                     answerX.setText("X:George Washington");
+                     answerY.setText("Y:Thomas Jefferson");
+                     dailyDouble.setAnswerInt(0);
+                    }
+                    
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2058,14 +2303,35 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC200.".toUpperCase());
-                     
+                    if(dailyDouble.getGamePhase() == 0)
+                    {
+                     clueText.setText("RAM".toUpperCase());
+                     answerA.setText("A:Random Access Memory");
+                     answerB.setText("B:Readable Access Memory");
+                     answerX.setText("X:Random Action Matrix");
+                     answerY.setText("Y:Random Action Memory");
+                     dailyDouble.setAnswerInt(0);
+                    }
+                    
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("Walt Whitman's poem, 'Oh Captain, My Captain'\n was written about this President. ".toUpperCase());
+                     answerA.setText("A:Abraham Lincoln");
+                     answerB.setText("B:Ulysses S. Grant");
+                     answerX.setText("X:George Washington");
+                     answerY.setText("Y:John Adams");
+                     dailyDouble.setAnswerInt(0);
+                    }
+                    
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2092,15 +2358,35 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC300.".toUpperCase());
-                     
+                    if(dailyDouble.getGamePhase() == 0)
+                    { 
+                     clueText.setText("HDD".toUpperCase());
+                     answerA.setText("A:Hard Disk Drive");
+                     answerB.setText("B:Hard Drive Disk");
+                     answerX.setText("X:High Definition Disk");
+                     answerY.setText("Y:High Definition Driver");
+                     dailyDouble.setAnswerInt(0);
+                    }
+                    
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("This U.S. President won a Pulitzer Prize\n for his book Profiles in Courage.".toUpperCase());
+                     answerA.setText("A:Bill Clinton");
+                     answerB.setText("B:Richard Nixon");
+                     answerX.setText("X:John F. Kennedy");
+                     answerY.setText("Y:Lyndon B. Johnson");
+                     dailyDouble.setAnswerInt(2);
+                    }
+                    
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
-                           
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            window.setScene(dailyDoubleScene1);
                         
                         }
@@ -2126,14 +2412,35 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC400.".toUpperCase());
+                    if(dailyDouble.getGamePhase() == 0)
+                    {
+                     clueText.setText("SSD".toUpperCase());
+                     answerA.setText("A:Solid-Silent Drive");
+                     answerB.setText("B:Silent-State Drive");
+                     answerX.setText("X:Solid-State Drive");
+                     answerY.setText("Y:Serial-State Drive");
+                     dailyDouble.setAnswerInt(2);
+                    }
+                    
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("Among the 44 men who have been president,\n only this one had a Phd. ".toUpperCase());
+                     answerA.setText("A:Zachary Taylor");
+                     answerB.setText("B:George H. W. Bush");
+                     answerX.setText("X:Ronald Reagan");
+                     answerY.setText("Y:Woodrow Wilson");
+                     dailyDouble.setAnswerInt(3);
+                    }
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2160,14 +2467,35 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                     
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryC500.".toUpperCase());
+                    if(dailyDouble.getGamePhase() == 0)
+                    { 
+                     clueText.setText("GPU".toUpperCase());
+                     answerA.setText("A:Graphics Processing Utility");
+                     answerB.setText("B:Graphics Processing Unit");
+                     answerX.setText("X:Graphic Procedural Unit ");
+                     answerY.setText("Y:Generating Processing Utility");
+                     dailyDouble.setAnswerInt(1);
+                    }
+                    
+                    if(dailyDouble.getGamePhase() == 1)
+                    {
+                     clueText.setText("This President was the first to be born a US Citizen.".toUpperCase());
+                     answerA.setText("A:John Quincy Adams");
+                     answerB.setText("B:Martin Van Buren");
+                     answerX.setText("X:William Henry Harrison");
+                     answerY.setText("Y:Woodrow Wilson");
+                     dailyDouble.setAnswerInt(1);
+                    }
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           answerADD.setText(answerA.getText());
+                           answerBDD.setText(answerB.getText());
+                           answerXDD.setText(answerX.getText());
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2189,16 +2517,29 @@ public class JeopardyTesting extends Application
                   
               
                /////////   Category D Buttons
-               
                categoryDInfo.setOnAction( e ->  //this button will go back and forth between the gameboardScene and the categoryInfomation scene
                   
                   {
                   
-                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryDInfo.".toUpperCase());
+                  
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        categoryText.setText("Spitting Bars! (Music)".toUpperCase());
+                        
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        categoryText.setText("Eurka! (Science)".toUpperCase());
+                     
+                     }
                      
                      
                      window.setScene(categoryInfoScene);
-                  
+                     
+                     
                   });
                   
                categoryD100.setOnAction( e ->  
@@ -2209,13 +2550,53 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD100.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
                      
+                        clueText.setText("This Musician was awarded the very first \n gold record from the \n Recording Industry Association of America".toUpperCase());   //BARS
+                     
+                        answerA.setText("Nat King Cole");
+                     
+                        answerB.setText("The Beatles");
+                     
+                        answerX.setText("Elvis Presley");
+                     
+                        answerY.setText("Perry Como");
+                     
+                        //dailyDouble.setAnswerInt(3); //Perry
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        clueText.setText("In 1911 this person became the only Nobel Laureate to win \n the award in the two different sciences ".toUpperCase());
+                     
+                        answerA.setText("Frederick Sanger");
+                     
+                        answerB.setText("Linus Pauling");
+                     
+                        answerX.setText("Marie Curie");
+                     
+                        answerY.setText("John Bardeen");
+                        
+                        //dailyDouble.setAnswerInt(2); //Marie Curie
+                     
+                     }
+                     
+                                          
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2243,13 +2624,56 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD200.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        clueText.setText("This is the oldest surviving musical instrument".toUpperCase());
+                        
+                        answerA.setText("Drum");
+                        
+                        answerB.setText("Lyre");
+                        
+                        answerX.setText("Flute");
+                        
+                        answerY.setText("Trumpet");
+                        
+                        //dailyDouble.setAnswerInt(2); //Flute
+                     
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        clueText.setText("The fifth planet \n from the Sun, _________ has the most moons \n in its orbit with 79".toUpperCase());
+                        
+                        answerA.setText("Jupiter");
+                        
+                        answerB.setText("Saturn");
+                        
+                        answerX.setText("Uranus");
+                        
+                        answerY.setText("Mars");
+                        
+                        //dailyDouble.setAnswerInt(0); //Jupiter
+                     
+                     
+                     }
+                     
+                     
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2277,7 +2701,40 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD300.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        clueText.setText("The World Record for the most\n words in a hit single \n is held by this Musician ".toUpperCase());
+                        
+                        answerA.setText("Kayne West");
+                        
+                        answerB.setText("Eminem");
+                        
+                        answerX.setText("Busta Rhymes");
+                        
+                        answerY.setText("50 Cent");
+                        
+                        //dailyDouble.setAnswerInt(1); //Eminem
+                        
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        clueText.setText("Born at the San Francisco Zoo, \n this Gorilla gained international attention after \n being taught sign language ".toUpperCase());
+                        
+                        answerA.setText("Chloe");
+                        
+                        answerB.setText("Koko");
+                        
+                        answerX.setText("Carly");
+                        
+                        answerY.setText("Katie");
+                        
+                        //dailyDouble.setAnswerInt(1); //Koko
+                     
+                     }
+                     
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2285,6 +2742,14 @@ public class JeopardyTesting extends Application
                         
                            clueTextDD.setText(clueText.getText());
                            
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+
                            window.setScene(dailyDoubleScene1);
                         
                         }
@@ -2311,13 +2776,53 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD400.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        clueText.setText("In 2016, they became the first Musician to win the\n Nobel Prize for having created new poetic\n expression within the great \n American song tradition ".toUpperCase());
+                     
+                        answerA.setText("Arehta Franklin");
+                     
+                        answerB.setText("Neil Young");
+                     
+                        answerX.setText("Bob Dylan");
+                     
+                        answerY.setText("Chuck Berry");
+                     
+                        //dailyDouble.setAnswerInt(2); //Bob Dylan
+                  
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        clueText.setText("Appearing on Earth over 400 Millions Years ago, this group of animals are older than trees".toUpperCase());
+                     
+                        answerA.setText("Alligators");
+                     
+                        answerB.setText("Lice");
+                     
+                        answerX.setText("Sharks");
+                     
+                        answerY.setText("Cockroaches");
+                     
+                        //dailyDouble.setAnswerInt(2); //Bob Dylan
+                     
+                     }
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2345,13 +2850,55 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryD500.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        clueText.setText("This brass instrument, despite its appearance,\n is a member of the Woodwind family".toUpperCase());
+                     
+                        answerA.setText("Trombone");
+                     
+                        answerB.setText("Trumpet");
+                     
+                        answerX.setText("Saxaphone");
+                     
+                        answerY.setText("French Horn");
+                     
+                        //dailyDouble.setAnswerInt(2); //Saxophone
+                        
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                        
+                        
+                        clueText.setText("Devil's Tower in Black Hills, Wyoming and Obsidian are both made of this rock".toUpperCase());
+                     
+                        answerA.setText("Sedimentary");
+                     
+                        answerB.setText("Igneous");
+                     
+                        answerX.setText("Metamorphic");
+                     
+                        answerY.setText("Phyllite");
+                     
+                        //dailyDouble.setAnswerInt(1); //Igneous
+                        
+                        
+                     }
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2378,8 +2925,19 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryEInfo.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
                      
+                        categoryText.setText("Excelsior (Comic Books)".toUpperCase());
+                        
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        categoryText.setText("Vroom Vroom! (Cars)".toUpperCase());
+                     
+                     }
                      
                      window.setScene(categoryInfoScene);
                   
@@ -2393,13 +2951,54 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE100.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        clueText.setText("First appearing in 1936, this character is considered the first costumed superhero".toUpperCase());
+                     
+                        answerA.setText("Superman");
+                     
+                        answerB.setText("Arrow");
+                     
+                        answerX.setText("Crimson Avenger");
+                     
+                        answerY.setText("The Phantom");
+                     
+                        //dailyDouble.setAnswerInt(3); //Phantom
+                        
+                     }   
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        clueText.setText("First Introduced in 1953, this vehicle earned the title 'America's Sports Car'".toUpperCase());
+                     
+                        answerA.setText("Challenger");
+                     
+                        answerB.setText("Corvette");
+                     
+                        answerX.setText("Camaro");
+                     
+                        answerY.setText("Charger");
+                     
+                        //dailyDouble.setAnswerInt(1); //Corvette
+                        
+                     
+                     }
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2427,13 +3026,53 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE200.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        clueText.setText("This actor was the first person to be hired to play a role in the Marvel Cinematic Universe".toUpperCase());
+                        
+                        answerA.setText("Terrence Howard");
+                        
+                        answerB.setText("Robert Downey Jr.");
+                        
+                        answerX.setText("Gwyneth Paltrow");
+                        
+                        answerY.setText("Jeff Bridges");
+                        
+                        //dailyDouble.setAnswerInt(0); //Terrence
+                        
+                     }  
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        clueText.setText("Made in Detroit, Michigan, this vehicle was the first mass produced automobile in America".toUpperCase());
+                        
+                        answerA.setText("Model T");
+                        
+                        answerB.setText("Model A");
+                        
+                        answerX.setText("Parkard");
+                        
+                        answerY.setText("Benz Patent-Motorwagen");
+                        
+                        //dailyDouble.setAnswerInt(0); //Model T
+                        
+                     } 
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2461,13 +3100,55 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE300.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        clueText.setText("This building served as the original headquarters for Fantastic Four".toUpperCase());
+                        
+                        answerA.setText("Baxter Building");
+                        
+                        answerB.setText("Titans Tower");
+                        
+                        answerX.setText("Stark Tower");
+                        
+                        answerY.setText("Four Freedom Plaza");
+                        
+                        //dailyDouble.setAnswerInt(0); //Baxter
+                        
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        clueText.setText("This Hot-Hatch was driven in Ken Block's famous Gymkhana 9 ".toUpperCase());
+                        
+                        answerA.setText("Hyundai Veloster N");
+                        
+                        answerB.setText("Ford Focus RS RX");
+                        
+                        answerX.setText("Toyota Corolla iM");
+                        
+                        answerY.setText("Subaru WRX");
+                        
+                        //dailyDouble.setAnswerInt(1); //Ford Focus
+
+                     
+                     }
+                     
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2495,13 +3176,53 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE400.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        clueText.setText("This Japanese comic series is known for having \n over 200 musical references spread \n across its 30 plus year print year".toUpperCase());
+                        
+                        answerA.setText("Golgo 13");
+                        
+                        answerB.setText("One Piece");
+                        
+                        answerX.setText("Dragon Ball Franchise");
+                        
+                        answerY.setText("JoJo's Bizzare Adventure");
+                        
+                        //dailyDouble.setAnswerInt(3); //Jojo
+                     
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        clueText.setText("What was the first commercially available hybrid gasoline-electric in the United States".toUpperCase());
+                        
+                        answerA.setText("Ford Escape Hybrid");
+                        
+                        answerB.setText("Tesla Model 3");
+                        
+                        answerX.setText("Toyota Prius");
+                        
+                        answerY.setText("Honda Insight");
+                        
+                        //dailyDouble.setAnswerInt(3); //Honda
+                     
+                     }
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2529,13 +3250,54 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryE500.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        clueText.setText("While well known today as a big Green Giant, \n the Incredible Hulk' skin was originally printed this color".toUpperCase());
+                        
+                        answerA.setText("White");
+                        
+                        answerB.setText("Grey");
+                        
+                        answerX.setText("Purple");
+                        
+                        answerY.setText("Red");
+                        
+                        //dailyDouble.setAnswerInt(1); //Grey
+                     
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        clueText.setText("Selling more than one million units in 1965, \n this car set a record that still \n stands today".toUpperCase());
+                        
+                        answerA.setText("Buick Wildcat");
+                        
+                        answerB.setText("Pontiac GTO");
+                        
+                        answerX.setText("Ford Thunderbird");
+                        
+                        answerY.setText("Chevrolet Impala");
+                        
+                        //dailyDouble.setAnswerInt(3); //Impala
+                     
+                     
+                     }
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2562,8 +3324,19 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     categoryText.setText("You are in the categoryInfoScene. \nYou arrived here via categoryFInfo.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
                      
+                        categoryText.setText("G.O.A.T \n Record Setting Teams/Players".toUpperCase());
+                     
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                        
+                        categoryText.setText("Higher Learning (Universities)".toUpperCase());
+                     
+                     }
                      
                      window.setScene(categoryInfoScene);
                   
@@ -2577,13 +3350,52 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF100.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        clueText.setText("This pitcher holds the record for the most\n complete games in an MLB career".toUpperCase());
+                        
+                        answerA.setText("Roy Halladay");
+                        
+                        answerB.setText("Nolan Ryan");
+                        
+                        answerX.setText("Cy Young");
+                        
+                        answerY.setText("Don Sutton");
+                        
+                        //dailyDouble.setAnswerInt(2); //Cy Young
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                        
+                        clueText.setText("This institution is the second-oldest college in the United States".toUpperCase());
+                        
+                        answerA.setText("Washington and Lee University");
+                        
+                        answerB.setText("Brown University");
+                        
+                        answerX.setText("College of William and Mary");
+                        
+                        answerY.setText("University of Virginia");
+                        
+                        //dailyDouble.setAnswerInt(1); //Brown Univ
+                     
+                     }
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2611,13 +3423,53 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF200.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        clueText.setText("This player was th only player in the NBA \n history to be named the Most Valuable \n Player, Coach of thr Year, and executive of the Year".toUpperCase());
+                        
+                        answerA.setText("Phil Jackson");
+                        
+                        answerB.setText("Magic Johnson");
+                        
+                        answerX.setText("Michael Jordan");
+                        
+                        answerY.setText("Larry Bird");
+                        
+                        //dailyDouble.setAnswerInt(3); //Larry Bird
+                     
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        clueText.setText("Established in 1636, this institution has had more US Presidents graduate from it than any other school".toUpperCase());
+                        
+                        answerA.setText("Yale University");
+                        
+                        answerB.setText("Harvard University");
+                        
+                        answerX.setText("Georgetown University");
+                        
+                        answerY.setText("Standford University");
+                        
+                        //dailyDouble.setAnswerInt(1); //Harvard
+                     
+                     }
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2645,13 +3497,53 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF300.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        clueText.setText("This American Olympian is the most decorated olympic athlete of all time".toUpperCase());
+                        
+                        answerA.setText("Carl Lewis");
+                        
+                        answerB.setText("Mary Lou Retton");
+                        
+                        answerX.setText("Michael Phelps");
+                        
+                        answerY.setText("Paavo Nurmi");
+                        
+                        //dailyDouble.setAnswerInt(2); //Phelps
+                     
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        clueText.setText("This country is the number one country of origin for foreign students in the US".toUpperCase());
+                     
+                        answerA.setText("India");
+                     
+                        answerB.setText("China");
+                     
+                        answerX.setText("South Korea");
+                     
+                        answerY.setText("Vietnam");
+                     
+                        //dailyDouble.setAnswerInt(1); //China
+                        
+                     }
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2679,13 +3571,52 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF400.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                        clueText.setText("During the 1992 Olympic Games, the US Basket Men's Backetball \n 'Dream Team' played against this country in the gold \n medal match, winning 117-85 ".toUpperCase());
+                        
+                        answerA.setText("Brazil");
+                        
+                        answerB.setText("Croatia");
+                        
+                        answerX.setText("Puerto Rico");
+                        
+                        answerY.setText("Germany");
+                        
+                        //dailyDouble.setAnswerInt(1); //Croatia
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        clueText.setText("Located in Blue Blue Pennsylvania, \n Montgomery County Community College had its original location in \n this Philly Suburb ".toUpperCase());
+                        
+                        answerA.setText("Plymouth Meeting");
+                        
+                        answerB.setText("Montgomeryville");
+                        
+                        answerX.setText("Conshohocken");
+                        
+                        answerY.setText("King of Prussia");
+                        
+                        //dailyDouble.setAnswerInt(2); //Consho
+                     
+                     }
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
                            clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
                            
                            window.setScene(dailyDoubleScene1);
                         
@@ -2695,7 +3626,7 @@ public class JeopardyTesting extends Application
                         
                         {
                         
-                        window.setScene(clueScene);
+                           window.setScene(clueScene);
                         
                         }
                      
@@ -2713,7 +3644,41 @@ public class JeopardyTesting extends Application
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                      
-                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF500.".toUpperCase());
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                     
+                     
+                        clueText.setText("This MLB player holds the record for most Grand Slams in one inning".toUpperCase());
+                        
+                        answerA.setText("Barry Bonds");
+                        
+                        answerB.setText("Fernando Tatis");
+                        
+                        answerX.setText("Mark Mcgwire");
+                        
+                        answerY.setText("Babe Ruth");
+
+                        //dailyDouble.setAnswerInt(1); //Tatis
+                     
+                     }
+                     
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                     
+                        clueText.setText("With 11 championships, this school's \n basketball team has won the NCAA Division I Men's \n Basketball Tournament more than any other teams".toUpperCase());
+                        
+                        answerA.setText("UCLA");
+                        
+                        answerB.setText("Duke University");
+                        
+                        answerX.setText("Villanova");
+                        
+                        answerY.setText("UNC");
+
+                        //dailyDouble.setAnswerInt(0); //UCLA
+                     
+                     }
+                     
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2721,7 +3686,16 @@ public class JeopardyTesting extends Application
                         
                            clueTextDD.setText(clueText.getText());
                            
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+                           
                            window.setScene(dailyDoubleScene1);
+
                         
                         }
                         
@@ -2738,10 +3712,11 @@ public class JeopardyTesting extends Application
                      categoryF500.setText("        ");
                   
                   });
-                  
+
+
             ///////////////// End of Button Programming.
                   
-                
+               
          }
          
      
