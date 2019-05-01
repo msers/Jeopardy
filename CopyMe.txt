@@ -1,0 +1,772 @@
+/*
+
+* CopyMe D,E,F
+
+*/
+categoryDInfo.setOnAction( e ->  //this button will go back and forth between the gameboardScene and the categoryInfomation scene
+                  
+                  {
+                  
+                     categoryText.setText("Spitting Bars! (Music)".toUpperCase());
+                     
+                     
+                     window.setScene(categoryInfoScene);
+                     
+                     
+                  });
+                  
+               categoryD100.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("This Musician was awarded the very first \n gold record from the \n Recording Industry Association of America".toUpperCase());
+                     
+                     answerA.setText("Nat King Cole");
+                     
+                     answerB.setText("The Beatles");
+                     
+                     answerX.setText("Elvis Presley");
+                     
+                     answerY.setText("Perry Como");
+                     
+                     //dailyDouble.setAnswerInt(3); //Perry
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                        
+                      categoryD100.setDisable(true);
+                     
+                      categoryD100.setText("        ");
+                  
+                  });
+                  
+               categoryD200.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("This is the oldest surviving musical instrument".toUpperCase());
+                     
+                     answerA.setText("Drum");
+                     
+                     answerB.setText("Lyre");
+                     
+                     answerX.setText("Flute");
+                     
+                     answerY.setText("Trumpet");
+                     
+                     //dailyDouble.setAnswerInt(2); //Flute
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                     
+                     categoryD200.setDisable(true);
+                     
+                     categoryD200.setText("        ");
+                  
+                  });
+                  
+               categoryD300.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("The World Record for the most words in a hit single \n is held by this Musician ".toUpperCase());
+                     
+                     answerA.setText("Kayne West");
+                     
+                     answerB.setText("Eminem");
+                     
+                     answerX.setText("Busta Rhymes");
+                     
+                     answerY.setText("50 Cent");
+                     
+                     //dailyDouble.setAnswerInt(1); //Eminem
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                     
+                     categoryD300.setDisable(true);
+                     
+                     categoryD300.setText("        ");
+                  
+                  });
+                  
+               categoryD400.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("In 2016, they became the first Musician to win the\n Nobel Prize for having created new poetic\n expression within the great \n American song tradition ".toUpperCase());
+                     
+                     answerA.setText("Arehta Franklin");
+                     
+                     answerB.setText("Neil Young");
+                     
+                     answerX.setText("Bob Dylan");
+                     
+                     answerY.setText("Chuck Berry");
+                     
+                     //dailyDouble.setAnswerInt(2); //Bob Dylan
+
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                     
+                     categoryD400.setDisable(true);
+                     
+                     categoryD400.setText("        ");
+                  
+                  });
+                  
+               categoryD500.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("This brass instrument, despite its appearance,\n is a member of the Woodwind family".toUpperCase());
+                     
+                     answerA.setText("Trombone");
+                     
+                     answerB.setText("Trumpet");
+                     
+                     answerX.setText("Saxaphone");
+                     
+                     answerY.setText("French Horn");
+                     
+                     //dailyDouble.setAnswerInt(2); //Saxophone
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                     
+                     categoryD500.setDisable(true);
+                     
+                     categoryD500.setText("        ");
+                  
+                  });
+                  
+               
+               /////////   Category E Buttons
+               
+               categoryEInfo.setOnAction( e ->  //this button will go back and forth between the gameboardScene and the categoryInfomation scene
+                  
+                  {
+                  
+                     categoryText.setText("Excelsior (Comic Books)".toUpperCase());
+                     
+                     
+                     window.setScene(categoryInfoScene);
+                  
+                  });
+                  
+               categoryE100.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("First appearing in 1936, this character is considered the first costumed superhero".toUpperCase());
+                     
+                     answerA.setText("Superman");
+                     
+                     answerB.setText("Arrow");
+                     
+                     answerX.setText("Crimson Avenger");
+                     
+                     answerY.setText("The Phantom");
+                     
+                     //dailyDouble.setAnswerInt(3); //Phantom
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                        
+                      categoryE100.setDisable(true);
+                     
+                      categoryE100.setText("        ");
+                  
+                  });
+                  
+               categoryE200.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("This actor was the first person to be hired to play a role in the Marvel Cinematic Universe".toUpperCase());
+                     
+                     answerA.setText("Terrence Howard");
+                     
+                     answerB.setText("Robert Downey Jr.");
+                     
+                     answerX.setText("Gwyneth Paltrow");
+                     
+                     answerY.setText("Jeff Bridges");
+                     
+                     //dailyDouble.setAnswerInt(0); //Terrence
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                     
+                     categoryE200.setDisable(true);
+                     
+                     categoryE200.setText("        ");
+                  
+                  });
+                  
+               categoryE300.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("This building served as the original headquarters for Fantastic Four".toUpperCase());
+                     
+                     answerA.setText("Baxter Building");
+                     
+                     answerB.setText("Titans Tower");
+                     
+                     answerX.setText("Stark Tower");
+                     
+                     answerY.setText("Four Freedom Plaza");
+                     
+                     //dailyDouble.setAnswerInt(0); //Baxter
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                     
+                     categoryE300.setDisable(true);
+                     
+                     categoryE300.setText("        ");
+                  
+                  });
+                  
+               categoryE400.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("This Japanese comic series is known for having \n over 200 musical references spread \n across its 30 plus year print year".toUpperCase());
+                     
+                     answerA.setText("Golgo 13");
+                     
+                     answerB.setText("One Piece");
+                     
+                     answerX.setText("Dragon Ball Franchise");
+                     
+                     answerY.setText("JoJo's Bizzare Adventure");
+                     
+                     //dailyDouble.setAnswerInt(3); //Jojo
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                     
+                     categoryE400.setDisable(true);
+                     
+                     categoryE400.setText("        ");
+                  
+                  });
+                  
+               categoryE500.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("While well known today as a big green giant, \n the Incredible Hulk' skin was originally printed this color".toUpperCase());
+                     
+                     answerA.setText("White");
+                     
+                     answerB.setText("Grey");
+                     
+                     answerX.setText("Purple");
+                     
+                     answerY.setText("Red");
+                     
+                     //dailyDouble.setAnswerInt(1); //Grey
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                     
+                     categoryE500.setDisable(true);
+                     
+                     categoryE500.setText("        ");
+                  
+                  });
+                  
+                  
+               /////////   Category F Buttons
+               
+               categoryFInfo.setOnAction( e ->  //this button will go back and forth between the gameboardScene and the categoryInfomation scene
+                  
+                  {
+                  
+                     categoryText.setText("G.O.A.T \n Record Setting Teams/Players".toUpperCase());
+                     
+                     
+                     window.setScene(categoryInfoScene);
+                  
+                  });
+                  
+               categoryF100.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("This pitcher holds the record for the most\n complete games in an MLB career".toUpperCase());
+                     
+                     answerA.setText("Roy Halladay");
+                     
+                     answerB.setText("Nolan Ryan");
+                     
+                     answerX.setText("Cy Young");
+                     
+                     answerY.setText("Don Sutton");
+                     
+                     //dailyDouble.setAnswerInt(2); //Cy Young
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                        
+                      categoryF100.setDisable(true);
+                     
+                      categoryF100.setText("        ");
+                  
+                  });
+                  
+               categoryF200.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("This player was th only player in the NBA \n history to be named the Most Valuable \n Player, Coach of thr Year, and executive of the Year".toUpperCase());
+                     
+                     answerA.setText("Phil Jackson");
+                     
+                     answerB.setText("Magic Johnson");
+                     
+                     answerX.setText("Michael Jordan");
+                     
+                     answerY.setText("Larry Bird");
+                     
+                     //dailyDouble.setAnswerInt(3); //Larry Bird
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           answerADD.setText(answerA.getText());
+                           
+                           answerBDD.setText(answerB.getText());
+                           
+                           answerXDD.setText(answerX.getText());
+                           
+                           answerYDD.setText(answerY.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                     
+                     categoryF200.setDisable(true);
+                     
+                     categoryF200.setText("        ");
+                  
+                  });
+                  
+               categoryF300.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("This American Olympian is the most decorated olympic athlete of all time".toUpperCase());
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                     
+                     categoryF300.setDisable(true);
+                     
+                     categoryF300.setText("        ");
+                  
+                  });
+                  
+               categoryF400.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF400.".toUpperCase());
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                     
+                     categoryF400.setDisable(true);
+                     
+                     categoryF400.setText("        ");
+                  
+                  });
+                  
+               categoryF500.setOnAction( e ->  
+                  
+                  {
+                  
+                     dailyDouble.plusCounter();
+                     
+                     System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
+                     clueText.setText("Put the text for the clue here.\nYou got here from categoryF500.".toUpperCase());
+                     
+                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                        
+                        {
+                        
+                           clueTextDD.setText(clueText.getText());
+                           
+                           window.setScene(dailyDoubleScene1);
+                        
+                        }
+                        
+                     else
+                        
+                        {
+                        
+                        window.setScene(clueScene);
+                        
+                        }
+                     
+                     categoryF500.setDisable(true);
+                     
+                     categoryF500.setText("        ");
+                  
+                  });
+                  
