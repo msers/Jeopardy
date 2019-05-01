@@ -22,6 +22,8 @@ public class DailyDouble
       
       private int dailyDoubleWager;
       
+      private int answerInteger;
+      
       private int gamePhase;
       
       public DailyDouble()
@@ -123,6 +125,22 @@ public class DailyDouble
          {
          
             dailyDoubleCounter = 0;
+         
+         }
+         
+      public void setAnswerInt( int answerInt)
+         
+         {
+         
+            answerInteger = answerInt;
+         
+         }
+         
+      public int getAnswerInt()
+         
+         {
+         
+            return answerInteger;
          
          }
 
