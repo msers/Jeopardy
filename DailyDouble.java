@@ -32,6 +32,9 @@ public class DailyDouble
       
       private int incorrectTracker;
       
+      private int finalJeopardyTracker;
+      
+      
       public DailyDouble()
       
          {
@@ -305,6 +308,22 @@ public class DailyDouble
                
             incorrectTracker = 0;
                
+         }
+         
+      public void plusFinalJeopardyTracker()
+         
+         {
+          
+            finalJeopardyTracker++;
+            
+         }
+         
+      public int getFinalJeopardyTracker()
+         
+         {
+            
+            return finalJeopardyTracker;
+            
          }
       
        
