@@ -649,16 +649,18 @@ public class JeopardyTesting extends Application
                         
                   // FJ Clue Scene
                   
-                        Label clueTextFJ = new Label("Put the text for FJ here.".toUpperCase());
+                        Label clueTextFJ = new Label("Here Me Roar!".toUpperCase());
                      
-                        Button answerAFJ = new Button("A: Answer A".toUpperCase());
+                        Button answerAFJ = new Button("House Targaryen".toUpperCase());
                      
-                        Button answerBFJ = new Button("B: Answer B".toUpperCase());
+                        Button answerBFJ = new Button("House Lannister".toUpperCase());
                      
-                        Button answerXFJ = new Button("X: Answer X".toUpperCase());
+                        Button answerXFJ = new Button("House Umber".toUpperCase());
                      
-                        Button answerYFJ = new Button("Y: Answer Y".toUpperCase());
-                     
+                        Button answerYFJ = new Button("House Royce".toUpperCase());
+                        
+                        dailyDouble.setAnswerInt(1);
+                        
                         GridPane clueGridPaneFJ = new GridPane();
                         
                         clueGridPaneFJ.setHgap(5);
