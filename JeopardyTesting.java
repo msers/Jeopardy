@@ -313,7 +313,7 @@ public class JeopardyTesting extends Application
                   
                   HBox scoreboard = new HBox (325, player1ScoreLabel, player2ScoreLabel, player3ScoreLabel);
                   
-                  VBox gameboardVBox = new VBox(50, gameboard, scoreboard);
+                  VBox gameboardVBox = new VBox(50, gameboard, scoreboard, gameboardTurnTrackerLabel);
                   
                   gameboardVBox.setAlignment(Pos.CENTER);
                   
@@ -384,7 +384,7 @@ public class JeopardyTesting extends Application
                      
                      clueGridPane.setVgap(5);
                      
-                     VBox clueSceneVBox = new VBox(clueText, clueGridPane, clueBackButton);
+                     VBox clueSceneVBox = new VBox(clueText, clueGridPane, clueTurnTrackerLabel, clueBackButton);
                      
                      BorderPane clueSceneBorderPane = new BorderPane();
                      
@@ -424,7 +424,7 @@ public class JeopardyTesting extends Application
                      
                         ///   This scene is used for the player to enter their wager during the daily double. As of 4/26/2019, the highest daily double wager was $25,000 which was set on April 9th, 2018. Because of this, we maxed out the bet at $25,001.
                      
-                        Label dailyDoubleScene2Label = new Label("How much would you like to wager? \nAll wagers must be positive whole numbers \nequal to or less than your current total.");
+                        Label dailyDoubleScene2Label = new Label("How much would you like to wager? \nAll wagers must be equal to or \nless than your current score. \nIf your wager is too high, it will be changed to your score. \nIf your score is negative, your wager \nwill be set to the regular value for the question.");
                
                         Label dailyDoubleWagerLabel = new Label("Wager: 0");
                         
@@ -1497,6 +1497,32 @@ public class JeopardyTesting extends Application
                   
                   {
                   
+                     if (dailyDouble.getTurn() == 0)
+                        
+                        {
+                     
+                           dailyDoubleScene2Label.setText(dailyDoubleScene2Label.getText() + "\nPlayer 1 Score: " + player1.getScore());
+                     
+                        }
+                        
+                     if (dailyDouble.getTurn() == 1)
+                        
+                        {
+                     
+                           dailyDoubleScene2Label.setText(dailyDoubleScene2Label.getText() + "\nPlayer 2 Score: " + player2.getScore());
+                     
+                        }
+                        
+                     if (dailyDouble.getTurn() == 2)
+                        
+                        {
+                     
+                           dailyDoubleScene2Label.setText(dailyDoubleScene2Label.getText() + "\nPlayer 3 Score: " + player3.getScore());
+                     
+                        }
+                     
+                     
+                     
                      window.setScene(dailyDoubleScene2);
                      
                      dailyDoubleWagerLabel.setText("Wager: 0");
@@ -1633,7 +1659,149 @@ public class JeopardyTesting extends Application
                   
                   {
                   
-                     window.setScene(dailyDoubleClueScene); 
+                     answerADD.setDisable(false); 
+                     
+                     answerBDD.setDisable(false);
+                     
+                     answerXDD.setDisable(false);
+                     
+                     answerYDD.setDisable(false);
+                     
+                     if (dailyDouble.getTurn() == 0)  //Handles Player 1
+                        
+                        {
+                        
+                           if (dailyDouble.getWager() > 0 && dailyDouble.getWager() <= player1.getScore())
+                              
+                              {
+                              
+                                 window.setScene(dailyDoubleClueScene);   
+                              
+                              }
+                              
+                           else if(player1.getScore() == dailyDouble.getWager())
+                              
+                              {
+                              
+                                 dailyDouble.setWager(player1.getScore());
+                                 
+                                 window.setScene(dailyDoubleClueScene);
+                              
+                              }
+                           
+                           else if (player1.getScore() < 0)
+                              
+                              {
+                              
+                                 dailyDouble.setWager(dailyDouble.getCluePoints());
+                                 
+                                 window.setScene(dailyDoubleClueScene);
+                              
+                              }
+                           
+                           else if (player1.getScore() < dailyDouble.getWager())
+                              
+                              {
+                              
+                                 dailyDouble.setWager(player1.getScore()); 
+                                 
+                                 window.setScene(dailyDoubleClueScene);     
+                              
+                              }
+                              
+                           
+                        
+                        }
+                        
+                     else if (dailyDouble.getTurn() == 1)  //Handles Player 2
+                        
+                        {
+                        
+                           if (dailyDouble.getWager() > 0 && dailyDouble.getWager() <= player2.getScore())
+                              
+                              {
+                              
+                                 window.setScene(dailyDoubleClueScene);   
+                              
+                              }
+                              
+                           else if(player2.getScore() == dailyDouble.getWager())
+                              
+                              {
+                              
+                                 dailyDouble.setWager(player2.getScore());
+                                 
+                                 window.setScene(dailyDoubleClueScene);
+                              
+                              }
+                           
+                           else if (player2.getScore() < 0)
+                              
+                              {
+                              
+                                 dailyDouble.setWager(dailyDouble.getCluePoints());
+                                 
+                                 window.setScene(dailyDoubleClueScene);
+                              
+                              }
+                           
+                           else if (player2.getScore() < dailyDouble.getWager())
+                              
+                              {
+                              
+                                 dailyDouble.setWager(player2.getScore()); 
+                                 
+                                 window.setScene(dailyDoubleClueScene);     
+                              
+                              }
+                        
+                        }
+                        
+                     else if (dailyDouble.getTurn() == 2)  //Handles Player 3
+                        
+                        {
+                        
+                           if (dailyDouble.getWager() > 0 && dailyDouble.getWager() <= player3.getScore())
+                              
+                              {
+                              
+                                 window.setScene(dailyDoubleClueScene);   
+                              
+                              }
+                           
+                           else if(player3.getScore() == dailyDouble.getWager())
+                              
+                              {
+                              
+                                 dailyDouble.setWager(player3.getScore());
+                                 
+                                 window.setScene(dailyDoubleClueScene);
+                              
+                              }
+                           
+                           else if (player3.getScore() < 0)
+                              
+                              {
+                              
+                                 dailyDouble.setWager(dailyDouble.getCluePoints());
+                                 
+                                 window.setScene(dailyDoubleClueScene);
+                              
+                              }
+                           
+                           else if (player3.getScore() < dailyDouble.getWager())
+                              
+                              {
+                              
+                                 dailyDouble.setWager(player3.getScore()); 
+                                 
+                                 window.setScene(dailyDoubleClueScene);     
+                              
+                              }
+                        
+                        }
+                     
+                     //window.setScene(dailyDoubleClueScene); 
                   
                   });   
                
@@ -2936,6 +3104,7 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                    
                     if(dailyDouble.getGamePhase() == 0)
                     { 
                      clueText.setText("GPU".toUpperCase());
@@ -3799,7 +3968,7 @@ public class JeopardyTesting extends Application
                         
                         answerX.setText("Dragon Ball Franchise");
                         
-                        answerY.setText("JoJo's Bizare Adventure");
+                        answerY.setText("JoJo's Bizarre Adventure");
                         
                         dailyDouble.setAnswerInt(3); //Jojo's Bizzare Adventure 
                         
@@ -5237,13 +5406,13 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                  answerA.setText(answerA.getText() + "\nCorrect!");
+                                  answerADD.setText(answerADD.getText() + "\nCorrect!");
                                   
-                                  answerB.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  answerBDD.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
                                   
-                                  answerX.setDisable(true); 
+                                  answerXDD.setDisable(true); 
                                   
-                                  answerY.setDisable(true);  
+                                  answerYDD.setDisable(true);  
                                   
                                   player1.plusScore(dailyDouble.getWager());
                                   
@@ -5259,16 +5428,16 @@ public class JeopardyTesting extends Application
                               
                                  
                                  
-                                 answerA.setText(answerA.getText() + "\nIncorrect");
+                                 answerADD.setText(answerADD.getText() + "\nIncorrect");
                                  
                                  player1.minusScore(dailyDouble.getWager());
                                  
                                  player1ScoreLabel.setText("Player 1:\n" + player1.getScore());
                                  
-                                 answerA.setDisable(true);
-                                 answerB.setDisable(true);
-                                 answerX.setDisable(true);
-                                 answerY.setDisable(true);
+                                 answerADD.setDisable(true);
+                                 answerBDD.setDisable(true);
+                                 answerXDD.setDisable(true);
+                                 answerYDD.setDisable(true);
                               }
                            
                         
@@ -5283,17 +5452,17 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                  answerA.setText(answerA.getText() + "\nCorrect!");
+                                  answerADD.setText(answerADD.getText() + "\nCorrect!");
                                   
-                                  answerB.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  answerBDD.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
                                   
-                                  answerX.setDisable(true); 
+                                  answerXDD.setDisable(true); 
                                   
-                                  answerY.setDisable(true);  
+                                  answerYDD.setDisable(true);  
                                   
                                   player2.plusScore(dailyDouble.getWager());
                                   
-                                  player2ScoreLabel.setText("Player 2:\n" + player1.getScore());
+                                  player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
                                   
                               }
                               
@@ -5301,16 +5470,16 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                 answerA.setText(answerA.getText() + "\nIncorrect");
+                                 answerADD.setText(answerADD.getText() + "\nIncorrect");
                                  
                                  player2.minusScore(dailyDouble.getWager());
                                  
-                                 player2ScoreLabel.setText("Player 2:\n" + player1.getScore());
+                                 player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
                                  
-                                 answerA.setDisable(true);
-                                 answerB.setDisable(true);
-                                 answerX.setDisable(true);
-                                 answerY.setDisable(true);
+                                 answerADD.setDisable(true);
+                                 answerBDD.setDisable(true);
+                                 answerXDD.setDisable(true);
+                                 answerYDD.setDisable(true);
                                  
                               }
                            
@@ -5327,17 +5496,17 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                  answerA.setText(answerA.getText() + "\nCorrect!");
+                                  answerADD.setText(answerADD.getText() + "\nCorrect!");
                                   
-                                  answerB.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  answerBDD.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
                                   
-                                  answerX.setDisable(true); 
+                                  answerXDD.setDisable(true); 
                                   
-                                  answerY.setDisable(true);  
+                                  answerYDD.setDisable(true);  
                                   
                                   player3.plusScore(dailyDouble.getWager());
                                   
-                                  player3ScoreLabel.setText("Player 3:\n" + player1.getScore());
+                                  player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
                                   
                               }
                               
@@ -5345,11 +5514,11 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                 answerA.setText(answerA.getText() + "\nIncorrect");
+                                 answerADD.setText(answerADD.getText() + "\nIncorrect");
                                  
                                  player3.minusScore(dailyDouble.getWager());
                                  
-                                 player3ScoreLabel.setText("Player 3:\n" + player1.getScore());
+                                 player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
                                  
                                  answerA.setDisable(true);
                                  answerB.setDisable(true);
@@ -5376,13 +5545,13 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                  answerB.setText(answerB.getText() + "\nCorrect!");
+                                  answerBDD.setText(answerBDD.getText() + "\nCorrect!");
                                   
-                                  answerA.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  answerADD.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
                                   
-                                  answerX.setDisable(true); 
+                                  answerXDD.setDisable(true); 
                                   
-                                  answerY.setDisable(true);  
+                                  answerYDD.setDisable(true);  
                                   
                                   player1.plusScore(dailyDouble.getWager());
                                   
@@ -5398,16 +5567,16 @@ public class JeopardyTesting extends Application
                               
                                  
                                  
-                                 answerB.setText(answerB.getText() + "\nIncorrect");
+                                 answerBDD.setText(answerBDD.getText() + "\nIncorrect");
                                  
                                  player1.minusScore(dailyDouble.getWager());
                                  
                                  player1ScoreLabel.setText("Player 1:\n" + player1.getScore());
                                  
-                                 answerA.setDisable(true);
-                                 answerB.setDisable(true);
-                                 answerX.setDisable(true);
-                                 answerY.setDisable(true);
+                                 answerADD.setDisable(true);
+                                 answerBDD.setDisable(true);
+                                 answerXDD.setDisable(true);
+                                 answerYDD.setDisable(true);
                               }
                            
                         
@@ -5422,17 +5591,17 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                  answerB.setText(answerB.getText() + "\nCorrect!");
+                                  answerBDD.setText(answerBDD.getText() + "\nCorrect!");
                                   
-                                  answerA.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  answerADD.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
                                   
-                                  answerX.setDisable(true); 
+                                  answerXDD.setDisable(true); 
                                   
-                                  answerY.setDisable(true);  
+                                  answerYDD.setDisable(true);  
                                   
                                   player2.plusScore(dailyDouble.getWager());
                                   
-                                  player2ScoreLabel.setText("Player 2:\n" + player1.getScore());
+                                  player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
                                   
                               }
                               
@@ -5440,16 +5609,16 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                 answerB.setText(answerB.getText() + "\nIncorrect");
+                                 answerBDD.setText(answerBDD.getText() + "\nIncorrect");
                                  
                                  player2.minusScore(dailyDouble.getWager());
                                  
-                                 player2ScoreLabel.setText("Player 2:\n" + player1.getScore());
+                                 player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
                                  
-                                 answerA.setDisable(true);
-                                 answerB.setDisable(true);
-                                 answerX.setDisable(true);
-                                 answerY.setDisable(true);
+                                 answerADD.setDisable(true);
+                                 answerBDD.setDisable(true);
+                                 answerXDD.setDisable(true);
+                                 answerYDD.setDisable(true);
                                  
                               }
                            
@@ -5466,17 +5635,17 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                  answerB.setText(answerB.getText() + "\nCorrect!");
+                                  answerBDD.setText(answerBDD.getText() + "\nCorrect!");
                                   
-                                  answerA.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  answerADD.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
                                   
-                                  answerX.setDisable(true); 
+                                  answerXDD.setDisable(true); 
                                   
-                                  answerY.setDisable(true);  
+                                  answerYDD.setDisable(true);  
                                   
                                   player3.plusScore(dailyDouble.getWager());
                                   
-                                  player3ScoreLabel.setText("Player 3:\n" + player1.getScore());
+                                  player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
                                   
                               }
                               
@@ -5484,11 +5653,11 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                 answerB.setText(answerB.getText() + "\nIncorrect");
+                                 answerBDD.setText(answerBDD.getText() + "\nIncorrect");
                                  
                                  player3.minusScore(dailyDouble.getWager());
                                  
-                                 player3ScoreLabel.setText("Player 3:\n" + player1.getScore());
+                                 player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
                                  
                                  answerA.setDisable(true);
                                  answerB.setDisable(true);
@@ -5515,13 +5684,13 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                  answerX.setText(answerX.getText() + "\nCorrect!");
+                                  answerXDD.setText(answerXDD.getText() + "\nCorrect!");
                                   
-                                  answerA.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  answerADD.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
                                   
-                                  answerB.setDisable(true); 
+                                  answerBDD.setDisable(true); 
                                   
-                                  answerY.setDisable(true);  
+                                  answerYDD.setDisable(true);  
                                   
                                   player1.plusScore(dailyDouble.getWager());
                                   
@@ -5537,16 +5706,16 @@ public class JeopardyTesting extends Application
                               
                                  
                                  
-                                 answerX.setText(answerX.getText() + "\nIncorrect");
+                                 answerXDD.setText(answerXDD.getText() + "\nIncorrect");
                                  
                                  player1.minusScore(dailyDouble.getWager());
                                  
                                  player1ScoreLabel.setText("Player 1:\n" + player1.getScore());
                                  
-                                 answerA.setDisable(true);
-                                 answerB.setDisable(true);
-                                 answerX.setDisable(true);
-                                 answerY.setDisable(true);
+                                 answerADD.setDisable(true);
+                                 answerBDD.setDisable(true);
+                                 answerXDD.setDisable(true);
+                                 answerYDD.setDisable(true);
                               }
                            
                         
@@ -5561,17 +5730,17 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                  answerB.setText(answerB.getText() + "\nCorrect!");
+                                  answerXDD.setText(answerXDD.getText() + "\nCorrect!");
                                   
-                                  answerA.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  answerADD.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
                                   
-                                  answerX.setDisable(true); 
+                                  answerBDD.setDisable(true); 
                                   
-                                  answerY.setDisable(true);  
+                                  answerYDD.setDisable(true);  
                                   
                                   player2.plusScore(dailyDouble.getWager());
                                   
-                                  player2ScoreLabel.setText("Player 2:\n" + player1.getScore());
+                                  player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
                                   
                               }
                               
@@ -5579,16 +5748,16 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                 answerB.setText(answerB.getText() + "\nIncorrect");
+                                 answerXDD.setText(answerXDD.getText() + "\nIncorrect");
                                  
                                  player2.minusScore(dailyDouble.getWager());
                                  
-                                 player2ScoreLabel.setText("Player 2:\n" + player1.getScore());
+                                 player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
                                  
-                                 answerA.setDisable(true);
-                                 answerB.setDisable(true);
-                                 answerX.setDisable(true);
-                                 answerY.setDisable(true);
+                                 answerADD.setDisable(true);
+                                 answerBDD.setDisable(true);
+                                 answerXDD.setDisable(true);
+                                 answerYDD.setDisable(true);
                                  
                               }
                            
@@ -5605,17 +5774,17 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                  answerX.setText(answerX.getText() + "\nCorrect!");
+                                  answerXDD.setText(answerXDD.getText() + "\nCorrect!");
                                   
-                                  answerA.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  answerADD.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
                                   
-                                  answerB.setDisable(true); 
+                                  answerBDD.setDisable(true); 
                                   
-                                  answerY.setDisable(true);  
+                                  answerYDD.setDisable(true);  
                                   
                                   player3.plusScore(dailyDouble.getWager());
                                   
-                                  player3ScoreLabel.setText("Player 3:\n" + player1.getScore());
+                                  player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
                                   
                               }
                               
@@ -5623,16 +5792,16 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                 answerX.setText(answerX.getText() + "\nIncorrect");
+                                 answerXDD.setText(answerXDD.getText() + "\nIncorrect");
                                  
                                  player3.minusScore(dailyDouble.getWager());
                                  
-                                 player3ScoreLabel.setText("Player 3:\n" + player1.getScore());
+                                 player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
                                  
-                                 answerA.setDisable(true);
-                                 answerB.setDisable(true);
-                                 answerX.setDisable(true);
-                                 answerY.setDisable(true);
+                                 answerADD.setDisable(true);
+                                 answerBDD.setDisable(true);
+                                 answerXDD.setDisable(true);
+                                 answerYDD.setDisable(true);
                                  
                               }
                         
@@ -5654,13 +5823,13 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                  answerY.setText(answerY.getText() + "\nCorrect!");
+                                  answerYDD.setText(answerYDD.getText() + "\nCorrect!");
                                   
-                                  answerA.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  answerADD.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
                                   
-                                  answerB.setDisable(true); 
+                                  answerBDD.setDisable(true); 
                                   
-                                  answerX.setDisable(true);  
+                                  answerXDD.setDisable(true);  
                                   
                                   player1.plusScore(dailyDouble.getWager());
                                   
@@ -5676,16 +5845,16 @@ public class JeopardyTesting extends Application
                               
                                  
                                  
-                                 answerY.setText(answerY.getText() + "\nIncorrect");
+                                 answerYDD.setText(answerYDD.getText() + "\nIncorrect");
                                  
                                  player1.minusScore(dailyDouble.getWager());
                                  
                                  player1ScoreLabel.setText("Player 1:\n" + player1.getScore());
                                  
-                                 answerA.setDisable(true);
-                                 answerB.setDisable(true);
-                                 answerX.setDisable(true);
-                                 answerY.setDisable(true);
+                                 answerADD.setDisable(true);
+                                 answerBDD.setDisable(true);
+                                 answerXDD.setDisable(true);
+                                 answerYDD.setDisable(true);
                               }
                            
                         
@@ -5700,17 +5869,17 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                  answerY.setText(answerY.getText() + "\nCorrect!");
+                                  answerYDD.setText(answerYDD.getText() + "\nCorrect!");
                                   
-                                  answerA.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  answerADD.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
                                   
-                                  answerX.setDisable(true); 
+                                  answerXDD.setDisable(true); 
                                   
-                                  answerB.setDisable(true);  
+                                  answerBDD.setDisable(true);  
                                   
                                   player2.plusScore(dailyDouble.getWager());
                                   
-                                  player2ScoreLabel.setText("Player 2:\n" + player1.getScore());
+                                  player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
                                   
                               }
                               
@@ -5718,16 +5887,16 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                 answerY.setText(answerY.getText() + "\nIncorrect");
+                                 answerYDD.setText(answerYDD.getText() + "\nIncorrect");
                                  
                                  player2.minusScore(dailyDouble.getWager());
                                  
-                                 player2ScoreLabel.setText("Player 2:\n" + player1.getScore());
+                                 player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
                                  
-                                 answerA.setDisable(true);
-                                 answerB.setDisable(true);
-                                 answerX.setDisable(true);
-                                 answerY.setDisable(true);
+                                 answerADD.setDisable(true);
+                                 answerBDD.setDisable(true);
+                                 answerXDD.setDisable(true);
+                                 answerYDD.setDisable(true);
                                  
                               }
                            
@@ -5744,17 +5913,17 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                  answerY.setText(answerY.getText() + "\nCorrect!");
+                                  answerYDD.setText(answerYDD.getText() + "\nCorrect!");
                                   
-                                  answerA.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  answerADD.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
                                   
-                                  answerB.setDisable(true); 
+                                  answerBDD.setDisable(true); 
                                   
-                                  answerX.setDisable(true);  
+                                  answerXDD.setDisable(true);  
                                   
                                   player3.plusScore(dailyDouble.getWager());
                                   
-                                  player3ScoreLabel.setText("Player 3:\n" + player1.getScore());
+                                  player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
                                   
                               }
                               
@@ -5762,16 +5931,16 @@ public class JeopardyTesting extends Application
                               
                               {
                               
-                                 answerY.setText(answerY.getText() + "\nIncorrect");
+                                 answerYDD.setText(answerYDD.getText() + "\nIncorrect");
                                  
                                  player3.minusScore(dailyDouble.getWager());
                                  
-                                 player3ScoreLabel.setText("Player 3:\n" + player1.getScore());
+                                 player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
                                  
-                                 answerA.setDisable(true);
-                                 answerB.setDisable(true);
-                                 answerX.setDisable(true);
-                                 answerY.setDisable(true);
+                                 answerADD.setDisable(true);
+                                 answerBDD.setDisable(true);
+                                 answerXDD.setDisable(true);
+                                 answerYDD.setDisable(true);
                                  
                               }
                         
