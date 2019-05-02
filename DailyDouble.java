@@ -160,13 +160,17 @@ public class DailyDouble
             
             dailyDoubleWager = dailyDoubleWager + addingDigit;
             
-            if (dailyDoubleWager >=25002) //The highest ever successful daily double bet was $25,000. So, since nothing higher than this has happened, we set the max to be 25001, as we don't think our players will get to that point.
+            
+            
+            if (dailyDoubleWager >=100001) //The highest ever successful daily double bet was $25,000. Just in case we have a Jeopardy Genius at TechConnect, we have the max set to 100,000.
                
                {
                
-                  dailyDoubleWager = 25001;
+                  dailyDoubleWager = 100000;
                
                }
+               
+            
          
          }
          
@@ -175,6 +179,14 @@ public class DailyDouble
          {
          
             dailyDoubleWager = 0;
+         
+         }
+         
+      public void setWager(int wagerValue)
+         
+         {
+         
+            dailyDoubleWager = wagerValue;
          
          }
          
