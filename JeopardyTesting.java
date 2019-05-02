@@ -1670,7 +1670,16 @@ public class JeopardyTesting extends Application
                categoryA100.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".");
@@ -1689,6 +1698,8 @@ public class JeopardyTesting extends Application
                      answerY.setText("Maple");
                      
                      dailyDouble.setAnswerInt(2); //Oak
+                     
+                     dailyDouble.setCluePoints(100); 
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
@@ -1705,6 +1716,8 @@ public class JeopardyTesting extends Application
                      answerY.setText("Charles Proteus Steinmetz");
                      
                      dailyDouble.setAnswerInt(0); //Thomas Edison
+                     
+                     dailyDouble.setCluePoints(200); 
                      
                      }
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
@@ -1743,7 +1756,16 @@ public class JeopardyTesting extends Application
                categoryA200.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+
+                     answerX.setDisable(false);
+
+                     answerY.setDisable(false);
+
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -1761,7 +1783,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Roots & Ladders LLC");
                      
                         dailyDouble.setAnswerInt(0); //Sun Microsystems
-                     
+                        
+                        dailyDouble.setCluePoints(200); 
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
@@ -1778,7 +1801,9 @@ public class JeopardyTesting extends Application
                         answerY.setText("John Alcock");
                      
                         dailyDouble.setAnswerInt(1); //Amelia Earhart
-                     
+                        
+                        dailyDouble.setCluePoints(400);
+                        
                     }
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -1815,7 +1840,16 @@ public class JeopardyTesting extends Application
                categoryA300.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -1832,7 +1866,11 @@ public class JeopardyTesting extends Application
                      answerY.setText("15,000,000,000");
                      
                      dailyDouble.setAnswerInt(3); //15,000,000,000
+                     
+                     dailyDouble.setCluePoints(300);
+                   
                     }
+                    
                     if(dailyDouble.getGamePhase() == 1)
                     {
                      clueText.setText("A fan of ancient indian poetry,\nthis physicist quotes the Bhagavad Gita, stating \n“Now I am become Death, the destroyer of worlds.”".toUpperCase());
@@ -1846,6 +1884,9 @@ public class JeopardyTesting extends Application
                      answerY.setText("Richard Feynman");
                      
                      dailyDouble.setAnswerInt(0); //J. Robert Oppenheimer
+                     
+                     dailyDouble.setCluePoints(600);
+                    
                     }
                     
                     
@@ -1884,7 +1925,16 @@ public class JeopardyTesting extends Application
                categoryA400.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -1902,7 +1952,9 @@ public class JeopardyTesting extends Application
                         answerY.setText("Linux");
                      
                         dailyDouble.setAnswerInt(0); //Android
-                     
+                        
+                        dailyDouble.setCluePoints(400);
+                    
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
@@ -1919,7 +1971,9 @@ public class JeopardyTesting extends Application
                         answerY.setText("Tim Cook");
                      
                         dailyDouble.setAnswerInt(0); //Paul Allen
-                     
+                        
+                        dailyDouble.setCluePoints(800);
+                    
                     }
                     
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
@@ -1957,7 +2011,16 @@ public class JeopardyTesting extends Application
                categoryA500.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -1974,8 +2037,13 @@ public class JeopardyTesting extends Application
                      answerY.setText("Phil Spencer"); //James Gosling
                      
                      dailyDouble.setAnswerInt(0);
+                    
+                     dailyDouble.setCluePoints(500);
+                    
                     }
+                    
                     if(dailyDouble.getGamePhase() == 1)
+                    
                     {
                      clueText.setText("This scotsman is credited with \ncreating the world's first antibiotic.  ".toUpperCase());
                      
@@ -1988,7 +2056,12 @@ public class JeopardyTesting extends Application
                      answerY.setText("Norton Zinder");
                      
                      dailyDouble.setAnswerInt(0); //Alexander Fleming
+                     
+                     dailyDouble.setCluePoints(1000);
+                    
+                    
                     }
+                     
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
@@ -2044,7 +2117,16 @@ public class JeopardyTesting extends Application
                categoryB100.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -2064,9 +2146,12 @@ public class JeopardyTesting extends Application
                      
                         dailyDouble.setAnswerInt(2); //Marin County
                         
+                        dailyDouble.setCluePoints(100);
+                    
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
+                    
                     {
                     
                      clueText.setText("In the 2013 smash hit Grand Theft Auto V,\n players can travel and interact\n in a virtual parody of this US City.".toUpperCase());
@@ -2081,6 +2166,8 @@ public class JeopardyTesting extends Application
                      
                      dailyDouble.setAnswerInt(0); //Los Angeles
                      
+                     dailyDouble.setCluePoints(200);
+                    
                     }
                     
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
@@ -2118,7 +2205,16 @@ public class JeopardyTesting extends Application
                categoryB200.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -2135,6 +2231,9 @@ public class JeopardyTesting extends Application
                      answerY.setText("Atlanta");
                      
                      dailyDouble.setAnswerInt(3); //Atlanta
+                     
+                     dailyDouble.setCluePoints(200);
+                    
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
@@ -2150,6 +2249,9 @@ public class JeopardyTesting extends Application
                      answerY.setText("Winky");
                      
                      dailyDouble.setAnswerInt(2); //Clyde
+                     
+                     dailyDouble.setCluePoints(400);
+                    
                     }
                     
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
@@ -2187,7 +2289,16 @@ public class JeopardyTesting extends Application
                categoryB300.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -2205,7 +2316,9 @@ public class JeopardyTesting extends Application
                         answerY.setText("Great Britain");
                      
                         dailyDouble.setAnswerInt(1); //France
-                     
+                        
+                        dailyDouble.setCluePoints(300);
+                        
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
@@ -2222,7 +2335,9 @@ public class JeopardyTesting extends Application
                         answerY.setText("Sims");
                      
                         dailyDouble.setAnswerInt(2); //World of Warcraft
-                     
+                        
+                        dailyDouble.setCluePoints(600);
+                    
                     }
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2259,7 +2374,16 @@ public class JeopardyTesting extends Application
                categoryB400.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -2276,6 +2400,10 @@ public class JeopardyTesting extends Application
                      answerY.setText("Omaha, Nebraska");
                      
                      dailyDouble.setAnswerInt(2); //Chicago, Illinois
+                    
+                     dailyDouble.setCluePoints(400);
+                    
+                    
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
@@ -2291,6 +2419,10 @@ public class JeopardyTesting extends Application
                      answerY.setText("Clothing");
                      
                      dailyDouble.setAnswerInt(1); //Playing Cards
+                    
+                     dailyDouble.setCluePoints(800);
+                    
+                    
                     }
                     
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
@@ -2328,7 +2460,16 @@ public class JeopardyTesting extends Application
                categoryB500.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -2348,9 +2489,12 @@ public class JeopardyTesting extends Application
                      
                         dailyDouble.setAnswerInt(0); //Colorado
                         
+                        dailyDouble.setCluePoints(500);
+                     
                      }
                     
                      if(dailyDouble.getGamePhase() == 1)
+                     
                      {
                     
                         clueText.setText("With over 150 Million consoles sold, \nthis system is the best selling game\n console of all time. ".toUpperCase());
@@ -2364,6 +2508,11 @@ public class JeopardyTesting extends Application
                         answerY.setText("Playstation 4");
                      
                         dailyDouble.setAnswerInt(0); //Playstation 2
+                        
+                        dailyDouble.setCluePoints(1000);
+                    
+                    
+                    
                     }
                     
                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
@@ -2421,7 +2570,16 @@ public class JeopardyTesting extends Application
                categoryC100.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -2438,6 +2596,12 @@ public class JeopardyTesting extends Application
                      answerY.setText("Universal Serial Bus");
                      
                      dailyDouble.setAnswerInt(3); //Universal Serial Bus
+                     
+                     dailyDouble.setCluePoints(100);
+                    
+                    
+                    
+                    
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
@@ -2453,6 +2617,11 @@ public class JeopardyTesting extends Application
                      answerY.setText("Thomas Jefferson");
                      
                      dailyDouble.setAnswerInt(0); //Theodore Roosevelt
+                     
+                     dailyDouble.setCluePoints(200);
+                    
+                    
+                    
                     }
                     
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
@@ -2490,7 +2659,16 @@ public class JeopardyTesting extends Application
                categoryC200.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -2507,6 +2685,11 @@ public class JeopardyTesting extends Application
                      answerY.setText("Random Action Memory");
                      
                      dailyDouble.setAnswerInt(0); //Random Access Memory
+                     
+                     dailyDouble.setCluePoints(200);
+                    
+                    
+                    
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
@@ -2522,6 +2705,11 @@ public class JeopardyTesting extends Application
                      answerY.setText("John Adams");
                      
                      dailyDouble.setAnswerInt(0); //Abraham Lincoln
+                    
+                     dailyDouble.setCluePoints(400);
+                    
+                    
+                    
                     }
                     
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
@@ -2559,7 +2747,16 @@ public class JeopardyTesting extends Application
                categoryC300.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -2576,6 +2773,10 @@ public class JeopardyTesting extends Application
                      answerY.setText("High Definition Driver");
                      
                      dailyDouble.setAnswerInt(0); //Hard Disk Drive
+                    
+                     dailyDouble.setCluePoints(300);
+                    
+                    
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
@@ -2591,6 +2792,11 @@ public class JeopardyTesting extends Application
                      answerY.setText("Lyndon B. Johnson");
                      
                      dailyDouble.setAnswerInt(2); //John F. Kennedy
+                    
+                     dailyDouble.setCluePoints(600);
+                    
+                    
+                    
                     }
                     
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
@@ -2629,7 +2835,16 @@ public class JeopardyTesting extends Application
                categoryC400.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -2646,6 +2861,12 @@ public class JeopardyTesting extends Application
                      answerY.setText("Serial-State Drive");
                      
                      dailyDouble.setAnswerInt(2); //Solid-State Drive
+                    
+                     dailyDouble.setCluePoints(400);
+                    
+                    
+                    
+                    
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
@@ -2661,6 +2882,10 @@ public class JeopardyTesting extends Application
                      answerY.setText("Woodrow Wilson");
                      
                      dailyDouble.setAnswerInt(3); //Woodrow Wilson
+                    
+                     dailyDouble.setCluePoints(800);
+                    
+                    
                     }
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
@@ -2698,7 +2923,16 @@ public class JeopardyTesting extends Application
                categoryC500.setOnAction( e ->  
                   
                   {
-                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -2715,6 +2949,10 @@ public class JeopardyTesting extends Application
                      answerY.setText("Generating Processing Utility");
                      
                      dailyDouble.setAnswerInt(1); //Graphics Processing Unit
+                    
+                     dailyDouble.setCluePoints(500);
+                    
+                    
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
@@ -2730,6 +2968,10 @@ public class JeopardyTesting extends Application
                      answerY.setText("Woodrow Wilson");
                      
                      dailyDouble.setAnswerInt(1); //Martin Van Buren
+                    
+                     dailyDouble.setCluePoints(1000);
+                    
+                    
                     }
                      
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
@@ -2766,6 +3008,7 @@ public class JeopardyTesting extends Application
                   
               
                /////////   Category D Buttons
+               
                categoryDInfo.setOnAction( e ->  //this button will go back and forth between the gameboardScene and the categoryInfomation scene
                   
                   {
@@ -2795,6 +3038,16 @@ public class JeopardyTesting extends Application
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                  
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -2813,6 +3066,9 @@ public class JeopardyTesting extends Application
                         answerY.setText("Perry Como");
                      
                         dailyDouble.setAnswerInt(3); //Perry Como
+                        
+                        dailyDouble.setCluePoints(100); //if it is in a catN100
+                        
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
@@ -2829,6 +3085,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("John Bardeen");
                         
                         dailyDouble.setAnswerInt(2); //Marie Curie
+                        
+                        dailyDouble.setCluePoints(200); //if it is in a catN100
                      
                      }
                      
@@ -2868,7 +3126,17 @@ public class JeopardyTesting extends Application
                categoryD200.setOnAction( e ->  
                   
                   {
-                  
+                     
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                     
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -2887,6 +3155,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Trumpet");
                         
                         dailyDouble.setAnswerInt(2); //Flute
+                        
+                        dailyDouble.setCluePoints(200); //if it is in a catN100
                      
                      }
                      
@@ -2904,6 +3174,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Mars");
                         
                         dailyDouble.setAnswerInt(0); //Jupiter
+                        
+                        dailyDouble.setCluePoints(400); //if it is in a catN100
                      
                      
                      }
@@ -2946,6 +3218,16 @@ public class JeopardyTesting extends Application
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                     
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -2965,6 +3247,8 @@ public class JeopardyTesting extends Application
                         
                         dailyDouble.setAnswerInt(1); //Eminem
                         
+                        dailyDouble.setCluePoints(300);
+                        
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
@@ -2981,6 +3265,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Katie");
                         
                         dailyDouble.setAnswerInt(1); //Koko
+                        
+                        dailyDouble.setCluePoints(600);
                      
                      }
                      
@@ -3021,6 +3307,16 @@ public class JeopardyTesting extends Application
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                  
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -3039,6 +3335,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Chuck Berry");
                      
                         dailyDouble.setAnswerInt(2); //Bob Dylan
+                        
+                        dailyDouble.setCluePoints(400);
                   
                      }
                      
@@ -3056,6 +3354,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Cockroaches");
                      
                         dailyDouble.setAnswerInt(2); //Sharks
+                        
+                        dailyDouble.setCluePoints(800);
                      
                      }
                      
@@ -3095,6 +3395,16 @@ public class JeopardyTesting extends Application
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                  
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -3114,6 +3424,8 @@ public class JeopardyTesting extends Application
                      
                         dailyDouble.setAnswerInt(2); //Saxophone
                         
+                        dailyDouble.setCluePoints(500);
+                        
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
@@ -3132,6 +3444,7 @@ public class JeopardyTesting extends Application
                      
                         dailyDouble.setAnswerInt(1); //Igneous
                         
+                        dailyDouble.setCluePoints(1000);
                         
                      }
                      
@@ -3194,7 +3507,17 @@ public class JeopardyTesting extends Application
                   
                categoryE100.setOnAction( e ->  
                   
-                  {
+                  {  
+                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
                   
                      dailyDouble.plusCounter();
                      
@@ -3215,6 +3538,8 @@ public class JeopardyTesting extends Application
                      
                         dailyDouble.setAnswerInt(3); //The Phantom
                         
+                        dailyDouble.setCluePoints(100);
+                        
                      }   
                      
                      if(dailyDouble.getGamePhase() == 1)
@@ -3232,6 +3557,7 @@ public class JeopardyTesting extends Application
                      
                         dailyDouble.setAnswerInt(1); //Corvette
                         
+                        dailyDouble.setCluePoints(200);
                      
                      }
                      
@@ -3270,6 +3596,16 @@ public class JeopardyTesting extends Application
                categoryE200.setOnAction( e ->  
                   
                   {
+                     
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
                   
                      dailyDouble.plusCounter();
                      
@@ -3290,6 +3626,8 @@ public class JeopardyTesting extends Application
                         
                         dailyDouble.setAnswerInt(0); //Terrence Howard 
                         
+                        dailyDouble.setCluePoints(200);
+                        
                      }  
                      
                      if(dailyDouble.getGamePhase() == 1)
@@ -3306,6 +3644,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Benz Patent-Motorwagen");
                         
                         dailyDouble.setAnswerInt(0); //Model T
+                        
+                        dailyDouble.setCluePoints(400);
                         
                      } 
                      
@@ -3345,6 +3685,16 @@ public class JeopardyTesting extends Application
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                  
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -3364,6 +3714,8 @@ public class JeopardyTesting extends Application
                         
                         dailyDouble.setAnswerInt(0); //Baxter Building
                         
+                        dailyDouble.setCluePoints(300);
+                        
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
@@ -3380,7 +3732,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Subaru WRX");
                         
                         dailyDouble.setAnswerInt(1); //Ford Focus RS RX
-
+                        
+                        dailyDouble.setCluePoints(600);
                      
                      }
                      
@@ -3421,6 +3774,16 @@ public class JeopardyTesting extends Application
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                     
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -3439,6 +3802,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("JoJo's Bizzare Adventure");
                         
                         dailyDouble.setAnswerInt(3); //Jojo's Bizzare Adventure 
+                        
+                        dailyDouble.setCluePoints(400);
                      
                      }
                      
@@ -3456,6 +3821,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Honda Insight");
                         
                         dailyDouble.setAnswerInt(3); //Honda Insight
+                        
+                        dailyDouble.setCluePoints(800);
                      
                      }
                      
@@ -3495,6 +3862,16 @@ public class JeopardyTesting extends Application
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                  
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -3513,6 +3890,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Red");
                         
                         dailyDouble.setAnswerInt(1); //Grey
+                        
+                        dailyDouble.setCluePoints(500);
                      
                      }
                      
@@ -3530,6 +3909,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Chevrolet Impala");
                         
                         dailyDouble.setAnswerInt(3); // Chevrolet Impala
+                        
+                        dailyDouble.setCluePoints(1000);
                      
                      
                      }
@@ -3593,7 +3974,17 @@ public class JeopardyTesting extends Application
                   
                categoryF100.setOnAction( e ->  
                   
-                  {
+                  {  
+                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
                   
                      dailyDouble.plusCounter();
                      
@@ -3613,6 +4004,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Don Sutton");
                         
                         dailyDouble.setAnswerInt(2); //Cy Young
+                        
+                        dailyDouble.setCluePoints(100);
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
@@ -3629,6 +4022,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("University of Virginia");
                         
                         dailyDouble.setAnswerInt(1); //Brown University
+                        
+                        dailyDouble.setCluePoints(200);
                      
                      }
                      
@@ -3668,6 +4063,16 @@ public class JeopardyTesting extends Application
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                  
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -3686,6 +4091,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Larry Bird");
                         
                         dailyDouble.setAnswerInt(3); //Larry Bird
+                        
+                        dailyDouble.setCluePoints(200);
                      
                      }
                      
@@ -3703,6 +4110,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Standford University");
                         
                         dailyDouble.setAnswerInt(1); //Harvard University
+                        
+                        dailyDouble.setCluePoints(400);
                      
                      }
                      
@@ -3742,6 +4151,16 @@ public class JeopardyTesting extends Application
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                  
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -3760,6 +4179,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Paavo Nurmi");
                         
                         dailyDouble.setAnswerInt(2); //Michael Phelps
+                        
+                        dailyDouble.setCluePoints(300);
                      
                      }
                      
@@ -3777,6 +4198,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Vietnam");
                      
                         dailyDouble.setAnswerInt(1); //China
+                        
+                        dailyDouble.setCluePoints(600);
                         
                      }
                      
@@ -3816,6 +4239,16 @@ public class JeopardyTesting extends Application
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                     
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -3834,6 +4267,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Germany");
                         
                         dailyDouble.setAnswerInt(1); //Croatia
+                        
+                        dailyDouble.setCluePoints(400);
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
@@ -3850,6 +4285,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("King of Prussia");
                         
                         dailyDouble.setAnswerInt(2); //Conshohocken
+                        
+                        dailyDouble.setCluePoints(800);
                      
                      }
                      
@@ -3888,6 +4325,16 @@ public class JeopardyTesting extends Application
                categoryF500.setOnAction( e ->  
                   
                   {
+                     
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
                   
                      dailyDouble.plusCounter();
                      
@@ -3908,6 +4355,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("Babe Ruth");
 
                         dailyDouble.setAnswerInt(1); // Fernando Tatis
+                        
+                        dailyDouble.setCluePoints(500);
                      
                      }
                      
@@ -3925,6 +4374,8 @@ public class JeopardyTesting extends Application
                         answerY.setText("UNC");
 
                         dailyDouble.setAnswerInt(0); //UCLA
+                        
+                        dailyDouble.setCluePoints(1000);
                      
                      }
                      
@@ -3961,7 +4412,7 @@ public class JeopardyTesting extends Application
                      categoryF500.setText("        ");
                   
                   });
-                  
+
                answerA.setOnAction( e ->  
                   
                   {
