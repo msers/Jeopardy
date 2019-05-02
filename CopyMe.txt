@@ -1,4 +1,5 @@
-categoryDInfo.setOnAction( e ->  //this button will go back and forth between the gameboardScene and the categoryInfomation scene
+
+               categoryDInfo.setOnAction( e ->  //this button will go back and forth between the gameboardScene and the categoryInfomation scene
                   
                   {
                   
@@ -6,14 +7,14 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        categoryText.setText("Spitting Bars! (Music)".toUpperCase());
+                        categoryText.setText("Spitting Bars! (Music)".toUpperCase()); //Category: Spitting Bars!
                         
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        categoryText.setText("Eurka! (Science)".toUpperCase());
+                        categoryText.setText("Eureka! (Science)".toUpperCase()); //Category: Eureka!
                      
                      }
                      
@@ -26,6 +27,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                categoryD100.setOnAction( e ->  
                   
                   {
+                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
                   
                      dailyDouble.plusCounter();
                      
@@ -44,13 +55,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      
                         answerY.setText("Perry Como");
                      
-                        //dailyDouble.setAnswerInt(3); //Perry
+                        dailyDouble.setAnswerInt(3); //Perry Como
+                        
+                        dailyDouble.setCluePoints(100); //if it is in a catN100
+                        
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("In 1911 this person became the only Nobel Laureate to win \n the award in the two different sciences ".toUpperCase());
+                        clueText.setText("In 1911 this person became\n the only Nobel Laureate to win \n the award in the two different sciences ".toUpperCase());
                      
                         answerA.setText("Frederick Sanger");
                      
@@ -60,7 +74,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      
                         answerY.setText("John Bardeen");
                         
-                        //dailyDouble.setAnswerInt(2); //Marie Curie
+                        dailyDouble.setAnswerInt(2); //Marie Curie
+                        
+                        dailyDouble.setCluePoints(200); //if it is in a catN100
                      
                      }
                      
@@ -100,7 +116,17 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                categoryD200.setOnAction( e ->  
                   
                   {
-                  
+                     
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                     
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -118,7 +144,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Trumpet");
                         
-                        //dailyDouble.setAnswerInt(2); //Flute
+                        dailyDouble.setAnswerInt(2); //Flute
+                        
+                        dailyDouble.setCluePoints(200); //if it is in a catN100
                      
                      }
                      
@@ -135,7 +163,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Mars");
                         
-                        //dailyDouble.setAnswerInt(0); //Jupiter
+                        dailyDouble.setAnswerInt(0); //Jupiter
+                        
+                        dailyDouble.setCluePoints(400); //if it is in a catN100
                      
                      
                      }
@@ -178,6 +208,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                     
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -195,7 +235,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("50 Cent");
                         
-                        //dailyDouble.setAnswerInt(1); //Eminem
+                        dailyDouble.setAnswerInt(1); //Eminem
+                        
+                        dailyDouble.setCluePoints(300);
                         
                      }
                      
@@ -212,7 +254,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Katie");
                         
-                        //dailyDouble.setAnswerInt(1); //Koko
+                        dailyDouble.setAnswerInt(1); //Koko
+                        
+                        dailyDouble.setCluePoints(600);
                      
                      }
                      
@@ -253,6 +297,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                  
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -270,14 +324,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      
                         answerY.setText("Chuck Berry");
                      
-                        //dailyDouble.setAnswerInt(2); //Bob Dylan
+                        dailyDouble.setAnswerInt(2); //Bob Dylan
+                        
+                        dailyDouble.setCluePoints(400);
                   
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("Appearing on Earth over 400 Millions Years ago, this group of animals are older than trees".toUpperCase());
+                        clueText.setText("Appearing on Earth over\n 400 Millions Years ago, this group of animals\n are older than trees".toUpperCase());
                      
                         answerA.setText("Alligators");
                      
@@ -287,7 +343,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      
                         answerY.setText("Cockroaches");
                      
-                        //dailyDouble.setAnswerInt(2); //Bob Dylan
+                        dailyDouble.setAnswerInt(2); //Sharks
+                        
+                        dailyDouble.setCluePoints(800);
                      
                      }
                      
@@ -327,6 +385,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                  
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -344,7 +412,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      
                         answerY.setText("French Horn");
                      
-                        //dailyDouble.setAnswerInt(2); //Saxophone
+                        dailyDouble.setAnswerInt(2); //Saxophone
+                        
+                        dailyDouble.setCluePoints(500);
                         
                      }
                      
@@ -352,7 +422,7 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      {
                         
                         
-                        clueText.setText("Devil's Tower in Black Hills, Wyoming and Obsidian are both made of this rock".toUpperCase());
+                        clueText.setText("Devil's Tower in Black Hills, Wyoming and Obsidian\n are both made of this rock".toUpperCase());
                      
                         answerA.setText("Sedimentary");
                      
@@ -362,8 +432,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      
                         answerY.setText("Phyllite");
                      
-                        //dailyDouble.setAnswerInt(1); //Igneous
+                        dailyDouble.setAnswerInt(1); //Igneous
                         
+                        dailyDouble.setCluePoints(1000);
                         
                      }
                      
@@ -409,14 +480,14 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        categoryText.setText("Excelsior (Comic Books)".toUpperCase());
+                        categoryText.setText("Excelsior! (Comic Books)".toUpperCase()); //Category: Excelsior!
                         
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        categoryText.setText("Vroom Vroom! (Cars)".toUpperCase());
+                        categoryText.setText("Vroom Vroom! (Cars)".toUpperCase()); //Category: Vroom Vroom!
                      
                      }
                      
@@ -426,7 +497,17 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                   
                categoryE100.setOnAction( e ->  
                   
-                  {
+                  {  
+                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
                   
                      dailyDouble.plusCounter();
                      
@@ -435,7 +516,7 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("First appearing in 1936, this character is considered the first costumed superhero".toUpperCase());
+                        clueText.setText("First appearing in 1936, this character is \nconsidered the first costumed superhero".toUpperCase());
                      
                         answerA.setText("Superman");
                      
@@ -445,14 +526,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      
                         answerY.setText("The Phantom");
                      
-                        //dailyDouble.setAnswerInt(3); //Phantom
+                        dailyDouble.setAnswerInt(3); //The Phantom
+                        
+                        dailyDouble.setCluePoints(100);
                         
                      }   
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("First Introduced in 1953, this vehicle earned the title 'America's Sports Car'".toUpperCase());
+                        clueText.setText("First Introduced in 1953, this vehicle\n earned the title 'America's Sports Car'".toUpperCase());
                      
                         answerA.setText("Challenger");
                      
@@ -462,8 +545,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      
                         answerY.setText("Charger");
                      
-                        //dailyDouble.setAnswerInt(1); //Corvette
+                        dailyDouble.setAnswerInt(1); //Corvette
                         
+                        dailyDouble.setCluePoints(200);
                      
                      }
                      
@@ -502,6 +586,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                categoryE200.setOnAction( e ->  
                   
                   {
+                     
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
                   
                      dailyDouble.plusCounter();
                      
@@ -510,7 +604,7 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("This actor was the first person to be hired to play a role in the Marvel Cinematic Universe".toUpperCase());
+                        clueText.setText("This actor was the first person to be\n hired to play a role in the \nMarvel Cinematic Universe".toUpperCase());
                         
                         answerA.setText("Terrence Howard");
                         
@@ -520,14 +614,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Jeff Bridges");
                         
-                        //dailyDouble.setAnswerInt(0); //Terrence
+                        dailyDouble.setAnswerInt(0); //Terrence Howard 
+                        
+                        dailyDouble.setCluePoints(200);
                         
                      }  
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("Made in Detroit, Michigan, this vehicle was the first mass produced automobile in America".toUpperCase());
+                        clueText.setText("Made in Detroit, Michigan, this vehicle\n was the first mass produced \nautomobile in America".toUpperCase());
                         
                         answerA.setText("Model T");
                         
@@ -537,7 +633,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Benz Patent-Motorwagen");
                         
-                        //dailyDouble.setAnswerInt(0); //Model T
+                        dailyDouble.setAnswerInt(0); //Model T
+                        
+                        dailyDouble.setCluePoints(400);
                         
                      } 
                      
@@ -577,6 +675,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                  
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -584,7 +692,7 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("This building served as the original headquarters for Fantastic Four".toUpperCase());
+                        clueText.setText("This building served as the original\n headquarters for Fantastic Four".toUpperCase());
                         
                         answerA.setText("Baxter Building");
                         
@@ -594,14 +702,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Four Freedom Plaza");
                         
-                        //dailyDouble.setAnswerInt(0); //Baxter
+                        dailyDouble.setAnswerInt(0); //Baxter Building
+                        
+                        dailyDouble.setCluePoints(300);
                         
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("This Hot-Hatch was driven in Ken Block's famous Gymkhana 9 ".toUpperCase());
+                        clueText.setText("This Hot-Hatch was driven\n in Ken Block's famous Gymkhana 9 ".toUpperCase());
                         
                         answerA.setText("Hyundai Veloster N");
                         
@@ -611,8 +721,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Subaru WRX");
                         
-                        //dailyDouble.setAnswerInt(1); //Ford Focus
-
+                        dailyDouble.setAnswerInt(1); //Ford Focus RS RX
+                        
+                        dailyDouble.setCluePoints(600);
                      
                      }
                      
@@ -653,6 +764,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                     
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -660,7 +781,7 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("This Japanese comic series is known for having \n over 200 musical references spread \n across its 30 plus year print year".toUpperCase());
+                        clueText.setText("This Japanese comic series\n is known for having over 200 musical references \nspread across its 30 plus year print year".toUpperCase());
                         
                         answerA.setText("Golgo 13");
                         
@@ -670,14 +791,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("JoJo's Bizzare Adventure");
                         
-                        //dailyDouble.setAnswerInt(3); //Jojo
+                        dailyDouble.setAnswerInt(3); //Jojo's Bizzare Adventure 
+                        
+                        dailyDouble.setCluePoints(400);
                      
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("What was the first commercially available hybrid gasoline-electric in the United States".toUpperCase());
+                        clueText.setText("What was the first commercially available\n hybrid gasoline-electric in\n the United States".toUpperCase());
                         
                         answerA.setText("Ford Escape Hybrid");
                         
@@ -687,7 +810,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Honda Insight");
                         
-                        //dailyDouble.setAnswerInt(3); //Honda
+                        dailyDouble.setAnswerInt(3); //Honda Insight
+                        
+                        dailyDouble.setCluePoints(800);
                      
                      }
                      
@@ -727,6 +852,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                  
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -734,7 +869,7 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("While well known today as a big Green Giant, \n the Incredible Hulk' skin was originally printed this color".toUpperCase());
+                        clueText.setText("While well known today as a big Green Giant, \n the Incredible Hulk' skin was originally\n printed this color".toUpperCase());
                         
                         answerA.setText("White");
                         
@@ -744,14 +879,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Red");
                         
-                        //dailyDouble.setAnswerInt(1); //Grey
+                        dailyDouble.setAnswerInt(1); //Grey
+                        
+                        dailyDouble.setCluePoints(500);
                      
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("Selling more than one million units in 1965, \n this car set a record that still \n stands today".toUpperCase());
+                        clueText.setText("Selling more than one million units in 1965, \n this car set a record that\n still stands today".toUpperCase());
                         
                         answerA.setText("Buick Wildcat");
                         
@@ -761,7 +898,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Chevrolet Impala");
                         
-                        //dailyDouble.setAnswerInt(3); //Impala
+                        dailyDouble.setAnswerInt(3); // Chevrolet Impala
+                        
+                        dailyDouble.setCluePoints(1000);
                      
                      
                      }
@@ -808,14 +947,14 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        categoryText.setText("G.O.A.T \n Record Setting Teams/Players".toUpperCase());
+                        categoryText.setText("G.O.A.T \n Record Setting Teams/Players".toUpperCase()); //Category: G.O.A.T
                      
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                         
-                        categoryText.setText("Higher Learning (Universities)".toUpperCase());
+                        categoryText.setText("Higher Learning (Universities)".toUpperCase()); //Category: Higher Learning
                      
                      }
                      
@@ -825,7 +964,17 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                   
                categoryF100.setOnAction( e ->  
                   
-                  {
+                  {  
+                  
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
                   
                      dailyDouble.plusCounter();
                      
@@ -844,13 +993,15 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Don Sutton");
                         
-                        //dailyDouble.setAnswerInt(2); //Cy Young
+                        dailyDouble.setAnswerInt(2); //Cy Young
+                        
+                        dailyDouble.setCluePoints(100);
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                         
-                        clueText.setText("This institution is the second-oldest college in the United States".toUpperCase());
+                        clueText.setText("This institution is the second-oldest\n college in the United States".toUpperCase());
                         
                         answerA.setText("Washington and Lee University");
                         
@@ -860,7 +1011,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("University of Virginia");
                         
-                        //dailyDouble.setAnswerInt(1); //Brown Univ
+                        dailyDouble.setAnswerInt(1); //Brown University
+                        
+                        dailyDouble.setCluePoints(200);
                      
                      }
                      
@@ -900,6 +1053,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                  
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -907,7 +1070,7 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("This player was th only player in the NBA \n history to be named the Most Valuable \n Player, Coach of thr Year, and executive of the Year".toUpperCase());
+                        clueText.setText("This player was th only player in the NBA \n history to be named the Most Valuable \n Player, Coach of thr Year, and\n executive of the Year".toUpperCase());
                         
                         answerA.setText("Phil Jackson");
                         
@@ -917,14 +1080,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Larry Bird");
                         
-                        //dailyDouble.setAnswerInt(3); //Larry Bird
+                        dailyDouble.setAnswerInt(3); //Larry Bird
+                        
+                        dailyDouble.setCluePoints(200);
                      
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("Established in 1636, this institution has had more US Presidents graduate from it than any other school".toUpperCase());
+                        clueText.setText("Established in 1636, this institution\n has had more US Presidents graduate\n from it than any other school".toUpperCase());
                         
                         answerA.setText("Yale University");
                         
@@ -934,7 +1099,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Standford University");
                         
-                        //dailyDouble.setAnswerInt(1); //Harvard
+                        dailyDouble.setAnswerInt(1); //Harvard University
+                        
+                        dailyDouble.setCluePoints(400);
                      
                      }
                      
@@ -974,6 +1141,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                  
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -981,7 +1158,7 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("This American Olympian is the most decorated olympic athlete of all time".toUpperCase());
+                        clueText.setText("This American Olympian is the most\n decorated olympic athlete of all time".toUpperCase());
                         
                         answerA.setText("Carl Lewis");
                         
@@ -991,14 +1168,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Paavo Nurmi");
                         
-                        //dailyDouble.setAnswerInt(2); //Phelps
+                        dailyDouble.setAnswerInt(2); //Michael Phelps
+                        
+                        dailyDouble.setCluePoints(300);
                      
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("This country is the number one country of origin for foreign students in the US".toUpperCase());
+                        clueText.setText("This country is the number one country of\n origin for foreign students in the US".toUpperCase());
                      
                         answerA.setText("India");
                      
@@ -1008,7 +1187,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      
                         answerY.setText("Vietnam");
                      
-                        //dailyDouble.setAnswerInt(1); //China
+                        dailyDouble.setAnswerInt(1); //China
+                        
+                        dailyDouble.setCluePoints(600);
                         
                      }
                      
@@ -1048,6 +1229,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                   
                   {
                   
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
+                     
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
@@ -1055,7 +1246,7 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("During the 1992 Olympic Games, the US Basket Men's Backetball \n 'Dream Team' played against this country in the gold \n medal match, winning 117-85 ".toUpperCase());
+                        clueText.setText("During the 1992 Olympic Games, the US\n Basket Men's Backetball 'Dream Team'\n played against this country in the gold \n medal match, winning 117-85 ".toUpperCase());
                         
                         answerA.setText("Brazil");
                         
@@ -1065,13 +1256,15 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Germany");
                         
-                        //dailyDouble.setAnswerInt(1); //Croatia
+                        dailyDouble.setAnswerInt(1); //Croatia
+                        
+                        dailyDouble.setCluePoints(400);
                      }
                      
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("Located in Blue Blue Pennsylvania, \n Montgomery County Community College had its original location in \n this Philly Suburb ".toUpperCase());
+                        clueText.setText("Located in Blue Blue Pennsylvania, \n Montgomery County Community College had \nits original location in \nthis Philly Suburb ".toUpperCase());
                         
                         answerA.setText("Plymouth Meeting");
                         
@@ -1081,7 +1274,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("King of Prussia");
                         
-                        //dailyDouble.setAnswerInt(2); //Consho
+                        dailyDouble.setAnswerInt(2); //Conshohocken
+                        
+                        dailyDouble.setCluePoints(800);
                      
                      }
                      
@@ -1120,6 +1315,16 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                categoryF500.setOnAction( e ->  
                   
                   {
+                     
+                     answerA.setDisable(false); 
+                     
+                     answerB.setDisable(false);
+                     
+                     answerX.setDisable(false);
+                     
+                     answerY.setDisable(false);
+                     
+                     dailyDouble.resetIncorrectTracker();
                   
                      dailyDouble.plusCounter();
                      
@@ -1129,7 +1334,7 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                      {
                      
                      
-                        clueText.setText("This MLB player holds the record for most Grand Slams in one inning".toUpperCase());
+                        clueText.setText("This MLB player holds the record for\n most Grand Slams in one inning".toUpperCase());
                         
                         answerA.setText("Barry Bonds");
                         
@@ -1139,7 +1344,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("Babe Ruth");
 
-                        //dailyDouble.setAnswerInt(1); //Tatis
+                        dailyDouble.setAnswerInt(1); // Fernando Tatis
+                        
+                        dailyDouble.setCluePoints(500);
                      
                      }
                      
@@ -1156,7 +1363,9 @@ categoryDInfo.setOnAction( e ->  //this button will go back and forth between th
                         
                         answerY.setText("UNC");
 
-                        //dailyDouble.setAnswerInt(0); //UCLA
+                        dailyDouble.setAnswerInt(0); //UCLA
+                        
+                        dailyDouble.setCluePoints(1000);
                      
                      }
                      
