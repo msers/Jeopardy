@@ -1,12 +1,12 @@
 /**=======================================================TABLE DROPS=======================================================**/
 
 IF EXISTS (SELECT 1 FROM sysobjects
-WHERE id=object_id('') AND type='U')
+WHERE id=object_id('') AND type='U')					/**Drop the Category table**/
 DROP TABLE CATEGORY
 GO
 
 IF EXISTS (SELECT 1 FROM sysobjects
-WHERE id=object_id('') AND type='U')
+WHERE id=object_id('') AND type='U')					/**Drop the Questions table**/
 DROP TABLE QUESTIONS
 GO
 
@@ -14,7 +14,7 @@ GO
 
 
 CREATE TABLE QUESTIONS (
-QUESTION_ID					int				NOT NULL primary key, 
+QUESTION_ID					int					NOT NULL primary key,			/**Creating the Questions table and establishing the variables and making primary key**/
 QUESTION					varchar(255)		NOT NULL,
 CATEGORY_ID					int					NOT NULL,
 ANSWER_A					varchar(255)		NOT NULL,
@@ -29,7 +29,7 @@ go
 
 
 CREATE TABLE CATEGORY (
-CATEGORY_ID					int				NOT NULL primary key, 
+CATEGORY_ID					int					NOT NULL primary key,		/**Creating the Category table and establishing the variables and making primary key**/
 CATEGORY					varchar(50)			NOT NULL,
 CATEGORY_DESCRIPTION		varchar(255)		NOT NULL,
 )
@@ -39,14 +39,14 @@ go
 
 
 ALTER TABLE QUESTIONS
-   ADD CONSTRAINT FK_QUESTIONS_REF_CATEGORY FOREIGN KEY  (CATEGORY_ID)
+   ADD CONSTRAINT FK_QUESTIONS_REF_CATEGORY FOREIGN KEY  (CATEGORY_ID)			/**Establishing the Foreign key from the Category table to the Questions table**/
        REFERENCES CATEGORY (CATEGORY_ID)
 
 /**=======================================================CATEGORY INSERT=======================================================**/
 
 
 
-INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)
+INSERT INTO CATEGORY(CATEGORY_ID,CATEGORY,CATEGORY_DESCRIPTION)					/**Inserting all the data from the category table**/
 VALUES(1, 'HELLO WORLD', 'JAVA FACTS' )
 go
 
@@ -105,7 +105,7 @@ go
 
 
 
-INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)
+INSERT INTO QUESTIONS(QUESTION_ID,QUESTION,CATEGORY_ID, ANSWER_A, ANSWER_B, ANSWER_X, ANSWER_Y, ANSWER)								/**Inserting all the data from the Questions table**/
 VALUES(100, 'Named after the tree that stood outside its creator’s office, this was the original name for the Java Programming Language.
 ', 1, 'PINE', 'BIRCH', 'OAK', 'MAPLE', 'X')
 go
