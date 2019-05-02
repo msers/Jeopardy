@@ -307,6 +307,10 @@ public class JeopardyTesting extends Application
                   
                   Label player3ScoreLabel = new Label("Player 3:\n" + player3.getScore());
                   
+                  Label gameboardTurnTrackerLabel = new Label("Player 1 \nControls The Board");
+                     
+                  gameboardTurnTrackerLabel.setStyle(" -fx-font-size: 30pt; -fx-text-fill: gold;");
+                  
                   HBox scoreboard = new HBox (325, player1ScoreLabel, player2ScoreLabel, player3ScoreLabel);
                   
                   VBox gameboardVBox = new VBox(50, gameboard, scoreboard);
@@ -363,6 +367,10 @@ public class JeopardyTesting extends Application
                      Button clueBackButton = new Button("Back");
                      
                      GridPane clueGridPane = new GridPane();
+                     
+                     Label clueTurnTrackerLabel = new Label("Player 1 \nControls The Board");
+                     
+                     clueTurnTrackerLabel.setStyle(" -fx-font-size: 30pt; -fx-text-fill: gold;");
                      
                      clueGridPane.add(answerA, 0, 0);
                      
