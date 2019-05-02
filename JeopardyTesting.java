@@ -3343,7 +3343,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("Appearing on Earth over\n 400 Millions Years ago, this group of animals\n are older than trees".toUpperCase());
+                        clueText.setText("Appearing on Earth over\n 400 Million Years ago, this group of animals\n are older than trees".toUpperCase());
                      
                         answerA.setText("Alligators");
                      
@@ -3791,7 +3791,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("This Japanese comic series\n is known for having over 200 musical references \nspread across its 30 plus year print year".toUpperCase());
+                        clueText.setText("This Japanese comic series\n is known for having over 200 musical references \nspread across its 30 plus year print run".toUpperCase());
                         
                         answerA.setText("Golgo 13");
                         
@@ -3799,7 +3799,7 @@ public class JeopardyTesting extends Application
                         
                         answerX.setText("Dragon Ball Franchise");
                         
-                        answerY.setText("JoJo's Bizzare Adventure");
+                        answerY.setText("JoJo's Bizare Adventure");
                         
                         dailyDouble.setAnswerInt(3); //Jojo's Bizzare Adventure 
                         
@@ -3810,7 +3810,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("What was the first commercially available\n hybrid gasoline-electric in\n the United States".toUpperCase());
+                        clueText.setText("This was the first commercially available\n hybrid gasoline-electric in\n the United States".toUpperCase());
                         
                         answerA.setText("Ford Escape Hybrid");
                         
@@ -4080,7 +4080,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("This player was th only player in the NBA \n history to be named the Most Valuable \n Player, Coach of thr Year, and\n executive of the Year".toUpperCase());
+                        clueText.setText("This player was the only player in the NBA \n history to be named the Most Valuable \n Player, Coach of the Year, and\n executive of the Year".toUpperCase());
                         
                         answerA.setText("Phil Jackson");
                         
@@ -4256,7 +4256,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("During the 1992 Olympic Games, the US\n Basket Men's Backetball 'Dream Team'\n played against this country in the gold \n medal match, winning 117-85 ".toUpperCase());
+                        clueText.setText("During the 1992 Olympic Games, the US\n Men's Basketball 'Dream Team'\n played against this country in the gold \n medal match, winning 117-85 ".toUpperCase());
                         
                         answerA.setText("Brazil");
                         
@@ -4716,7 +4716,7 @@ public class JeopardyTesting extends Application
                                  
                                  answerB.setText(answerB.getText() + "\nIncorrect");
                                  
-                                 answerA.setDisable(true);
+                                 answerB.setDisable(true);
                                  
                                  player2.minusScore(dailyDouble.getCluePoints());
                                  
