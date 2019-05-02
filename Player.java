@@ -22,7 +22,7 @@ public class Player
          
             int addingPoints = pointsToAdd;
             
-            score = score + addingPoints;   
+            score = score + addingPoints;    
          
          }
       
