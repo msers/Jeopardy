@@ -3953,6 +3953,815 @@ public class JeopardyTesting extends Application
                      categoryF500.setText("        ");
                   
                   });
+                  
+               answerA.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getTurn() == 0)  //This if statement handles player 1
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 0)
+                              
+                              {
+                              
+                                  answerA.setText(answerA.getText() + "\nCorrect!");
+                                  
+                                  answerB.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  
+                                  answerX.setDisable(true); 
+                                  
+                                  answerY.setDisable(true);  
+                                  
+                                  player1.plusScore(dailyDouble.getCluePoints());
+                                  
+                                  player1ScoreLabel.setText("Player 1:\n" + player1.getScore());
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 answerA.setText(answerA.getText() + "\nIncorrect");
+                                 
+                                 answerA.setDisable(true);
+                                 
+                                 player1.minusScore(dailyDouble.getCluePoints());
+                                 
+                                 player1ScoreLabel.setText("Player 1:\n" + player1.getScore());
+                                 
+                                 dailyDouble.changeTurn();
+                                 
+                                 gameboardTurnTrackerLabel.setText("Player 2 \nControls The Board");
+                                 
+                                 clueTurnTrackerLabel.setText("Player 2 \nControls The Board");
+                                 
+                                 dailyDouble.plusIncorrectTracker();
+                                 
+                                 if (dailyDouble.getIncorrectTracker() == 3)
+                                    
+                                    {
+                                    
+                                       dailyDouble.resetIncorrectTracker();
+                                       
+                                       answerA.setDisable(true);
+                                       answerB.setDisable(true);
+                                       answerX.setDisable(true);
+                                       answerY.setDisable(true);
+                                       
+                                    }
+                              
+                              }
+                           
+                        
+                        }
+                        
+                     
+                     else if (dailyDouble.getTurn() == 1)  //This if statement handles player 2
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 0)
+                              
+                              {
+                              
+                                  answerA.setText(answerA.getText() + "\nCorrect!");
+                                  
+                                  answerB.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  
+                                  answerX.setDisable(true); 
+                                  
+                                  answerY.setDisable(true);  
+                                  
+                                  player2.plusScore(dailyDouble.getCluePoints());
+                                  
+                                  player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 answerA.setText(answerA.getText() + "\nIncorrect");
+                                 
+                                 answerA.setDisable(true);
+                                 
+                                 player2.minusScore(dailyDouble.getCluePoints());
+                                 
+                                 player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
+                                 
+                                 dailyDouble.changeTurn();
+                                 
+                                 gameboardTurnTrackerLabel.setText("Player 3 \nControls The Board");
+                                 
+                                 clueTurnTrackerLabel.setText("Player 3 \nControls The Board");
+                                 
+                                 dailyDouble.plusIncorrectTracker();
+                                 
+                                 if (dailyDouble.getIncorrectTracker() == 3)
+                                    
+                                    {
+                                    
+                                       dailyDouble.resetIncorrectTracker();
+                                       
+                                       answerA.setDisable(true);
+                                       answerB.setDisable(true);
+                                       answerX.setDisable(true);
+                                       answerY.setDisable(true);
+                                       
+                                    }
+                              
+                              }
+                           
+                        
+                        }
+                        
+                        
+                        
+                     else if (dailyDouble.getTurn() == 2)  //This if statement handles player 3
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 0)
+                              
+                              {
+                              
+                                  answerA.setText(answerA.getText() + "\nCorrect!");
+                                  
+                                  answerB.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  
+                                  answerX.setDisable(true); 
+                                  
+                                  answerY.setDisable(true);  
+                                  
+                                  player3.plusScore(dailyDouble.getCluePoints());
+                                  
+                                  player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 answerA.setText(answerA.getText() + "\nIncorrect");
+                                 
+                                 answerA.setDisable(true);
+                                 
+                                 player3.minusScore(dailyDouble.getCluePoints());
+                                 
+                                 player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
+                                 
+                                 dailyDouble.changeTurn();
+                                 
+                                 gameboardTurnTrackerLabel.setText("Player 1 \nControls The Board");
+                                 
+                                 clueTurnTrackerLabel.setText("Player 1 \nControls The Board");
+                                 
+                                 dailyDouble.plusIncorrectTracker();
+                                 
+                                 if (dailyDouble.getIncorrectTracker() == 3)
+                                    
+                                    {
+                                    
+                                       dailyDouble.resetIncorrectTracker();
+                                       
+                                       answerA.setDisable(true);
+                                       answerB.setDisable(true);
+                                       answerX.setDisable(true);
+                                       answerY.setDisable(true);
+                                       
+                                    }
+                              
+                              }
+                        
+                        }
+                        
+                        
+                  
+                  });
+                  
+                  answerB.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getTurn() == 0)  //This if statement handles player 1
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 1)
+                              
+                              {
+                              
+                                  answerB.setText(answerB.getText() + "\nCorrect!");
+                                  
+                                  answerA.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  
+                                  answerX.setDisable(true); 
+                                  
+                                  answerY.setDisable(true);  
+                                  
+                                  player1.plusScore(dailyDouble.getCluePoints());
+                                  
+                                  player1ScoreLabel.setText("Player 1:\n" + player1.getScore());
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 answerB.setText(answerB.getText() + "\nIncorrect");
+                                 
+                                 answerB.setDisable(true);
+                                 
+                                 player1.minusScore(dailyDouble.getCluePoints());
+                                 
+                                 player1ScoreLabel.setText("Player 1:\n" + player1.getScore());
+                                 
+                                 dailyDouble.changeTurn();
+                                 
+                                 gameboardTurnTrackerLabel.setText("Player 2 \nControls The Board");
+                                 
+                                 clueTurnTrackerLabel.setText("Player 2 \nControls The Board");
+                                 
+                                 dailyDouble.plusIncorrectTracker();
+                                 
+                                 if (dailyDouble.getIncorrectTracker() == 3)
+                                    
+                                    {
+                                    
+                                       dailyDouble.resetIncorrectTracker();
+                                       
+                                       answerA.setDisable(true);
+                                       answerB.setDisable(true);
+                                       answerX.setDisable(true);
+                                       answerY.setDisable(true);
+                                       
+                                    }
+                              
+                              }
+                           
+                        
+                        }
+                        
+                     
+                     else if (dailyDouble.getTurn() == 1)  //This if statement handles player 2
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 1)
+                              
+                              {
+                              
+                                  answerB.setText(answerB.getText() + "\nCorrect!");
+                                  
+                                  answerA.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  
+                                  answerX.setDisable(true); 
+                                  
+                                  answerY.setDisable(true);  
+                                  
+                                  player2.plusScore(dailyDouble.getCluePoints());
+                                  
+                                  player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 answerB.setText(answerB.getText() + "\nIncorrect");
+                                 
+                                 answerA.setDisable(true);
+                                 
+                                 player2.minusScore(dailyDouble.getCluePoints());
+                                 
+                                 player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
+                                 
+                                 dailyDouble.changeTurn();
+                                 
+                                 gameboardTurnTrackerLabel.setText("Player 3 \nControls The Board");
+                                 
+                                 clueTurnTrackerLabel.setText("Player 3 \nControls The Board");
+                                 
+                                 dailyDouble.plusIncorrectTracker();
+                                 
+                                 if (dailyDouble.getIncorrectTracker() == 3)
+                                    
+                                    {
+                                    
+                                       dailyDouble.resetIncorrectTracker();
+                                       
+                                       answerA.setDisable(true);
+                                       answerB.setDisable(true);
+                                       answerX.setDisable(true);
+                                       answerY.setDisable(true);
+                                       
+                                    }
+                              
+                              }
+                           
+                        
+                        }
+                        
+                        
+                        
+                     else if (dailyDouble.getTurn() == 2)  //This if statement handles player 3
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 1)
+                              
+                              {
+                              
+                                  answerB.setText(answerB.getText() + "\nCorrect!");
+                                  
+                                  answerA.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  
+                                  answerX.setDisable(true); 
+                                  
+                                  answerY.setDisable(true);  
+                                  
+                                  player3.plusScore(dailyDouble.getCluePoints());
+                                  
+                                  player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 answerB.setText(answerB.getText() + "\nIncorrect");
+                                 
+                                 answerB.setDisable(true);
+                                 
+                                 player3.minusScore(dailyDouble.getCluePoints());
+                                 
+                                 player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
+                                 
+                                 dailyDouble.changeTurn();
+                                 
+                                 gameboardTurnTrackerLabel.setText("Player 1 \nControls The Board");
+                                 
+                                 clueTurnTrackerLabel.setText("Player 1 \nControls The Board");
+                                 
+                                 dailyDouble.plusIncorrectTracker();
+                                 
+                                 if (dailyDouble.getIncorrectTracker() == 3)
+                                    
+                                    {
+                                    
+                                       dailyDouble.resetIncorrectTracker();
+                                       
+                                       answerA.setDisable(true);
+                                       answerB.setDisable(true);
+                                       answerX.setDisable(true);
+                                       answerY.setDisable(true);
+                                       
+                                    }
+                              
+                              }
+                        
+                        }
+                        
+                        
+                  
+                  }); 
+                  
+                  answerX.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getTurn() == 0)  //This if statement handles player 1
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 2)
+                              
+                              {
+                              
+                                  answerX.setText(answerX.getText() + "\nCorrect!");
+                                  
+                                  answerA.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  
+                                  answerB.setDisable(true); 
+                                  
+                                  answerY.setDisable(true);  
+                                  
+                                  player1.plusScore(dailyDouble.getCluePoints());
+                                  
+                                  player1ScoreLabel.setText("Player 1:\n" + player1.getScore());
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 answerX.setText(answerX.getText() + "\nIncorrect");
+                                 
+                                 answerX.setDisable(true);
+                                 
+                                 player1.minusScore(dailyDouble.getCluePoints());
+                                 
+                                 player1ScoreLabel.setText("Player 1:\n" + player1.getScore());
+                                 
+                                 dailyDouble.changeTurn();
+                                 
+                                 gameboardTurnTrackerLabel.setText("Player 2 \nControls The Board");
+                                 
+                                 clueTurnTrackerLabel.setText("Player 2 \nControls The Board");
+                                 
+                                 dailyDouble.plusIncorrectTracker();
+                                 
+                                 if (dailyDouble.getIncorrectTracker() == 3)
+                                    
+                                    {
+                                    
+                                       dailyDouble.resetIncorrectTracker();
+                                       
+                                       answerA.setDisable(true);
+                                       answerB.setDisable(true);
+                                       answerX.setDisable(true);
+                                       answerY.setDisable(true);
+                                       
+                                    }
+                              
+                              }
+                           
+                        
+                        }
+                        
+                     
+                     else if (dailyDouble.getTurn() == 1)  //This if statement handles player 2
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 2)
+                              
+                              {
+                              
+                                  answerX.setText(answerX.getText() + "\nCorrect!");
+                                  
+                                  answerB.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  
+                                  answerA.setDisable(true); 
+                                  
+                                  answerY.setDisable(true);  
+                                  
+                                  player2.plusScore(dailyDouble.getCluePoints());
+                                  
+                                  player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 answerX.setText(answerX.getText() + "\nIncorrect");
+                                 
+                                 answerX.setDisable(true);
+                                 
+                                 player2.minusScore(dailyDouble.getCluePoints());
+                                 
+                                 player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
+                                 
+                                 dailyDouble.changeTurn();
+                                 
+                                 gameboardTurnTrackerLabel.setText("Player 3 \nControls The Board");
+                                 
+                                 clueTurnTrackerLabel.setText("Player 3 \nControls The Board");
+                                 
+                                 dailyDouble.plusIncorrectTracker();
+                                 
+                                 if (dailyDouble.getIncorrectTracker() == 3)
+                                    
+                                    {
+                                    
+                                       dailyDouble.resetIncorrectTracker();
+                                       
+                                       answerA.setDisable(true);
+                                       answerB.setDisable(true);
+                                       answerX.setDisable(true);
+                                       answerY.setDisable(true);
+                                       
+                                    }
+                              
+                              }
+                           
+                        
+                        }
+                        
+                        
+                        
+                     else if (dailyDouble.getTurn() == 2)  //This if statement handles player 3
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 2)
+                              
+                              {
+                              
+                                  answerX.setText(answerX.getText() + "\nCorrect!");
+                                  
+                                  answerB.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  
+                                  answerA.setDisable(true); 
+                                  
+                                  answerY.setDisable(true);  
+                                  
+                                  player3.plusScore(dailyDouble.getCluePoints());
+                                  
+                                  player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 answerX.setText(answerX.getText() + "\nIncorrect");
+                                 
+                                 answerX.setDisable(true);
+                                 
+                                 player3.minusScore(dailyDouble.getCluePoints());
+                                 
+                                 player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
+                                 
+                                 dailyDouble.changeTurn();
+                                 
+                                 gameboardTurnTrackerLabel.setText("Player 1 \nControls The Board");
+                                 
+                                 clueTurnTrackerLabel.setText("Player 1 \nControls The Board");
+                                 
+                                 dailyDouble.plusIncorrectTracker();
+                                 
+                                 if (dailyDouble.getIncorrectTracker() == 3)
+                                    
+                                    {
+                                    
+                                       dailyDouble.resetIncorrectTracker();
+                                       
+                                       answerA.setDisable(true);
+                                       answerB.setDisable(true);
+                                       answerX.setDisable(true);
+                                       answerY.setDisable(true);
+                                       
+                                    }
+                              
+                              }
+                        
+                        }
+                        
+                        
+                  
+                  });    
+                  
+                  
+                  answerY.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getTurn() == 0)  //This if statement handles player 1
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 3)
+                              
+                              {
+                              
+                                  answerY.setText(answerY.getText() + "\nCorrect!");
+                                  
+                                  answerB.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  
+                                  answerX.setDisable(true); 
+                                  
+                                  answerA.setDisable(true);  
+                                  
+                                  player1.plusScore(dailyDouble.getCluePoints());
+                                  
+                                  player1ScoreLabel.setText("Player 1:\n" + player1.getScore());
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 answerY.setText(answerY.getText() + "\nIncorrect");
+                                 
+                                 answerY.setDisable(true);
+                                 
+                                 player1.minusScore(dailyDouble.getCluePoints());
+                                 
+                                 player1ScoreLabel.setText("Player 1:\n" + player1.getScore());
+                                 
+                                 dailyDouble.changeTurn();
+                                 
+                                 gameboardTurnTrackerLabel.setText("Player 2 \nControls The Board");
+                                 
+                                 clueTurnTrackerLabel.setText("Player 2 \nControls The Board");
+                                 
+                                 dailyDouble.plusIncorrectTracker();
+                                 
+                                 if (dailyDouble.getIncorrectTracker() == 3)
+                                    
+                                    {
+                                    
+                                       dailyDouble.resetIncorrectTracker();
+                                       
+                                       answerA.setDisable(true);
+                                       answerB.setDisable(true);
+                                       answerX.setDisable(true);
+                                       answerY.setDisable(true);
+                                       
+                                    }
+                              
+                              }
+                           
+                        
+                        }
+                        
+                     
+                     else if (dailyDouble.getTurn() == 1)  //This if statement handles player 2
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 3)
+                              
+                              {
+                              
+                                  answerY.setText(answerY.getText() + "\nCorrect!");
+                                  
+                                  answerB.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  
+                                  answerX.setDisable(true); 
+                                  
+                                  answerA.setDisable(true);  
+                                  
+                                  player2.plusScore(dailyDouble.getCluePoints());
+                                  
+                                  player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 answerY.setText(answerY.getText() + "\nIncorrect");
+                                 
+                                 answerY.setDisable(true);
+                                 
+                                 player2.minusScore(dailyDouble.getCluePoints());
+                                 
+                                 player2ScoreLabel.setText("Player 2:\n" + player2.getScore());
+                                 
+                                 dailyDouble.changeTurn();
+                                 
+                                 gameboardTurnTrackerLabel.setText("Player 3 \nControls The Board");
+                                 
+                                 clueTurnTrackerLabel.setText("Player 3 \nControls The Board");
+                                 
+                                 dailyDouble.plusIncorrectTracker();
+                                 
+                                 if (dailyDouble.getIncorrectTracker() == 3)
+                                    
+                                    {
+                                    
+                                       dailyDouble.resetIncorrectTracker();
+                                       
+                                       answerA.setDisable(true);
+                                       answerB.setDisable(true);
+                                       answerX.setDisable(true);
+                                       answerY.setDisable(true);
+                                       
+                                    }
+                              
+                              }
+                           
+                        
+                        }
+                        
+                        
+                        
+                     else if (dailyDouble.getTurn() == 2)  //This if statement handles player 3
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 3)
+                              
+                              {
+                              
+                                  answerY.setText(answerY.getText() + "\nCorrect!");
+                                  
+                                  answerB.setDisable(true); //prevents the other buttons from being pressed, that way the player can't select a wrong answer after selecting the right answer.
+                                  
+                                  answerX.setDisable(true); 
+                                  
+                                  answerA.setDisable(true);  
+                                  
+                                  player3.plusScore(dailyDouble.getCluePoints());
+                                  
+                                  player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 answerY.setText(answerY.getText() + "\nIncorrect");
+                                 
+                                 answerY.setDisable(true);
+                                 
+                                 player3.minusScore(dailyDouble.getCluePoints());
+                                 
+                                 player3ScoreLabel.setText("Player 3:\n" + player3.getScore());
+                                 
+                                 dailyDouble.changeTurn();
+                                 
+                                 gameboardTurnTrackerLabel.setText("Player 1 \nControls The Board");
+                                 
+                                 clueTurnTrackerLabel.setText("Player 1 \nControls The Board");
+                                 
+                                 dailyDouble.plusIncorrectTracker();
+                                 
+                                 if (dailyDouble.getIncorrectTracker() == 3)
+                                    
+                                    {
+                                    
+                                       dailyDouble.resetIncorrectTracker();
+                                       
+                                       answerA.setDisable(true);
+                                       answerB.setDisable(true);
+                                       answerX.setDisable(true);
+                                       answerY.setDisable(true);
+                                       
+                                    }
+                              
+                              }
+                        
+                        }
+                        
+                        
+                  
+                  });
 
 
             ///////////////// End of Button Programming.
