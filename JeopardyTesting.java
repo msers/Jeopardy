@@ -549,9 +549,29 @@ public class JeopardyTesting extends Application
                            
                         Label finalJeopardyScene1Label = new Label("Final \nJeopardy".toUpperCase());
                         
-                        Button finalJeopardyScene1Button = new Button ("Next");
+                        Label splashLabel = new Label("Thank you for trying out our Jeopardy! demonstration. \nFinal Jeopardy is still in development, and unfortunately \nwas not ready in time for TechConnect. \nHere are the final scores for each player.");
                         
-                        VBox finalJeopardyScene1VBox = new VBox(finalJeopardyScene1Label, finalJeopardyScene1Button);
+                        splashLabel.setStyle(" -fx-font-size: 30pt; -fx-text-fill: gold;");
+                        
+                        Label player1FJScoreLabel = new Label("Player 1:\n" + player1.getScore());
+                        
+                        player1FJScoreLabel.setStyle(" -fx-font-size: 30pt; -fx-text-fill: gold;");
+                  
+                        Label player2FJScoreLabel = new Label("Player 2:\n" + player2.getScore());
+                        
+                        player2FJScoreLabel.setStyle(" -fx-font-size: 30pt; -fx-text-fill: gold;");
+                  
+                        Label player3FJScoreLabel = new Label("Player 3:\n" + player3.getScore());
+                        
+                        player3FJScoreLabel.setStyle(" -fx-font-size: 30pt; -fx-text-fill: gold;");
+                        
+                        HBox splashHBox = new HBox(350, player1FJScoreLabel, player2FJScoreLabel, player3FJScoreLabel);
+                        
+                        splashHBox.setAlignment(Pos.CENTER);
+                  
+                        Button exitButton = new Button ("Select to Exit");
+                        
+                        VBox finalJeopardyScene1VBox = new VBox(finalJeopardyScene1Label, splashLabel, splashHBox, exitButton);
                         
                         finalJeopardyScene1VBox.setAlignment(Pos.CENTER);
                         
@@ -698,6 +718,41 @@ public class JeopardyTesting extends Application
                         Scene finalJeopardyClueScene = new Scene(clueSceneBorderPaneFJ, 1920, 980);
                         
                         finalJeopardyClueScene.getStylesheets().add("Clue.css");
+                        
+                   
+                  /* 
+                        
+                  // FJ Scoreboard Scene
+                     
+                     BorderPane fjScoreboardBorderPane = new BorderPane();
+                     
+                     Label player1FJScoreLabel = new Label("Player 1:\n" + player1.getScore());
+                  
+                     Label player2FJScoreLabel = new Label("Player 2:\n" + player2.getScore());
+                  
+                     Label player3FJScoreLabel = new Label("Player 3:\n" + player3.getScore());
+                  
+                     Label winnerString = new Label("The Winner is:");
+                     
+                     Button exitButton = new Button("Exit");
+                     
+                     winnerString.setStyle(" -fx-font-size: 30pt; -fx-text-fill: gold;");
+                  
+                     HBox scoreboardFJ = new HBox (325, player1FJScoreLabel, player2FJScoreLabel, player3FJScoreLabel);
+                  
+                     VBox scoreboardFJVBox = new VBox(50, scoreboardFJ, winnerString, exitButton);
+                  
+                     scoreboardFJVBox.setAlignment(Pos.CENTER);
+                  
+                     scoreboardFJ.setAlignment(Pos.CENTER);
+                  
+                     fjScoreboardBorderPane.setCenter(scoreboardFJVBox);
+                     
+                     Scene finalJeopardyScoreboardScene = new Scene(fjScoreboardBorderPane, 1920, 980);
+                        
+                     finalJeopardyScoreboardScene.getStylesheets().add("gameboard.css");
+                     
+                  */
             
             
             ///////////////// Start of Button Programming.  
@@ -728,6 +783,8 @@ public class JeopardyTesting extends Application
                                  
                                  {
                            
+                                    
+                                    
                                     ///   Resets the Gameboard and prepares it for Double Jeopardy. 
                                     
                                     // Category A
@@ -845,7 +902,11 @@ public class JeopardyTesting extends Application
                                  
                                  {
                                  
-                                    // future final jeopardy code goes here.
+                                    player1FJScoreLabel.setText("Player 1:\n" + player1.getScore());
+                  
+                                    player2FJScoreLabel.setText("Player 2:\n" + player2.getScore());
+                  
+                                    player3FJScoreLabel.setText("Player 3:\n" + player3.getScore());
                                     
                                     window.setScene(finalJeopardyScene1);
                                  
@@ -880,6 +941,8 @@ public class JeopardyTesting extends Application
                   
                   });
                
+               /*
+               
                finalJeopardyScene1Button.setOnAction ( e ->
                   
                   {
@@ -897,6 +960,8 @@ public class JeopardyTesting extends Application
                      window.setScene(finalJeopardyClueScene);
                   
                   });
+                  
+               */
                   
                // Final Jeopardy Wager Scene Buttons
                
@@ -5949,6 +6014,737 @@ public class JeopardyTesting extends Application
                         
                   
                   });
+                  
+            /*
+            
+            //FJ Clue Scene Buttons
+               
+               
+               answerAFJ.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getTurn() == 0)  //This if statement handles player 1
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 0)
+                              
+                              {
+                              
+                                  player1.plusScore(player1.getWager());
+                                  
+                                  //set label on FJ scoreboard scene
+                                  
+                                  player1FJScoreLabel.setText("Player 1:\n" + player1.getScore()); 
+                                  
+                                  dailyDouble.plusFinalJeopardyTracker();
+                                  
+                                  System.out.println("" + player1.getWager());
+                                  
+                                  if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 player1.minusScore(player1.getWager());
+                                 
+                                 //set label on FJ scoreboard scene
+                                  
+                                 player1FJScoreLabel.setText("Player 1:\n" + player1.getScore());
+                                 
+                                 dailyDouble.plusFinalJeopardyTracker();
+                                 
+                                 System.out.println("" + player1.getWager());
+                                 
+                                 if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                 
+                              }
+                           
+                        
+                        }
+                        
+                     
+                     else if (dailyDouble.getTurn() == 1)  //This if statement handles player 2
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 0)
+                              
+                              {
+                              
+                                  player2.plusScore(player2.getWager());
+                                  
+                                  //set label on FJ scoreboard scene
+                                  
+                                  player2FJScoreLabel.setText("Player 2:\n" + player2.getScore()); 
+                                  
+                                  dailyDouble.plusFinalJeopardyTracker();
+                                  
+                                  if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 player2.minusScore(player2.getWager());
+                                 
+                                 //set label on FJ scoreboard scene
+                                  
+                                 player2FJScoreLabel.setText("Player 2:\n" + player2.getScore());
+                                 
+                                 dailyDouble.plusFinalJeopardyTracker();
+                                 
+                                 if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                 
+                              }
+                           
+                        
+                        }
+                        
+                        
+                        
+                     else if (dailyDouble.getTurn() == 2)  //This if statement handles player 3
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 0)
+                              
+                              {
+                              
+                                  player3.plusScore(player3.getWager());
+                                  
+                                  //set label on FJ scoreboard scene
+                                  
+                                  player3FJScoreLabel.setText("Player 3:\n" + player3.getScore()); 
+                                  
+                                  dailyDouble.plusFinalJeopardyTracker();
+                                  
+                                  if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 player3.minusScore(player3.getWager());
+                                 
+                                 //set label on FJ scoreboard scene
+                                  
+                                 player3FJScoreLabel.setText("Player 3:\n" + player3.getScore());
+                                 
+                                 dailyDouble.plusFinalJeopardyTracker();
+                                 
+                                 if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                 
+                              }
+                        
+                        }
+                        
+                        
+                  
+                  });
+                  
+               answerBFJ.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getTurn() == 0)  //This if statement handles player 1
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 1)
+                              
+                              {
+                              
+                                  player1.plusScore(player1.getWager());
+                                  
+                                  //set label on FJ scoreboard scene
+                                  
+                                  player1FJScoreLabel.setText("Player 1:\n" + player1.getScore()); 
+                                  
+                                  dailyDouble.plusFinalJeopardyTracker();
+                                  
+                                  if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 player1.minusScore(player1.getWager());
+                                 
+                                 //set label on FJ scoreboard scene
+                                  
+                                 player1FJScoreLabel.setText("Player 1:\n" + player1.getScore());
+                                 
+                                 dailyDouble.plusFinalJeopardyTracker();
+                                 
+                                 if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                 
+                              }
+                           
+                        
+                        }
+                        
+                     
+                     else if (dailyDouble.getTurn() == 1)  //This if statement handles player 2
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 1)
+                              
+                              {
+                              
+                                  player2.plusScore(player2.getWager());
+                                  
+                                  //set label on FJ scoreboard scene
+                                  
+                                  player2FJScoreLabel.setText("Player 2:\n" + player2.getScore()); 
+                                  
+                                  dailyDouble.plusFinalJeopardyTracker();
+                                  
+                                  if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 player2.minusScore(player2.getWager());
+                                 
+                                 //set label on FJ scoreboard scene
+                                  
+                                 player2FJScoreLabel.setText("Player 2:\n" + player2.getScore());
+                                 
+                                 dailyDouble.plusFinalJeopardyTracker();
+                                 
+                                 if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                 
+                              }
+                           
+                        
+                        }
+                        
+                        
+                        
+                     else if (dailyDouble.getTurn() == 2)  //This if statement handles player 3
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 1)
+                              
+                              {
+                              
+                                  player3.plusScore(player3.getWager());
+                                  
+                                  //set label on FJ scoreboard scene
+                                  
+                                  player3FJScoreLabel.setText("Player 3:\n" + player3.getScore()); 
+                                  
+                                  dailyDouble.plusFinalJeopardyTracker();
+                                  
+                                  if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 player3.minusScore(player3.getWager());
+                                 
+                                 //set label on FJ scoreboard scene
+                                  
+                                 player3FJScoreLabel.setText("Player 3:\n" + player3.getScore());
+                                 
+                                 dailyDouble.plusFinalJeopardyTracker();
+                                 
+                                 if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                 
+                              }
+                        
+                        }
+
+                        
+                        
+                        
+                        
+                  
+                  });
+                  
+               answerXFJ.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getTurn() == 0)  //This if statement handles player 1
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 2)
+                              
+                              {
+                              
+                                  player1.plusScore(player1.getWager());
+                                  
+                                  //set label on FJ scoreboard scene
+                                  
+                                  player1FJScoreLabel.setText("Player 1:\n" + player1.getScore()); 
+                                  
+                                  dailyDouble.plusFinalJeopardyTracker();
+                                  
+                                  if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 player1.minusScore(player1.getWager());
+                                 
+                                 //set label on FJ scoreboard scene
+                                  
+                                 player1FJScoreLabel.setText("Player 1:\n" + player1.getScore());
+                                 
+                                 dailyDouble.plusFinalJeopardyTracker();
+                                 
+                                 if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                 
+                              }
+                           
+                        
+                        }
+                        
+                     
+                     else if (dailyDouble.getTurn() == 1)  //This if statement handles player 2
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 2)
+                              
+                              {
+                              
+                                  player2.plusScore(player2.getWager());
+                                  
+                                  //set label on FJ scoreboard scene
+                                  
+                                  player2FJScoreLabel.setText("Player 2:\n" + player2.getScore()); 
+                                  
+                                  dailyDouble.plusFinalJeopardyTracker();
+                                  
+                                  if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 player2.minusScore(player2.getWager());
+                                 
+                                 //set label on FJ scoreboard scene
+                                  
+                                 player2FJScoreLabel.setText("Player 2:\n" + player2.getScore());
+                                 
+                                 dailyDouble.plusFinalJeopardyTracker();
+                                 
+                                 if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                 
+                              }
+                           
+                        
+                        }
+                        
+                        
+                        
+                     else if (dailyDouble.getTurn() == 2)  //This if statement handles player 3
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 2)
+                              
+                              {
+                              
+                                  player3.plusScore(player3.getWager());
+                                  
+                                  //set label on FJ scoreboard scene
+                                  
+                                  player3FJScoreLabel.setText("Player 3:\n" + player3.getScore()); 
+                                  
+                                  dailyDouble.plusFinalJeopardyTracker();
+                                  
+                                  if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 player3.minusScore(player3.getWager());
+                                 
+                                 //set label on FJ scoreboard scene
+                                  
+                                 player3FJScoreLabel.setText("Player 3:\n" + player3.getScore());
+                                 
+                                 dailyDouble.plusFinalJeopardyTracker();
+                                 
+                                 if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                 
+                              }
+                        
+                        }
+
+                        
+                        
+                        
+                        
+                        
+                        
+                  
+                  });
+                  
+               answerYFJ.setOnAction( e ->  
+                  
+                  {
+                  
+                     if (dailyDouble.getTurn() == 0)  //This if statement handles player 1
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 3)
+                              
+                              {
+                              
+                                  player1.plusScore(player1.getWager());
+                                  
+                                  //set label on FJ scoreboard scene
+                                  
+                                  player1FJScoreLabel.setText("Player 1:\n" + player1.getScore()); 
+                                  
+                                  dailyDouble.plusFinalJeopardyTracker();
+                                  
+                                  if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 player1.minusScore(player1.getWager());
+                                 
+                                 //set label on FJ scoreboard scene
+                                  
+                                 player1FJScoreLabel.setText("Player 1:\n" + player1.getScore());
+                                 
+                                 dailyDouble.plusFinalJeopardyTracker();
+                                 
+                                 if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                 
+                              }
+                           
+                        
+                        }
+                        
+                     
+                     else if (dailyDouble.getTurn() == 1)  //This if statement handles player 2
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 3)
+                              
+                              {
+                              
+                                  player2.plusScore(player2.getWager());
+                                  
+                                  //set label on FJ scoreboard scene
+                                  
+                                  player2FJScoreLabel.setText("Player 2:\n" + player2.getScore()); 
+                                  
+                                  dailyDouble.plusFinalJeopardyTracker();
+                                  
+                                  if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 player2.minusScore(player2.getWager());
+                                 
+                                 //set label on FJ scoreboard scene
+                                  
+                                 player2FJScoreLabel.setText("Player 2:\n" + player2.getScore());
+                                 
+                                 dailyDouble.plusFinalJeopardyTracker();
+                                 
+                                 if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                 
+                              }
+                           
+                        
+                        }
+                        
+                        
+                        
+                     else if (dailyDouble.getTurn() == 2)  //This if statement handles player 3
+                        
+                        {
+                        
+                           if (dailyDouble.getAnswerInt() == 3)
+                              
+                              {
+                              
+                                  player3.plusScore(player3.getWager());
+                                  
+                                  //set label on FJ scoreboard scene
+                                  
+                                  player3FJScoreLabel.setText("Player 3:\n" + player3.getScore()); 
+                                  
+                                  dailyDouble.plusFinalJeopardyTracker();
+                                  
+                                  if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                  
+                                  
+                              
+                              }
+                              
+                           else 
+                              
+                              {
+                              
+                                 
+                                 
+                                 player3.minusScore(player3.getWager());
+                                 
+                                 //set label on FJ scoreboard scene
+                                  
+                                 player3FJScoreLabel.setText("Player 3:\n" + player3.getScore());
+                                 
+                                 dailyDouble.plusFinalJeopardyTracker();
+                                    
+                                    if (dailyDouble.getFinalJeopardyTracker() == 3)
+                                       
+                                       {
+                                       
+                                          window.setScene(finalJeopardyScoreboardScene);
+                                       
+                                       }
+                                 
+                              }
+                        
+                        }
+
+                        
+                        
+                        
+                                          
+                  });
+                  
+                  */
+                  
+            exitButton.setOnAction ( e->
+               
+               {
+               
+                  System.exit(0);
+               
+               });
+               
+               
 
 
             ///////////////// End of Button Programming.
