@@ -2487,7 +2487,7 @@ public class JeopardyTesting extends Application
                      
                         answerY.setText("Wyoming");
                      
-                        dailyDouble.setAnswerInt(0); //Colorado
+                        dailyDouble.setAnswerInt(3); //Wyoming
                         
                         dailyDouble.setCluePoints(500);
                      
