@@ -1686,7 +1686,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                     clueText.setText("In the late 19th Century, this inventor perfected the design of the light bulb.  ".toUpperCase());
+                     clueText.setText("In the late 19th Century, this inventor \nperfected the design of the light bulb.  ".toUpperCase());
                      
                      answerA.setText("Thomas Edison");
                      
@@ -1741,32 +1741,36 @@ public class JeopardyTesting extends Application
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                     if(dailyDouble.getGamePhase() == 0)
                     {
-                     clueText.setText("This company, founded in \nFebruary 1982 originally developed Java.".toUpperCase());
+                    
+                        clueText.setText("This company, founded in \nFebruary 1982 originally developed Java.".toUpperCase());
                      
-                     answerA.setText("Sun Microsystems");
+                        answerA.setText("Sun Microsystems");
                      
-                     answerB.setText("Oracle Corporation");
+                        answerB.setText("Oracle Corporation");
                      
-                     answerX.setText("Sunopsis");
+                        answerX.setText("Sunopsis");
                      
-                     answerY.setText("Roots & Ladders LLC");
+                        answerY.setText("Roots & Ladders LLC");
                      
-                     dailyDouble.setAnswerInt(0); //Sun Microsystems
+                        dailyDouble.setAnswerInt(0); //Sun Microsystems
+                     
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
                     {
-                     clueText.setText("Five years after the first solo flight across the Atlantic,\n this pilot became the second person to complete the same feat.".toUpperCase());
+                    
+                        clueText.setText("Five years after the\n first solo flight across the Atlantic,\n this pilot became the second person\n to complete the same feat.".toUpperCase());
                      
-                     answerA.setText("Charles Lindbergh");
+                        answerA.setText("Charles Lindbergh");
                      
-                     answerB.setText("Amelia Earhart");
+                        answerB.setText("Amelia Earhart");
                      
-                     answerX.setText("Arthur Brown");
+                        answerX.setText("Arthur Brown");
                      
-                     answerY.setText("John Alcock");
+                        answerY.setText("John Alcock");
                      
-                     dailyDouble.setAnswerInt(1); //Amelia Earhart
+                        dailyDouble.setAnswerInt(1); //Amelia Earhart
+                     
                     }
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -1878,31 +1882,36 @@ public class JeopardyTesting extends Application
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                     if(dailyDouble.getGamePhase() == 0)
                     {
-                     clueText.setText("First released in on a device in 2008,\n this operating system is mostly written Java..".toUpperCase());
+                    
+                        clueText.setText("First released in on a device in 2008,\n this operating system is mostly written Java..".toUpperCase());
                      
-                     answerA.setText("Android");
+                        answerA.setText("Android");
                      
-                     answerB.setText("iOS");
+                        answerB.setText("iOS");
                      
-                     answerX.setText("FireOS");
+                        answerX.setText("FireOS");
                      
-                     answerY.setText("Linux");
+                        answerY.setText("Linux");
                      
-                     dailyDouble.setAnswerInt(0); //Android
+                        dailyDouble.setAnswerInt(0); //Android
+                     
                     }
+                    
                     if(dailyDouble.getGamePhase() == 1)
                     {
-                     clueText.setText("One of the co-founders of Microsoft, \nthis man unfortunately lost his battle with cancer in 2018.  ".toUpperCase());
+                    
+                        clueText.setText("One of the co-founders of Microsoft, \nthis man unfortunately lost his battle\n with cancer in 2018.  ".toUpperCase());
                      
-                     answerA.setText("Paul Allen");
+                        answerA.setText("Paul Allen");
                      
-                     answerB.setText("Bill Gates");
+                        answerB.setText("Bill Gates");
                      
-                     answerX.setText("Steve Wozniak");
+                        answerX.setText("Steve Wozniak");
                      
-                     answerY.setText("Tim Cook");
+                        answerY.setText("Tim Cook");
                      
-                     dailyDouble.setAnswerInt(0); //Paul Allen
+                        dailyDouble.setAnswerInt(0); //Paul Allen
+                     
                     }
                     
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
@@ -2031,24 +2040,28 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
+                     
                     if(dailyDouble.getGamePhase() == 0)
                     {
-                     clueText.setText("Opened in 1937, the Golden Gate Bridge\nconnects the city of San Francisco, CA to this county.".toUpperCase());
+                    
+                        clueText.setText("Opened in 1937, the Golden Gate Bridge\nconnects the city of San Francisco, CA \nto this county.".toUpperCase());
                      
-                     answerA.setText("Alameda County");
+                        answerA.setText("Alameda County");
                      
-                     answerB.setText("Napa County");
+                        answerB.setText("Napa County");
                      
-                     answerX.setText("Marin County");
+                        answerX.setText("Marin County");
                      
-                     answerY.setText("San Mateo County");
+                        answerY.setText("San Mateo County");
                      
-                     dailyDouble.setAnswerInt(2); //Marin County
+                        dailyDouble.setAnswerInt(2); //Marin County
+                        
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
                     {
-                     clueText.setText("In the 2013 smash hit Grand Theft Auto V,\n players can travel and interact in a virtual parody of this US City.".toUpperCase());
+                    
+                     clueText.setText("In the 2013 smash hit Grand Theft Auto V,\n players can travel and interact\n in a virtual parody of this US City.".toUpperCase());
                      
                      answerA.setText("Los Angeles");
                      
@@ -2059,6 +2072,7 @@ public class JeopardyTesting extends Application
                      answerY.setText("Miami");
                      
                      dailyDouble.setAnswerInt(0); //Los Angeles
+                     
                     }
                     
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
@@ -2102,7 +2116,7 @@ public class JeopardyTesting extends Application
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                     if(dailyDouble.getGamePhase() == 0)
                     {
-                     clueText.setText("Once the world’s largest/n the Georgia aquarium is located in this city?".toUpperCase());
+                     clueText.setText("Once the world’s largest\n the Georgia aquarium is located in this city?".toUpperCase());
                      
                      answerA.setText("Savannah");
                      
@@ -2171,32 +2185,36 @@ public class JeopardyTesting extends Application
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
                     if(dailyDouble.getGamePhase() == 0)
                     {
-                     clueText.setText("Given as a token of friendship between two nations,\nthe Statue of Liberty was given\nto the United States from this nation. ".toUpperCase());
+                    
+                        clueText.setText("Given as a token of friendship between two nations,\nthe Statue of Liberty was given\nto the United States from this nation. ".toUpperCase());
                      
-                     answerA.setText("Spain");
+                        answerA.setText("Spain");
                      
-                     answerB.setText("France");
+                        answerB.setText("France");
                      
-                     answerX.setText("Germany");
+                        answerX.setText("Germany");
                      
-                     answerY.setText("Great Britain");
+                        answerY.setText("Great Britain");
                      
-                     dailyDouble.setAnswerInt(1); //France
+                        dailyDouble.setAnswerInt(1); //France
+                     
                     }
                     
                     if(dailyDouble.getGamePhase() == 1)
                     {
-                     clueText.setText("Since release, this MMORPG has made over $9,000,000,000 in revenue. ".toUpperCase());
+                    
+                        clueText.setText("Since release, this MMORPG has made over\n $9,000,000,000 in revenue. ".toUpperCase());
                      
-                     answerA.setText("Grand Theft Auto V");
+                        answerA.setText("Grand Theft Auto V");
                      
-                     answerB.setText("Minecraft");
+                        answerB.setText("Minecraft");
                      
-                     answerX.setText("World of Warcraft");
+                        answerX.setText("World of Warcraft");
                      
-                     answerY.setText("Sims");
+                        answerY.setText("Sims");
                      
-                     dailyDouble.setAnswerInt(2); //World of Warcraft
+                        dailyDouble.setAnswerInt(2); //World of Warcraft
+                     
                     }
                      if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
@@ -2306,36 +2324,41 @@ public class JeopardyTesting extends Application
                      dailyDouble.plusCounter();
                      
                      System.out.println("The daily double counter is currently at ".toUpperCase() + dailyDouble.getCounter() + ".".toUpperCase());
-                    if(dailyDouble.getGamePhase() == 0)
-                    {
-                     clueText.setText("The first national monument,\nDevils Tower National Monument,\ncan be found in this state.".toUpperCase());
                      
-                     answerA.setText("Colorado");
+                     if(dailyDouble.getGamePhase() == 0)
+                     {
+                    
+                        clueText.setText("The first national monument,\nDevils Tower National Monument,\ncan be found in this state.".toUpperCase());
                      
-                     answerB.setText("California");
+                        answerA.setText("Colorado");
                      
-                     answerX.setText("Montana");
+                        answerB.setText("California");
                      
-                     answerY.setText("Wyoming");
+                        answerX.setText("Montana");
                      
-                     dailyDouble.setAnswerInt(0); //Colorado
-                    }
-                    if(dailyDouble.getGamePhase() == 1)
-                    {
-                     clueText.setText("With over 150 Million consoles sold, \nthis system is the best selling game console of all time. ".toUpperCase());
+                        answerY.setText("Wyoming");
                      
-                     answerA.setText("Playstation 2");
+                        dailyDouble.setAnswerInt(0); //Colorado
+                        
+                     }
+                    
+                     if(dailyDouble.getGamePhase() == 1)
+                     {
+                    
+                        clueText.setText("With over 150 Million consoles sold, \nthis system is the best selling game\n console of all time. ".toUpperCase());
                      
-                     answerB.setText("Xbox 360");
+                        answerA.setText("Playstation 2");
                      
-                     answerX.setText("Nitendo Wii");
+                        answerB.setText("Xbox 360");
                      
-                     answerY.setText("Playstation 4");
+                        answerX.setText("Nitendo Wii");
                      
-                     dailyDouble.setAnswerInt(0); //Playstation 2
+                        answerY.setText("Playstation 4");
+                     
+                        dailyDouble.setAnswerInt(0); //Playstation 2
                     }
                     
-                     if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
+                    if (dailyDouble.getCounter() == dailyDouble.getValueA() || dailyDouble.getCounter() == dailyDouble.getValueB() || dailyDouble.getCounter() == dailyDouble.getValueC())
                         
                         {
                         
@@ -2787,7 +2810,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("In 1911 this person became the only Nobel Laureate to win \n the award in the two different sciences ".toUpperCase());
+                        clueText.setText("In 1911 this person became\n the only Nobel Laureate to win \n the award in the two different sciences ".toUpperCase());
                      
                         answerA.setText("Frederick Sanger");
                      
@@ -3014,7 +3037,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("Appearing on Earth over 400 Millions Years ago, this group of animals are older than trees".toUpperCase());
+                        clueText.setText("Appearing on Earth over\n 400 Millions Years ago, this group of animals\n are older than trees".toUpperCase());
                      
                         answerA.setText("Alligators");
                      
@@ -3089,7 +3112,7 @@ public class JeopardyTesting extends Application
                      {
                         
                         
-                        clueText.setText("Devil's Tower in Black Hills, Wyoming and Obsidian are both made of this rock".toUpperCase());
+                        clueText.setText("Devil's Tower in Black Hills, Wyoming and Obsidian\n are both made of this rock".toUpperCase());
                      
                         answerA.setText("Sedimentary");
                      
@@ -3172,7 +3195,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("First appearing in 1936, this character is considered the first costumed superhero".toUpperCase());
+                        clueText.setText("First appearing in 1936, this character is \nconsidered the first costumed superhero".toUpperCase());
                      
                         answerA.setText("Superman");
                      
@@ -3189,7 +3212,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("First Introduced in 1953, this vehicle earned the title 'America's Sports Car'".toUpperCase());
+                        clueText.setText("First Introduced in 1953, this vehicle\n earned the title 'America's Sports Car'".toUpperCase());
                      
                         answerA.setText("Challenger");
                      
@@ -3247,7 +3270,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("This actor was the first person to be hired to play a role in the Marvel Cinematic Universe".toUpperCase());
+                        clueText.setText("This actor was the first person to be\n hired to play a role in the \nMarvel Cinematic Universe".toUpperCase());
                         
                         answerA.setText("Terrence Howard");
                         
@@ -3264,7 +3287,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("Made in Detroit, Michigan, this vehicle was the first mass produced automobile in America".toUpperCase());
+                        clueText.setText("Made in Detroit, Michigan, this vehicle\n was the first mass produced \nautomobile in America".toUpperCase());
                         
                         answerA.setText("Model T");
                         
@@ -3321,7 +3344,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("This building served as the original headquarters for Fantastic Four".toUpperCase());
+                        clueText.setText("This building served as the original\n headquarters for Fantastic Four".toUpperCase());
                         
                         answerA.setText("Baxter Building");
                         
@@ -3338,7 +3361,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("This Hot-Hatch was driven in Ken Block's famous Gymkhana 9 ".toUpperCase());
+                        clueText.setText("This Hot-Hatch was driven\n in Ken Block's famous Gymkhana 9 ".toUpperCase());
                         
                         answerA.setText("Hyundai Veloster N");
                         
@@ -3397,7 +3420,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("This Japanese comic series is known for having \n over 200 musical references spread \n across its 30 plus year print year".toUpperCase());
+                        clueText.setText("This Japanese comic series\n is known for having over 200 musical references \nspread across its 30 plus year print year".toUpperCase());
                         
                         answerA.setText("Golgo 13");
                         
@@ -3414,7 +3437,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("What was the first commercially available hybrid gasoline-electric in the United States".toUpperCase());
+                        clueText.setText("What was the first commercially available\n hybrid gasoline-electric in\n the United States".toUpperCase());
                         
                         answerA.setText("Ford Escape Hybrid");
                         
@@ -3471,7 +3494,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("While well known today as a big Green Giant, \n the Incredible Hulk' skin was originally printed this color".toUpperCase());
+                        clueText.setText("While well known today as a big Green Giant, \n the Incredible Hulk' skin was originally\n printed this color".toUpperCase());
                         
                         answerA.setText("White");
                         
@@ -3488,7 +3511,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("Selling more than one million units in 1965, \n this car set a record that still \n stands today".toUpperCase());
+                        clueText.setText("Selling more than one million units in 1965, \n this car set a record that\n still stands today".toUpperCase());
                         
                         answerA.setText("Buick Wildcat");
                         
@@ -3587,7 +3610,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                         
-                        clueText.setText("This institution is the second-oldest college in the United States".toUpperCase());
+                        clueText.setText("This institution is the second-oldest\n college in the United States".toUpperCase());
                         
                         answerA.setText("Washington and Lee University");
                         
@@ -3644,7 +3667,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("This player was th only player in the NBA \n history to be named the Most Valuable \n Player, Coach of thr Year, and executive of the Year".toUpperCase());
+                        clueText.setText("This player was th only player in the NBA \n history to be named the Most Valuable \n Player, Coach of thr Year, and\n executive of the Year".toUpperCase());
                         
                         answerA.setText("Phil Jackson");
                         
@@ -3661,7 +3684,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("Established in 1636, this institution has had more US Presidents graduate from it than any other school".toUpperCase());
+                        clueText.setText("Established in 1636, this institution\n has had more US Presidents graduate\n from it than any other school".toUpperCase());
                         
                         answerA.setText("Yale University");
                         
@@ -3718,7 +3741,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("This American Olympian is the most decorated olympic athlete of all time".toUpperCase());
+                        clueText.setText("This American Olympian is the most\n decorated olympic athlete of all time".toUpperCase());
                         
                         answerA.setText("Carl Lewis");
                         
@@ -3735,7 +3758,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("This country is the number one country of origin for foreign students in the US".toUpperCase());
+                        clueText.setText("This country is the number one country of\n origin for foreign students in the US".toUpperCase());
                      
                         answerA.setText("India");
                      
@@ -3792,7 +3815,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 0)
                      {
                      
-                        clueText.setText("During the 1992 Olympic Games, the US Basket Men's Backetball \n 'Dream Team' played against this country in the gold \n medal match, winning 117-85 ".toUpperCase());
+                        clueText.setText("During the 1992 Olympic Games, the US\n Basket Men's Backetball 'Dream Team'\n played against this country in the gold \n medal match, winning 117-85 ".toUpperCase());
                         
                         answerA.setText("Brazil");
                         
@@ -3808,7 +3831,7 @@ public class JeopardyTesting extends Application
                      if(dailyDouble.getGamePhase() == 1)
                      {
                      
-                        clueText.setText("Located in Blue Blue Pennsylvania, \n Montgomery County Community College had its original location in \n this Philly Suburb ".toUpperCase());
+                        clueText.setText("Located in Blue Blue Pennsylvania, \n Montgomery County Community College had \nits original location in \nthis Philly Suburb ".toUpperCase());
                         
                         answerA.setText("Plymouth Meeting");
                         
@@ -3866,7 +3889,7 @@ public class JeopardyTesting extends Application
                      {
                      
                      
-                        clueText.setText("This MLB player holds the record for most Grand Slams in one inning".toUpperCase());
+                        clueText.setText("This MLB player holds the record for\n most Grand Slams in one inning".toUpperCase());
                         
                         answerA.setText("Barry Bonds");
                         
