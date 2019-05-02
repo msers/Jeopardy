@@ -28,6 +28,10 @@ public class DailyDouble
       
       private int turnTracker;
       
+      private int cluePoints;
+      
+      private int incorrectTracker;
+      
       public DailyDouble()
       
          {
@@ -242,7 +246,54 @@ public class DailyDouble
             return turnTracker;
          
          }
-
+         
+      public void setCluePoints (int cluePointsInt)
+         
+         {
+         
+            cluePoints = cluePointsInt;
+         
+         }
+         
+      public int getCluePoints()
+         
+         {
+         
+            return cluePoints;
+         
+         }
+      
+      public void setIncorrectTurn (int incorrectTrackerInt)
+      
+         {
+            
+            incorrectTracker = incorrectTrackerInt;
+         
+         }
+         
+      public void plusIncorrectTracker()
+         
+         {
+         
+            incorrectTracker++;
+            
+         }
+            
+      public int getIncorrectTracker()
+         
+         {
+         
+            return incorrectTracker;
+         
+         }
+         
+      public void resetIncorrectTracker()
+         
+         {
+               
+            incorrectTracker = 0;
+               
+         }
       
        
 
